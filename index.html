@@ -18,13 +18,47 @@
     main{padding:2rem 5vw;}
     section{max-width:900px;margin:2rem auto;}
     h1,h2{margin-bottom:1rem;}
-    .slider-wrapper{position:relative;width:100%;max-width:600px;margin:2rem auto;overflow:hidden;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.15);}
-    .slider-img{position:absolute;top:0;left:0;width:100%;}
-    .slider-img img{display:block;width:100%;}
-    .slider-img.after{clip-path:inset(0 50% 0 0);transition:clip-path .15s ease-out;}
-    .slider-range{width:100%;margin-top:1rem;}
-    form input,form textarea,form button{display:block;width:100%;padding:.5rem;margin-bottom:1rem;border:1px solid #ccc;border-radius:4px;}
-    form button{background:#007ac0;color:#fff;border:none;font-weight:bold;cursor:pointer;}
+
+    .slider-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .slider-wrapper .slider-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    .slider-wrapper .slider-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .slider-wrapper .after {
+      clip-path: inset(0 50% 0 0);
+      z-index: 2;
+    }
+    .slider-wrapper .before {
+      z-index: 1;
+    }
+    .slider-range {
+      position: relative;
+      width: 100%;
+      margin-top: 1rem;
+      z-index: 3;
+    }
+
+    form input,form textarea,form button {
+      display:block;width:100%;padding:.5rem;margin-bottom:1rem;border:1px solid #ccc;border-radius:4px;
+    }
+    form button {
+      background:#007ac0;color:#fff;border:none;font-weight:bold;cursor:pointer;
+    }
   </style>
 </head>
 <body>
@@ -43,6 +77,7 @@
       <h1>Vítejte na C:Dent</h1>
       <p>Špičková stomatologická péče v srdci města.</p>
     </section>
+
     <section id="services">
       <h2>Naše služby</h2>
       <ul>
@@ -52,6 +87,7 @@
         <li>Ortodoncie</li>
       </ul>
     </section>
+
     <section id="work">
       <h2>Ukázky naší práce</h2>
       <div class="slider-wrapper">
@@ -64,6 +100,7 @@
       </div>
       <input type="range" min="0" max="100" value="50" class="slider-range">
     </section>
+
     <section id="contact">
       <h2>Kontaktujte nás</h2>
       <p>Telefon: +420 123 456 789<br>Email: info@cdent.cz<br>Adresa: U zubů 12, 110 00 Praha</p>
@@ -76,12 +113,13 @@
     </section>
   </main>
 </div>
+
 <script>
 const slider = document.querySelector('.slider-range');
-const afterImg = document.querySelector('.slider-img.after');
-slider.addEventListener('input', e=>{
+const after = document.querySelector('.slider-wrapper .after');
+slider.addEventListener('input', e => {
   const val = e.target.value;
-  afterImg.style.clipPath = `inset(0 ${100 - val}% 0 0)`;
+  after.style.clipPath = `inset(0 ${100 - val}% 0 0)`;
 });
 </script>
 </body>
