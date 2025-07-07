@@ -95,26 +95,17 @@
       text-align: center;
       margin-bottom: 1.5rem;
     }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-    .service {
-      background: white;
-      padding: 1.2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    .team-member {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      transition: transform 0.2s ease;
+      gap: 1rem;
     }
-    .service:hover {
-      transform: translateY(-5px);
-    }
-    .service i {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
+    .team-member img {
+      width: 240px;
+      height: auto;
+      border-radius: 10px;
     }
     .slider-container {
       position: relative;
@@ -139,22 +130,6 @@
       width: 100%;
       margin-top: 1rem;
     }
-    form input, form textarea, form button {
-      display:block;
-      width:100%;
-      padding:.6rem;
-      margin-bottom:1rem;
-      border:1px solid #ccc;
-      border-radius:4px;
-      font-family:inherit;
-    }
-    form button {
-      background:var(--primary);
-      color:#fff;
-      border:none;
-      font-weight:600;
-      cursor:pointer;
-    }
   </style>
 </head>
 <body>
@@ -162,7 +137,7 @@
 <header>
   <div class="logo">C:Dent</div>
   <nav>
-    <a href="#services">Služby</a>
+    <a href="#team">Náš tým</a>
     <a href="#work">Ukázky</a>
     <a href="#contact">Kontakt</a>
   </nav>
@@ -177,15 +152,12 @@
 </section>
 
 <main>
-  <section id="services">
-    <h2>Naše služby</h2>
-    <div class="services-grid">
-      <div class="service"><i>🦷</i><p>Preventivní prohlídky</p></div>
-      <div class="service"><i>🪥</i><p>Dentální hygiena</p></div>
-      <div class="service"><i>💎</i><p>Bělení zubů</p></div>
-      <div class="service"><i>🛠️</i><p>Zubní protetika</p></div>
-      <div class="service"><i>👶</i><p>Dětská stomatologie</p></div>
-      <div class="service"><i>🔬</i><p>Mikroskopická endodoncie</p></div>
+  <section id="team">
+    <h2>Náš tým</h2>
+    <div class="team-member">
+      <img src="assets/jonas.jpg" alt="Jonáš Celerýn">
+      <h3>MDDr. Jonáš Celerýn</h3>
+      <p>Věnuje se komplexní stomatologické péči s využitím mikroskopu. Specializuje se na rekonstrukce chrupu, estetickou stomatologii, protetiku, implantologii a chirurgii měkkých tkání. Tři roky působil jako pedagog na 1. lékařské fakultě Univerzity Karlovy a absolvoval odborné curriculum ČADE. Ke každému pacientovi přistupuje individuálně, s důrazem na detail a dlouhodobý výsledek.</p>
     </div>
   </section>
 
@@ -203,12 +175,6 @@
     <p><strong>Adresa:</strong> Vinohradská 196, Praha 3, 130 00</p>
     <p><strong>Telefon:</strong> <a href="tel:+420272735268">272 735 268</a></p>
     <p><strong>Email:</strong> <a href="mailto:dmd@zubnidmd.cz">dmd@zubnidmd.cz</a></p>
-    <form>
-      <input type="text" placeholder="Vaše jméno">
-      <input type="email" placeholder="Váš e-mail">
-      <textarea rows="4" placeholder="Zpráva..."></textarea>
-      <button type="submit">Odeslat</button>
-    </form>
   </section>
 </main>
 
