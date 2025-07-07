@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>C:Dent – Stomatologická klinika</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('assets/smile.jpg') center/cover no-repeat fixed;
+      color: #111;
+      background-color: white;
+    }
+    .overlay {
+      background: rgba(255,255,255,0.88);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      color: #000;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+    }
+    section {
+      padding: 2rem 0;
+    }
+    form input, form textarea, form button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form button {
+      background-color: #007ac0;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <header>
+      <div class="logo">C:Dent</div>
+      <nav>
+        <a href="#home">Úvod</a>
+        <a href="#services">Služby</a>
+        <a href="#about">O nás</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+    </header>
+    <main>
+      <section id="home">
+        <h1>Vítejte na C:Dent</h1>
+        <p>Špičková stomatologická péče v srdci města.</p>
+      </section>
+      <section id="services">
+        <h2>Naše služby</h2>
+        <ul>
+          <li>Dentální hygiena</li>
+          <li>Bělení zubů</li>
+          <li>Implantologie</li>
+          <li>Ortodoncie</li>
+        </ul>
+      </section>
+      <section id="about">
+        <h2>O nás</h2>
+        <p>C:Dent je moderní klinika s profesionálním týmem...</p>
+      </section>
+      <section id="contact">
+        <h2>Kontaktujte nás</h2>
+        <p>
+          Telefon: +420 123 456 789<br/>
+          E-mail: info@cdent.cz<br/>
+          Adresa: U zubů 12, 110 00 Praha
+        </p>
+        <form>
+          <label>Jméno</label>
+          <input type="text" name="name"/>
+          <label>E-mail</label>
+          <input type="email" name="email"/>
+          <label>Zpráva</label>
+          <textarea rows="5"></textarea>
+          <button type="submit">Odeslat</button>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
