@@ -6,98 +6,121 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>C:Dent – Stomatologická klinika</title>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:url('assets/background.jpg') center/cover fixed no-repeat;
-  color:#111;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: url('assets/background.jpg') center/cover no-repeat fixed;
+  color: #111;
 }
-.overlay{background:rgba(255,255,255,0.4);min-height:100vh;}
-header{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1);}
-nav a{margin:0 1rem;text-decoration:none;font-weight:bold;color:#000;}
-main{padding:2rem 5vw;}
-section{max-width:900px;margin:2rem auto;}
-h1,h2{margin-bottom:1rem;}
-/* Slider */
-.slider-container{
-  position:relative;
-  width:100%;
-  max-width:700px;
-  margin:2rem auto;
-  aspect-ratio:16/9;
-  overflow:hidden;
-  border-radius:8px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.15);
+.overlay {
+  background-color: rgba(255, 255, 255, 0.85);
+  min-height: 100vh;
 }
-.slider-container img{
-  position:absolute;
-  top:0;left:0;
-  width:100%;height:100%;
-  object-fit:cover;
+header {
+  background: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.after{clip-path:inset(0 50% 0 0);transition:clip-path .2s ease;}
-.slider-range{width:100%;margin-top:1rem;}
-/* Form */
-form input,form textarea,form button{display:block;width:100%;padding:.5rem;margin-bottom:1rem;border:1px solid #ccc;border-radius:4px;}
-form button{background:#007ac0;color:#fff;border:none;font-weight:bold;cursor:pointer;}
+nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: #007ac0;
+  cursor: pointer;
+}
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+h1, h2 {
+  margin-bottom: 1rem;
+}
+.hidden {
+  display: none;
+}
+form input, form textarea, form button {
+  display:block;width:100%;padding:.5rem;margin-bottom:1rem;border:1px solid #ccc;border-radius:4px;
+}
+form button {
+  background:#007ac0;color:#fff;border:none;font-weight:bold;cursor:pointer;
+}
 </style>
 </head>
 <body>
 <div class="overlay">
-<header>
-  <div class="logo">C:Dent</div>
-  <nav>
-    <a href="#home">Úvod</a>
-    <a href="#services">Služby</a>
-    <a href="#work">Ukázky naší práce</a>
-    <a href="#contact">Kontakt</a>
-  </nav>
-</header>
+  <header>
+    <div class="logo">C:Dent</div>
+    <nav>
+      <a onclick="showSection('home')">O nás</a>
+      <a onclick="showSection('services')">Služby</a>
+      <a onclick="showSection('work')">Ukázky</a>
+      <a onclick="showSection('contact')">Kontakt</a>
+    </nav>
+  </header>
+  <main>
+    <section id="home">
+      <h1>Rodinná stomatologická péče s důrazem na prevenci</h1>
+      <p>Na klinice C:Dent se věnujeme všem odvětvím stomatologie:</p>
+      <ul>
+        <li>Dentální hygiena</li>
+        <li>Konzervační stomatologie</li>
+        <li>Protetika</li>
+        <li>Chirurgie</li>
+        <li>Ortodoncie</li>
+        <li>Implantologie</li>
+        <li>Estetická stomatologie</li>
+        <li>Pedostomatologie (dětská péče)</li>
+      </ul>
+      <p>Náš tým tvoří zkušení zubní lékaři i dentální hygienistky, kteří poskytují individuální a lidský přístup.</p>
+      <p>Najdete nás na Vinohradech, kousek od stanice metra <strong>Želivského</strong>.</p>
+    </section>
 
-<main>
-<section id="home">
-  <h1>Vítejte na C:Dent</h1>
-  <p>Špičková stomatologická péče v srdci města.</p>
-</section>
+    <section id="services" class="hidden">
+      <h2>Naše služby</h2>
+      <p>Podrobný výpis všech zákroků a péče připravujeme.</p>
+    </section>
 
-<section id="services">
-  <h2>Naše služby</h2>
-  <ul>
-    <li>Dentální hygiena</li>
-    <li>Bělení zubů</li>
-    <li>Implantologie</li>
-    <li>Ortodoncie</li>
-  </ul>
-</section>
+    <section id="work" class="hidden">
+      <h2>Ukázky naší práce</h2>
+      <div class="slider-container" style="position:relative;max-width:700px;margin:auto;aspect-ratio:16/9;overflow:hidden;border-radius:8px;">
+        <img src="assets/before.jpg" alt="Před" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;">
+        <img src="assets/after.jpg" alt="Po" id="after" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;clip-path:inset(0 50% 0 0);z-index:2;transition:clip-path .2s ease;">
+      </div>
+      <input type="range" min="0" max="100" value="50" class="slider-range" style="width:100%;margin-top:1rem;">
+    </section>
 
-<section id="work">
-  <h2>Ukázky naší práce</h2>
-  <div class="slider-container">
-    <img src="assets/before.jpg" alt="Před ošetřením" class="before">
-    <img src="assets/after.jpg" alt="Po ošetření" class="after">
-  </div>
-  <input type="range" min="0" max="100" value="50" class="slider-range">
-</section>
-
-<section id="contact">
-  <h2>Kontaktujte nás</h2>
-  <p>Telefon: +420 123 456 789<br>Email: info@cdent.cz<br>Adresa: U zubů 12, 110 00 Praha</p>
-  <form>
-    <label>Jméno</label><input type="text">
-    <label>Email</label><input type="email">
-    <label>Zpráva</label><textarea rows="5"></textarea>
-    <button type="submit">Odeslat</button>
-  </form>
-</section>
-</main>
+    <section id="contact" class="hidden">
+      <h2>Kontaktujte nás</h2>
+      <p><strong>Adresa:</strong> Vinohradská 196, Praha 3, 130 00</p>
+      <p><strong>Telefon:</strong> 272 735 268</p>
+      <p><strong>E-mail:</strong> <a href="mailto:dmd@zubnidmd.cz">dmd@zubnidmd.cz</a></p>
+      <form>
+        <label>Jméno</label><input type="text">
+        <label>Email</label><input type="email">
+        <label>Zpráva</label><textarea rows="5"></textarea>
+        <button type="submit">Odeslat</button>
+      </form>
+    </section>
+  </main>
 </div>
 
 <script>
-const slider=document.querySelector('.slider-range');
-const after=document.querySelector('.after');
-slider.addEventListener('input',e=>{
-  after.style.clipPath=`inset(0 ${100-e.target.value}% 0 0)`;
-});
+function showSection(id) {
+  document.querySelectorAll('main section').forEach(sec => sec.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+}
+
+const slider = document.querySelector('.slider-range');
+const afterImg = document.getElementById('after');
+if (slider && afterImg) {
+  slider.addEventListener('input', e => {
+    afterImg.style.clipPath = `inset(0 ${100 - e.target.value}% 0 0)`;
+  });
+}
 </script>
 </body>
 </html>
