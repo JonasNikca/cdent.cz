@@ -7,20 +7,154 @@
   <title>C:Dent – Stomatologická klinika</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background: #fefefe; color: #012b39; }
-    header { background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.05); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-    nav a, .lang-switch { margin-left: 1.2rem; text-decoration: none; color: #012b39; font-weight: 500; cursor: pointer; }
-    .lang-switch { border: 1px solid #008cdd; padding: .3rem .6rem; border-radius: 4px; }
-    .hero { background: url('https://images.unsplash.com/photo-1526040652367-ac003a0475fe?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; color: white; }
-    .hero::before { content: ''; position: absolute; inset: 0; background: rgba(0, 140, 221, 0.45); z-index: 1; }
-    .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 2rem; }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.2rem; }
-    main { max-width: 960px; margin: auto; padding: 2rem 1.2rem; }
-    section { margin-top: 4rem; }
-    h2 { text-align: center; margin-bottom: 2rem; }
-    .team-member { display: flex; flex-direction: column; align-items: center; text-align: center; }
-    .team-member img { width: 240px; border-radius: 10px; margin-bottom: 1rem; }
+    :root {
+      --primary: #008cdd;
+      --text: #012b39;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background: #f9f9f9;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 999;
+    }
+    .logo {
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: var(--primary);
+    }
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1629909613655-658b4df7c71b?auto=format&fit=crop&w=1450&q=80') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(0, 140, 221, 0.45);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .hero a {
+      background: white;
+      color: var(--primary);
+      padding: 0.7rem 1.4rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1.5rem;
+    }
+    section {
+      margin-top: 3rem;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .service {
+      background: white;
+      padding: 1.2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .service:hover {
+      transform: translateY(-5px);
+    }
+    .service i {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .slider-container {
+      position: relative;
+      max-width: 700px;
+      margin: 2rem auto;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    .slider-container img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .after {
+      clip-path: inset(0 50% 0 0);
+      z-index: 2;
+      transition: clip-path .2s ease;
+    }
+    .slider-range {
+      width: 100%;
+      margin-top: 1rem;
+    }
+    form input, form textarea, form button {
+      display:block;
+      width:100%;
+      padding:.6rem;
+      margin-bottom:1rem;
+      border:1px solid #ccc;
+      border-radius:4px;
+      font-family:inherit;
+    }
+    form button {
+      background:var(--primary);
+      color:#fff;
+      border:none;
+      font-weight:600;
+      cursor:pointer;
+    }
   </style>
 </head>
 <body>
@@ -28,68 +162,64 @@
 <header>
   <div class="logo">C:Dent</div>
   <nav>
-    <a href="#home" data-i18n="nav_home">Úvod</a>
-    <a href="#services" data-i18n="nav_services">Služby</a>
-    <a href="#work" data-i18n="nav_work">Ukázky</a>
-    <a href="#contact" data-i18n="nav_contact">Kontakt</a>
-    <a href="#team" data-i18n="nav_team">Náš tým</a>
-    <span class="lang-switch" onclick="switchLang()" id="lang-label">EN</span>
+    <a href="#services">Služby</a>
+    <a href="#work">Ukázky</a>
+    <a href="#contact">Kontakt</a>
   </nav>
 </header>
 
-<section class="hero" id="home">
+<section class="hero">
   <div class="hero-content">
-    <h1 data-i18n="hero_title">Rodinná stomatologická péče na Vinohradech</h1>
-    <p data-i18n="hero_sub">Komplexní zubní služby – prevence, estetika i moderní mikroskopie</p>
+    <h1>Rodinná stomatologická péče na Vinohradech</h1>
+    <p>Komplexní zubní služby – prevence, estetika i moderní mikroskopie</p>
+    <a href="#contact">Objednat konzultaci</a>
   </div>
 </section>
 
 <main>
-  <section id="team">
-    <h2 data-i18n="team_title">Náš tým</h2>
-    <div class="team-member">
-      <img src="assets/jonas.jpg" alt="Jonáš Celerýn">
-      <h3>MDDr. Jonáš Celerýn</h3>
-      <p data-i18n="team_jonas_desc">
-        Věnuje se komplexní stomatologii s využitím mikroskopu. Zaměřuje se na rekonstrukce chrupu, estetiku, protetiku, implantologii a chirurgii měkkých tkání. Tři roky působil jako pedagog na 1. LF UK a absolvoval curriculum ČADE.
-      </p>
+  <section id="services">
+    <h2>Naše služby</h2>
+    <div class="services-grid">
+      <div class="service"><i>🦷</i><p>Preventivní prohlídky</p></div>
+      <div class="service"><i>🪥</i><p>Dentální hygiena</p></div>
+      <div class="service"><i>💎</i><p>Bělení zubů</p></div>
+      <div class="service"><i>🛠️</i><p>Zubní protetika</p></div>
+      <div class="service"><i>👶</i><p>Dětská stomatologie</p></div>
+      <div class="service"><i>🔬</i><p>Mikroskopická endodoncie</p></div>
     </div>
+  </section>
+
+  <section id="work">
+    <h2>Ukázky naší práce</h2>
+    <div class="slider-container">
+      <img src="assets/before.jpg" class="before" alt="Před">
+      <img src="assets/after.jpg" class="after" id="after">
+    </div>
+    <input type="range" min="0" max="100" value="50" class="slider-range">
+  </section>
+
+  <section id="contact">
+    <h2>Kontaktujte nás</h2>
+    <p><strong>Adresa:</strong> Vinohradská 196, Praha 3, 130 00</p>
+    <p><strong>Telefon:</strong> <a href="tel:+420272735268">272 735 268</a></p>
+    <p><strong>Email:</strong> <a href="mailto:dmd@zubnidmd.cz">dmd@zubnidmd.cz</a></p>
+    <form>
+      <input type="text" placeholder="Vaše jméno">
+      <input type="email" placeholder="Váš e-mail">
+      <textarea rows="4" placeholder="Zpráva..."></textarea>
+      <button type="submit">Odeslat</button>
+    </form>
   </section>
 </main>
 
 <script>
-const i18n = {
-  cs: {
-    nav_home: "Úvod", nav_services: "Služby", nav_work: "Ukázky", nav_contact: "Kontakt", nav_team: "Náš tým",
-    hero_title: "Rodinná stomatologická péče na Vinohradech",
-    hero_sub: "Komplexní zubní služby – prevence, estetika i moderní mikroskopie",
-    team_title: "Náš tým",
-    team_jonas_desc: "Věnuje se komplexní stomatologii s využitím mikroskopu. Zaměřuje se na rekonstrukce chrupu, estetiku, protetiku, implantologii a chirurgii měkkých tkání. Tři roky působil jako pedagog na 1. LF UK a absolvoval curriculum ČADE."
-  },
-  en: {
-    nav_home: "Home", nav_services: "Services", nav_work: "Cases", nav_contact: "Contact", nav_team: "Our Team",
-    hero_title: "Family Dental Care in Vinohrady",
-    hero_sub: "Comprehensive dental services – prevention, esthetics and microscopy",
-    team_title: "Our Team",
-    team_jonas_desc: "Provides comprehensive dental care using a microscope. Specializes in full-mouth reconstructions, esthetics, prosthetics, implantology and soft tissue surgery. Taught at 1st Faculty of Medicine (Charles University) and completed ČADE curriculum."
-  }
-};
-let lang = 'cs';
-function applyLang(){
-  document.documentElement.lang = lang;
-  document.getElementById("lang-label").textContent = lang === 'cs' ? 'EN' : 'CZ';
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if(i18n[lang] && i18n[lang][key]) {
-      el.textContent = i18n[lang][key];
-    }
+const slider = document.querySelector('.slider-range');
+const afterImg = document.getElementById('after');
+if (slider && afterImg) {
+  slider.addEventListener('input', e => {
+    afterImg.style.clipPath = `inset(0 ${100 - e.target.value}% 0 0)`;
   });
 }
-function switchLang(){
-  lang = (lang === 'cs') ? 'en' : 'cs';
-  applyLang();
-}
-applyLang();
 </script>
 
 </body>
