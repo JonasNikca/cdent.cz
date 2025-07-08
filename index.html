@@ -1,13 +1,12 @@
 
 <!DOCTYPE html>
-
 <html lang="cs">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>C:Dent – Stomatologická klinika</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&amp;display=swap" rel="stylesheet"/>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C:Dent – Stomatologická klinika</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <style>
     :root {
       --primary: #008cdd;
       --text: #012b39;
@@ -159,54 +158,60 @@
   </style>
 </head>
 <body>
+
 <header>
-<div class="logo">C:Dent</div>
-<nav>
-<a href="#services">Služby</a>
-<a href="#work">Ukázky</a>
-<a href="#contact">Kontakt</a>
-</nav>
+  <div class="logo">C:Dent</div>
+  <nav>
+    <a href="#services">Služby</a>
+    <a href="#work">Ukázky</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
 </header>
+
 <section class="hero">
-<div class="hero-content">
-<h1>Rodinná stomatologická péče na Vinohradech</h1>
-<p>Komplexní zubní služby – prevence, estetika i moderní mikroskopie</p>
-<a href="#contact">Objednat konzultaci</a>
-</div>
+  <div class="hero-content">
+    <h1>Rodinná stomatologická péče na Vinohradech</h1>
+    <p>Komplexní zubní služby – prevence, estetika i moderní mikroskopie</p>
+    <a href="#contact">Objednat konzultaci</a>
+  </div>
 </section>
+
 <main>
-<section id="services">
-<h2>Naše služby</h2>
-<div class="services-grid">
-<div class="service"><i>🦷</i><p>Preventivní prohlídky</p></div>
-<div class="service"><i>🪥</i><p>Dentální hygiena</p></div>
-<div class="service"><i>💎</i><p>Bělení zubů</p></div>
-<div class="service"><i>🛠️</i><p>Zubní protetika</p></div>
-<div class="service"><i>👶</i><p>Dětská stomatologie</p></div>
-<div class="service"><i>🔬</i><p>Mikroskopická endodoncie</p></div>
-</div>
-</section>
-<section id="work">
-<h2>Ukázky naší práce</h2>
-<div class="slider-container">
-<img alt="Před" class="before" src="assets/before.jpg"/>
-<img class="after" id="after" src="assets/after.jpg"/>
-</div>
-<input class="slider-range" max="100" min="0" type="range" value="50"/>
-</section>
-<section id="team"><h2>Náš tým</h2><div class="team-member"><img alt="MDDr. Jonáš Celerýn" src="assets/jonas.jpg"/><h3>MDDr. Jonáš Celerýn</h3><p>Věnuje se komplexní stomatologické péči, pracuje s mikroskopem, zaměřuje se na rekonstrukce chrupu, estetiku, protetiku, implantologii a chirurgii měkkých tkání. Působil jako pedagog na 1. LF UK a je absolventem curriculum ČADE.</p></div></section><section id="contact">
-<h2>Kontaktujte nás</h2>
-<p><strong>Adresa:</strong> Vinohradská 196, Praha 3, 130 00</p>
-<p><strong>Telefon:</strong> <a href="tel:+420272735268">272 735 268</a></p>
-<p><strong>Email:</strong> <a href="mailto:dmd@zubnidmd.cz">dmd@zubnidmd.cz</a></p>
-<form>
-<input placeholder="Vaše jméno" type="text"/>
-<input placeholder="Váš e-mail" type="email"/>
-<textarea placeholder="Zpráva..." rows="4"></textarea>
-<button type="submit">Odeslat</button>
-</form>
-</section>
+  <section id="services">
+    <h2>Naše služby</h2>
+    <div class="services-grid">
+      <div class="service"><i>🦷</i><p>Preventivní prohlídky</p></div>
+      <div class="service"><i>🪥</i><p>Dentální hygiena</p></div>
+      <div class="service"><i>💎</i><p>Bělení zubů</p></div>
+      <div class="service"><i>🛠️</i><p>Zubní protetika</p></div>
+      <div class="service"><i>👶</i><p>Dětská stomatologie</p></div>
+      <div class="service"><i>🔬</i><p>Mikroskopická endodoncie</p></div>
+    </div>
+  </section>
+
+  <section id="work">
+    <h2>Ukázky naší práce</h2>
+    <div class="slider-container">
+      <img src="assets/before.jpg" class="before" alt="Před">
+      <img src="assets/after.jpg" class="after" id="after">
+    </div>
+    <input type="range" min="0" max="100" value="50" class="slider-range">
+  </section>
+
+  <section id="contact">
+    <h2>Kontaktujte nás</h2>
+    <p><strong>Adresa:</strong> Vinohradská 196, Praha 3, 130 00</p>
+    <p><strong>Telefon:</strong> <a href="tel:+420272735268">272 735 268</a></p>
+    <p><strong>Email:</strong> <a href="mailto:dmd@zubnidmd.cz">dmd@zubnidmd.cz</a></p>
+    <form>
+      <input type="text" placeholder="Vaše jméno">
+      <input type="email" placeholder="Váš e-mail">
+      <textarea rows="4" placeholder="Zpráva..."></textarea>
+      <button type="submit">Odeslat</button>
+    </form>
+  </section>
 </main>
+
 <script>
 const slider = document.querySelector('.slider-range');
 const afterImg = document.getElementById('after');
@@ -216,5 +221,6 @@ if (slider && afterImg) {
   });
 }
 </script>
+
 </body>
 </html>
