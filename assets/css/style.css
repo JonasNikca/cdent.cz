@@ -118,18 +118,9 @@ section {
     transition: opacity 0.4s ease-in-out;
 }
 
-.after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
-}
 
-.before-after div:hover .after {
-    opacity: 1;
-}
+
+.before-after div:hover 
 
 
     nav ul {
@@ -206,4 +197,34 @@ section {
     font-size: 0.9em;
     margin-top: 1em;
     color: #555;
+}
+
+.before-after {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+.ba-container {
+    position: relative;
+    width: 300px;
+    max-width: 100%;
+    cursor: ew-resize;
+    overflow: hidden;
+}
+
+.ba-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.ba-container img.after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    transition: none;
 }

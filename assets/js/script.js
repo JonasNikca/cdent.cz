@@ -14,3 +14,20 @@ document.getElementById("lang-toggle").addEventListener("click", function () {
         location.reload();
     }
 });
+
+// Before-After slider logic
+document.querySelectorAll('.ba-container').forEach(container => {
+    const afterImg = container.querySelector('img.after');
+    const update = x => {
+        const rect = container.getBoundingClientRect();
+        let pos = (x - rect.left) / rect.width;
+        pos = Math.max(0, Math.min(1, pos));
+        afterImg.style.width = (pos * 100) + '%';
+    };
+    const startPos = container.getBoundingClientRect().left + container.getBoundingClientRect().width / 2;
+    update(startPos);
+    container.addEventListener('mousemove', e => update(e.clientX));
+    container.addEventListener('touchmove', e => {
+        if (e.touches.length) update(e.touches[0].clientX);
+    }, { passive: true });
+});
