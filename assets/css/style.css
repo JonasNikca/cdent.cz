@@ -147,3 +147,8 @@ section {
 .member img {
     object-position: center top;
 }
+
+.member img[alt="MDDr. Jonáš Celerýn"] {
+    object-position: center 10%;
+    transform: scale(1.2);
+}
