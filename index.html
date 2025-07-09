@@ -2,124 +2,85 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>C:Dent</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/twentytwenty@1.0.0/css/twentytwenty.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>C:Dent – rodinná stomatologie</title>
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
-    header { background: white; padding: 10px 20px; display: flex; align-items: center; position: sticky; top: 0; z-index: 10; }
-    header img { height: 40px; }
-    nav { margin-left: auto; }
-    nav a { margin: 0 10px; text-decoration: none; color: #333; font-weight: bold; }
-    .hero {
-      height: 300px;
-      background: url('assets/family-bg.jpg') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-    }
-    .hero h1 {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      border-radius: 10px;
-      font-size: 22px;
-    }
-    .section { padding: 40px 20px; text-align: center; }
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .service {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      width: 140px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      font-size: 14px;
-    }
-    .service span {
-      font-size: 30px;
-      display: block;
-      margin-bottom: 10px;
-    }
-    #contact { background: #eee; }
-    #team img {
-      max-width: 180px;
-      border-radius: 10px;
-    }
-    .lang-toggle {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 14px;
-    }
-    @media (max-width: 600px) {
-      .grid { flex-direction: column; align-items: center; }
-      .service { width: 80%; }
-    }
+    :root { --primary:#008cdd; --bg:#fdfdfd; --text:#222; }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif;}
+    body{background:var(--bg);color:var(--text);}
+    header{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 4px rgba(0,0,0,.05);}
+    header img.logo{height:42px;}
+    nav a{margin:0 10px;text-decoration:none;color:var(--text);font-weight:bold;font-size:15px;}
+    .lang{font-size:14px;}
+    .hero{height:340px;background:url('https://images.unsplash.com/photo-1580745291955-274f83d3a43c?auto=format&fit=crop&w=1600&q=80') center/contain no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;}
+    .hero h1{background:rgba(0,0,0,.55);color:#fff;font-size:22px;padding:18px 24px;border-radius:10px;max-width:90%;line-height:1.4;}
+    .section{padding:48px 20px;text-align:center;}
+    h2{margin-bottom:32px;font-size:26px;color:var(--primary);}
+    .grid{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;}
+    .service{background:#fff;border-radius:10px;padding:20px;width:140px;box-shadow:0 2px 6px rgba(0,0,0,.1);}
+    .service span{font-size:28px;display:block;margin-bottom:8px;}
+    #work .slider{position:relative;max-width:580px;margin:0 auto;border-radius:10px;overflow:hidden;cursor:pointer;}
+    #work .slider img{width:100%;display:block;transition:opacity .4s ease;}
+    #work .after{position:absolute;top:0;left:0;opacity:0;}
+    #work .slider:hover .after{opacity:1;}
+    #work .slider:hover .before{opacity:0;}
+    #team img{max-width:180px;border-radius:10px;margin-bottom:16px;}
+    #contact p a{color:var(--text);}
+    @media(max-width:600px){ nav a{margin:0 6px;font-size:14px;} .grid{flex-direction:column;align-items:center;} .service{width:85%;} }
   </style>
 </head>
 <body>
-  <header>
-    <img src="assets/logo.png" alt="Logo C:Dent" />
-    <nav>
-      <a href="#services">Služby</a>
-      <a href="#work">Ukázky</a>
-      <a href="#team">Náš tým</a>
-      <a href="#contact">Kontakt</a>
-    </nav>
-    <div class="lang-toggle"><a href="#">EN</a> | <strong>CZ</strong></div>
-  </header>
+<header>
+  <img src="assets/logo.png" alt="C:Dent logo" class="logo">
+  <nav>
+    <a href="#services">Služby</a>
+    <a href="#work">Ukázky</a>
+    <a href="#team">O&nbsp;nás</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+  <div class="lang"><a href="#">EN</a> | <strong>CZ</strong></div>
+</header>
 
-  <section class="hero">
-    <h1>Vítejte v rodinné stomatologické praxi v srdci Vinohrad</h1>
-  </section>
+<section class="hero">
+  <h1>Vítejte v rodinné stomatologické praxi v&nbsp;srdci Vinohrad</h1>
+</section>
 
-  <section class="section" id="services">
-    <h2>Naše služby</h2>
-    <div class="grid">
-      <div class="service"><span>🦷</span>Preventivní prohlídky</div>
-      <div class="service"><span>🪥</span>Dentální hygiena</div>
-      <div class="service"><span>💎</span>Bělení zubů</div>
-      <div class="service"><span>🔧</span>Protetika</div>
-      <div class="service"><span>👶</span>Dětská stomatologie</div>
-      <div class="service"><span>🔬</span>Mikroskopická endodoncie</div>
-      <div class="service"><span>🪛</span>Implantologie</div>
-      <div class="service"><span>🔪</span>Chirurgie</div>
-    </div>
-  </section>
+<section id="services" class="section">
+  <h2>Naše služby</h2>
+  <div class="grid">
+    <div class="service"><span>🦷</span>Preventivní prohlídky</div>
+    <div class="service"><span>🪥</span>Dentální hygiena</div>
+    <div class="service"><span>💎</span>Bělení zubů</div>
+    <div class="service"><span>🔧</span>Protetika</div>
+    <div class="service"><span>👶</span>Dětská stomatologie</div>
+    <div class="service"><span>🔬</span>Mikroskopická endodoncie</div>
+    <div class="service"><span>🪛</span>Implantologie</div>
+    <div class="service"><span>🔪</span>Chirurgie</div>
+  </div>
+</section>
 
-  <section class="section" id="work">
-    <h2>Ukázky naší práce</h2>
-    <div class="twentytwenty-container" style="max-width:600px; margin: 0 auto;">
-      <img src="assets/smile.jpg" alt="Před" />
-      <img src="assets/smile1.jpg" alt="Po" />
-    </div>
-  </section>
+<section id="work" class="section">
+  <h2>Ukázky naší práce</h2>
+  <p>Přejeďte myší pro zobrazení výsledku</p>
+  <div class="slider">
+    <img src="assets/smile_before.jpg" alt="Před zákrokem" class="before">
+    <img src="assets/smile_after.jpg" alt="Po zákroku" class="after">
+  </div>
+</section>
 
-  <section class="section" id="team">
-    <h2>Náš tým</h2>
-    <img src="assets/team-photo.jpg" alt="Jonáš Celerýn" />
-    <p><strong>Jonáš Celerýn</strong><br/>Věnuji se komplexní stomatologické péči, pracuji s mikroskopem, specializuji se na rekonstrukce chrupu, estetiku, protetiku, implantologii a chirurgii měkkých tkání. Učil jsem 3 roky na 1. LF UK a absolvoval jsem curriculum ČADE.</p>
-  </section>
+<section id="team" class="section">
+  <h2>Náš tým</h2>
+  <img src="assets/team.jpg" alt="Jonáš Celerýn">
+  <p><strong>MDDr. Jonáš Celerýn</strong><br>Komplexní stomatologická péče, mikroskopická preciznost, rekonstrukce chrupu, estetika, protetika, implantologie, chirurgie měkkých tkání.</p>
+</section>
 
-  <section class="section" id="contact">
-    <h2>Kontakt</h2>
-    <p>Vinohradská 196, Praha 3, 130 00</p>
-    <p>Telefon: 272 735 268</p>
-    <p>Email: dmd@zubnidmd.cz</p>
-  </section>
+<section id="contact" class="section">
+  <h2>Kontakt</h2>
+  <p>Vinohradská&nbsp;196, Praha&nbsp;3, 130&nbsp;00</p>
+  <p>Telefon: <a href="tel:+420272735268">272&nbsp;735&nbsp;268</a></p>
+  <p>Email: <a href="mailto:dmd@zubnidmd.cz">dmd@zubnidmd.cz</a></p>
+</section>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery-event-move@2.0.0/js/jquery.event.move.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/twentytwenty@1.0.0/js/jquery.twentytwenty.min.js"></script>
-  <script>
-    $(function(){ $(".twentytwenty-container").twentytwenty(); });
-  </script>
 </body>
 </html>
