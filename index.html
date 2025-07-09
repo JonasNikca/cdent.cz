@@ -1,124 +1,133 @@
+
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>C:Dent – rodinná stomatologie</title>
-  <style>
-    :root {
-      --main: #008cdd;
-      --bg: #f4f9fc;
-      --text: #222;
-      --accent: #4ecdc4;
-    }
-    * {box-sizing:border-box;margin:0;padding:0;font-family:sans-serif}
-    body {background: var(--bg); color: var(--text); line-height:1.6;}
-    header {
-      display:flex;justify-content:space-between;align-items:center;
-      background:white;padding:10px 20px;box-shadow:0 2px 5px rgba(0,0,0,0.1);
-      position:sticky;top:0;z-index:100;
-    }
-    header img.logo {height:44px}
-    nav a {margin:0 10px;text-decoration:none;color:var(--text);font-weight:bold;}
-    .lang {font-size:14px}
-    .hero {
-      background:url('assets/family-bg.jpg') center/cover no-repeat;
-      height:360px;
-      display:flex;align-items:center;justify-content:center;
-      text-align:center;padding:20px;
-    }
-    .hero h1 {
-      background:rgba(0,0,0,0.6);color:white;padding:20px 30px;
-      border-radius:12px;font-size:24px;max-width:90%;
-    }
-    .section {padding:60px 20px;text-align:center;}
-    h2 {color:var(--main);margin-bottom:32px}
-    .grid {
-      display:flex;flex-wrap:wrap;justify-content:center;gap:20px;
-    }
-    .service {
-      background:white;padding:20px;border-radius:12px;
-      box-shadow:0 2px 5px rgba(0,0,0,0.1);width:140px;
-    }
-    .service span {font-size:26px;display:block;margin-bottom:8px;}
-    .slider {
-      position:relative;width:90%;max-width:580px;margin:0 auto;border-radius:10px;overflow:hidden;
-    }
-    .slider img {width:100%;transition:opacity 0.4s ease;}
-    .slider img.after {
-      position:absolute;top:0;left:0;opacity:0;
-    }
-    .slider:hover img.after {opacity:1}
-    .slider:hover img.before {opacity:0}
-    #team img {
-      width:160px;border-radius:10px;margin-bottom:10px;
-    }
-    #contact {background:#eee}
-    footer {text-align:center;font-size:13px;padding:20px;color:#666}
-    @media(max-width:600px){
-      nav a{margin:0 5px;font-size:13px}
-      .grid{flex-direction:column;align-items:center}
-      .service{width:80%}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C:Dent | Rodinná klinika Vinohrady</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-<header>
-  <img src="assets/logo.png" alt="Logo" class="logo" />
-  <nav>
-    <a href="#services">Služby</a>
-    <a href="#work">Ukázky</a>
-    <a href="#team">O nás</a>
-    <a href="#contact">Kontakt</a>
-  </nav>
-  <div class="lang"><strong>CZ</strong> | <a href="index_en.html">EN</a></div>
-</header>
+    <header id="home">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <a href="#home"><img src="images/logo.png" alt="Logo C:Dent" class="logo"></a>
+                <ul class="nav-links">
+                    <li><a href="#sluzby">Služby</a></li>
+                    <li><a href="#tym">Můj&nbsp;tým</a></li>
+                    <li><a href="#ukazky">Ukázky&nbsp;prací</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Rodinná klinika v srdci Vinohrad</h1>
+                <p>Moderní stomatologická péče pro celou rodinu. Přijímáme nové pacienty &ndash; objednejte se ještě dnes a zažijte pohodovou návštěvu zubaře.</p>
+                <a href="#kontakt" class="btn">Objednat se</a>
+            </div>
+        </section>
+    </header>
 
-<section class="hero">
-  <h1>Vítejte v rodinné stomatologické praxi v srdci Vinohrad</h1>
-</section>
+    <main>
+        <!-- Služby -->
+        <section id="sluzby" class="services section-padding">
+            <div class="container">
+                <h2>Služby</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <i class="fa-solid fa-shield-heart"></i>
+                        <h3>Dental Hygiene</h3>
+                        <p>Profesionální čištění a prevence onemocnění dutiny ústní.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fa-solid fa-tooth"></i>
+                        <h3>Implantologie</h3>
+                        <p>Bezpečná náhrada chybějících zubů pomocí titanových implantátů.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fa-solid fa-teeth-open"></i>
+                        <h3>Protetika</h3>
+                        <p>Korunky, můstky a fazety pro dokonalý vzhled i funkci.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fa-solid fa-stethoscope"></i>
+                        <h3>Záchovná stomatologie</h3>
+                        <p>Šetrné ošetření kazů moderními materiály.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fa-solid fa-microscope"></i>
+                        <h3>Reendodoncie s mikroskopem</h3>
+                        <p>Opakované ošetření kořenových kanálků pod mikroskopem.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fa-solid fa-briefcase-medical"></i>
+                        <h3>Chirurgie</h3>
+                        <p>Bezbolestné chirurgické zákroky včetně odstranění zubů moudrosti.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fa-solid fa-sun"></i>
+                        <h3>Bělení</h3>
+                        <p>Bezpečné ordinační a domácí bělení zubů.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fa-solid fa-grin-stars"></i>
+                        <h3>Estetické rekonstrukce</h3>
+                        <p>Kompozitní a keramické výplně pro přirozený úsměv.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section id="services" class="section">
-  <h2>Naše služby</h2>
-  <div class="grid">
-    <div class="service"><span>🦷</span>Preventivní prohlídky</div>
-    <div class="service"><span>🪥</span>Dentální hygiena</div>
-    <div class="service"><span>💎</span>Bělení zubů</div>
-    <div class="service"><span>🔧</span>Protetika</div>
-    <div class="service"><span>👶</span>Dětská stomatologie</div>
-    <div class="service"><span>🔬</span>Mikroskopická endodoncie</div>
-    <div class="service"><span>🪛</span>Implantologie</div>
-    <div class="service"><span>🔪</span>Chirurgie</div>
-  </div>
-</section>
+        <!-- Tým -->
+        <section id="tym" class="section-padding">
+            <div class="container">
+                <h2>Můj tým</h2>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <img src="images/team_jonas.jpg" alt="MUDr. Jonáš Celerýn">
+                        <h3>MUDr. Jonáš Celerýn</h3>
+                        <p>Vedoucí lékař &ndash; protetika a estetická stomatologie.</p>
+                    </div>
+                    <!-- Další členové týmu mohou být přidáni zde -->
+                </div>
+            </div>
+        </section>
 
-<section id="work" class="section">
-  <h2>Ukázky naší práce</h2>
-  <p>Přejeďte myší – zobrazí se výsledek</p>
-  <div class="slider">
-    <img src="assets/smile.jpg" alt="Před" class="before"/>
-    <img src="assets/smile1.jpg" alt="Po" class="after"/>
-  </div>
-</section>
+        <!-- Ukázky prací -->
+        <section id="ukazky" class="section-padding">
+            <div class="container">
+                <h2>Ukázky prací</h2>
+                <p style="text-align:center;margin-bottom:1.5rem">Přejeďte myší přes fotografii a podívejte se na výsledek <em>před &amp; po</em>.</p>
+                <div class="ba-container">
+                    <img src="images/before.jpg" alt="Stav před ošetřením" class="before">
+                    <img src="images/after.jpg" alt="Stav po ošetření" class="after">
+                </div>
+            </div>
+        </section>
 
-<section id="team" class="section">
-  <h2>Náš tým</h2>
-  <img src="assets/team-photo.jpg" alt="MDDr. Jonáš Celerýn" />
-  <p><strong>MDDr. Jonáš Celerýn</strong><br>
-    Komplexní stomatologická péče s využitím mikroskopu. Specializace na rozsáhlé rekonstrukce chrupu, estetiku, protetiku, implantologii a chirurgii měkkých tkání. 
-    Působil jako pedagog na 1. LF UK, absolvent postgraduálního kurikula ČADE.
-  </p>
-</section>
+        <!-- Kontakt -->
+        <section id="kontakt" class="contact section-padding">
+            <div class="container">
+                <h2>Kontakt</h2>
+                <div class="contact-info">
+                    <p><strong>Adresa:</strong><br>Vinohradská&nbsp;196, Praha&nbsp;3, 130&nbsp;00</p>
+                    <p><strong>Telefon:</strong> <a href="tel:+420272735268">272&nbsp;735&nbsp;268</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:dmd@zubnidmd.cz">dmd@zubnidmd.cz</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<section id="contact" class="section">
-  <h2>Kontakt</h2>
-  <p>Vinohradská 196, Praha 3, 130 00</p>
-  <p>Telefon: <a href="tel:+420272735268">272 735 268</a></p>
-  <p>Email: <a href="mailto:dmd@zubnidmd.cz">dmd@zubnidmd.cz</a></p>
-</section>
+    <footer>
+        <p>&copy; 2025 C:Dent &ndash; MUDr. Jonáš Celerýn. Všechna práva vyhrazena.</p>
+    </footer>
 
-<footer>
-  © C:Dent {{year}} – rodinná stomatologická péče v Praze
-</footer>
+    <script src="js/main.js"></script>
 </body>
 </html>
