@@ -1,1 +1,124 @@
-<!DOCTYPE html><html><head><meta charset='UTF-8'><title>C:Dent</title></head><body>Připravuji nový web…</body></html>
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>C:Dent – rodinná stomatologie</title>
+  <style>
+    :root {
+      --main: #008cdd;
+      --bg: #f4f9fc;
+      --text: #222;
+      --accent: #4ecdc4;
+    }
+    * {box-sizing:border-box;margin:0;padding:0;font-family:sans-serif}
+    body {background: var(--bg); color: var(--text); line-height:1.6;}
+    header {
+      display:flex;justify-content:space-between;align-items:center;
+      background:white;padding:10px 20px;box-shadow:0 2px 5px rgba(0,0,0,0.1);
+      position:sticky;top:0;z-index:100;
+    }
+    header img.logo {height:44px}
+    nav a {margin:0 10px;text-decoration:none;color:var(--text);font-weight:bold;}
+    .lang {font-size:14px}
+    .hero {
+      background:url('assets/family-bg.jpg') center/cover no-repeat;
+      height:360px;
+      display:flex;align-items:center;justify-content:center;
+      text-align:center;padding:20px;
+    }
+    .hero h1 {
+      background:rgba(0,0,0,0.6);color:white;padding:20px 30px;
+      border-radius:12px;font-size:24px;max-width:90%;
+    }
+    .section {padding:60px 20px;text-align:center;}
+    h2 {color:var(--main);margin-bottom:32px}
+    .grid {
+      display:flex;flex-wrap:wrap;justify-content:center;gap:20px;
+    }
+    .service {
+      background:white;padding:20px;border-radius:12px;
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);width:140px;
+    }
+    .service span {font-size:26px;display:block;margin-bottom:8px;}
+    .slider {
+      position:relative;width:90%;max-width:580px;margin:0 auto;border-radius:10px;overflow:hidden;
+    }
+    .slider img {width:100%;transition:opacity 0.4s ease;}
+    .slider img.after {
+      position:absolute;top:0;left:0;opacity:0;
+    }
+    .slider:hover img.after {opacity:1}
+    .slider:hover img.before {opacity:0}
+    #team img {
+      width:160px;border-radius:10px;margin-bottom:10px;
+    }
+    #contact {background:#eee}
+    footer {text-align:center;font-size:13px;padding:20px;color:#666}
+    @media(max-width:600px){
+      nav a{margin:0 5px;font-size:13px}
+      .grid{flex-direction:column;align-items:center}
+      .service{width:80%}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <img src="assets/logo.png" alt="Logo" class="logo" />
+  <nav>
+    <a href="#services">Služby</a>
+    <a href="#work">Ukázky</a>
+    <a href="#team">O nás</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+  <div class="lang"><strong>CZ</strong> | <a href="index_en.html">EN</a></div>
+</header>
+
+<section class="hero">
+  <h1>Vítejte v rodinné stomatologické praxi v srdci Vinohrad</h1>
+</section>
+
+<section id="services" class="section">
+  <h2>Naše služby</h2>
+  <div class="grid">
+    <div class="service"><span>🦷</span>Preventivní prohlídky</div>
+    <div class="service"><span>🪥</span>Dentální hygiena</div>
+    <div class="service"><span>💎</span>Bělení zubů</div>
+    <div class="service"><span>🔧</span>Protetika</div>
+    <div class="service"><span>👶</span>Dětská stomatologie</div>
+    <div class="service"><span>🔬</span>Mikroskopická endodoncie</div>
+    <div class="service"><span>🪛</span>Implantologie</div>
+    <div class="service"><span>🔪</span>Chirurgie</div>
+  </div>
+</section>
+
+<section id="work" class="section">
+  <h2>Ukázky naší práce</h2>
+  <p>Přejeďte myší – zobrazí se výsledek</p>
+  <div class="slider">
+    <img src="assets/smile.jpg" alt="Před" class="before"/>
+    <img src="assets/smile1.jpg" alt="Po" class="after"/>
+  </div>
+</section>
+
+<section id="team" class="section">
+  <h2>Náš tým</h2>
+  <img src="assets/team-photo.jpg" alt="MDDr. Jonáš Celerýn" />
+  <p><strong>MDDr. Jonáš Celerýn</strong><br>
+    Komplexní stomatologická péče s využitím mikroskopu. Specializace na rozsáhlé rekonstrukce chrupu, estetiku, protetiku, implantologii a chirurgii měkkých tkání. 
+    Působil jako pedagog na 1. LF UK, absolvent postgraduálního kurikula ČADE.
+  </p>
+</section>
+
+<section id="contact" class="section">
+  <h2>Kontakt</h2>
+  <p>Vinohradská 196, Praha 3, 130 00</p>
+  <p>Telefon: <a href="tel:+420272735268">272 735 268</a></p>
+  <p>Email: <a href="mailto:dmd@zubnidmd.cz">dmd@zubnidmd.cz</a></p>
+</section>
+
+<footer>
+  © C:Dent {{year}} – rodinná stomatologická péče v Praze
+</footer>
+</body>
+</html>
