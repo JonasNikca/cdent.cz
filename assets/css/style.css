@@ -228,3 +228,35 @@ section {
     height: 100%;
     transition: none;
 }
+
+/* Image comparison slider handle */
+.ba-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    background: #fff;
+    opacity: 0.8;
+    cursor: ew-resize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; /* visible but non-interactive; container handles interaction */
+}
+
+.ba-handle::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #0077c8;
+    border: 2px solid #fff;
+    box-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 768px) {
+    .ba-container {
+        width: 100%;
+    }
+}
