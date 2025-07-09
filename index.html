@@ -1,36 +1,111 @@
+
 <!DOCTYPE html>
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C:Dent | Rodinná klinika Vinohrady</title>
+    <title>C:Dent – Rodinná stomatologie Vinohrady</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2e6d4b0f57.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header id="home">
-        <nav class="navbar">
-            <div class="container nav-container">
-                <a href="#home"><img src="images/logo.png" alt="Logo C:Dent" class="logo"></a>
-                <ul class="nav-links">
-                    <li><a href="#sluzby">Služby</a></li>
-                    <li><a href="#tym">Náš&nbsp;tým</a></li>
-                    <li><a href="#ukazky">Ukázky&nbsp;prací</a></li>
-                    <li><a href="#kontakt">Kontakt</a></li>
-                </ul>
-            </div>
-        </nav>
-        <section class="hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1>Rodinná klinika v srdci Vinohrad</h1>
-                <p>Moderní stomatologická péče pro celou rodinu. Přijímáme nové pacienty – objednejte se ještě dnes a zažijte pohodovou návštěvu zubaře. Pracoviště má smlouvu s VZP a OZP.</p>
-                <a href="#kontakt" class="btn">Objednat se</a>
-            </div>
-        </section>
+    <nav>
+        <div class="logo">
+            <img src="images/logo.jpeg" alt="C:Dent logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#uvod" class="lang-cz">Úvod</a><a href="#uvod" class="lang-en hidden">Home</a></li>
+            <li><a href="#sluzby" class="lang-cz">Služby</a><a href="#sluzby" class="lang-en hidden">Services</a></li>
+            <li><a href="#tym" class="lang-cz">Náš tým</a><a href="#tym" class="lang-en hidden">Team</a></li>
+            <li><a href="#ukazky" class="lang-cz">Ukázky prací</a><a href="#ukazky" class="lang-en hidden">Cases</a></li>
+            <li><a href="#kontakt" class="lang-cz">Kontakt</a><a href="#kontakt" class="lang-en hidden">Contact</a></li>
+        </ul>
+        <button id="lang-toggle">EN</button>
+    </nav>
+
+    <header id="uvod" class="hero">
+        <div class="overlay">
+            <h1><span class="lang-cz">Rodinná klinika v srdci Vinohrad</span><span class="lang-en hidden">Family dental clinic in the heart of Vinohrady</span></h1>
+            <p><span class="lang-cz">Moderní stomatologie pod jednou střechou. Máme smlouvy se zdravotními pojišťovnami.</span><span class="lang-en hidden">Modern dentistry under one roof. We cooperate with health insurance companies.</span></p>
+            <a href="#kontakt" class="cta"><span class="lang-cz">Objednat se</span><span class="lang-en hidden">Book appointment</span></a>
+        </div>
     </header>
+
+    <section id="sluzby" class="section">
+        <h2><span class="lang-cz">Služby</span><span class="lang-en hidden">Our Services</span></h2>
+        <div class="services-grid">
+            <div class="service-card"><i class="fas fa-tooth"></i><span class="lang-cz">Dentální hygiena</span><span class="lang-en hidden">Dental Hygiene</span></div>
+            <div class="service-card"><i class="fas fa-screwdriver"></i><span class="lang-cz">Implantologie</span><span class="lang-en hidden">Implantology</span></div>
+            <div class="service-card"><i class="fas fa-teeth"></i><span class="lang-cz">Protetika</span><span class="lang-en hidden">Prosthetics</span></div>
+            <div class="service-card"><i class="fas fa-user-md"></i><span class="lang-cz">Záchovná stomatologie</span><span class="lang-en hidden">Restorative</span></div>
+            <div class="service-card"><i class="fas fa-microscope"></i><span class="lang-cz">Reendodoncie s mikroskopem</span><span class="lang-en hidden">Re‑endodontics</span></div>
+            <div class="service-card"><i class="fas fa-cut"></i><span class="lang-cz">Chirurgie</span><span class="lang-en hidden">Oral Surgery</span></div>
+            <div class="service-card"><i class="fas fa-sun"></i><span class="lang-cz">Bělení</span><span class="lang-en hidden">Whitening</span></div>
+            <div class="service-card"><i class="fas fa-smile"></i><span class="lang-cz">Estetické rekonstrukce</span><span class="lang-en hidden">Esthetic Rehab</span></div>
+        </div>
+    </section>
+
+    <section id="tym" class="section">
+        <h2><span class="lang-cz">Náš tým</span><span class="lang-en hidden">Meet the Team</span></h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="images/celeryn.jpg" alt="MDDr. Jonáš Celerýn">
+                <h3>MDDr. Jonáš Celerýn</h3>
+                <p><span class="lang-cz">Záchovná stomatologie, protetika, implantologie, chirurgie, estetické rekonstrukce</span><span class="lang-en hidden">Restorative dentistry, prosthetics, implants, surgery, esthetic reconstructions</span></p>
+            </div>
+            <div class="team-card">
+                <img src="images/placeholder.png" alt="MDDr. Nikola Celerýnová">
+                <h3>MDDr. Nikola Celerýnová</h3>
+                <p><span class="lang-cz">Záchovná stomatologie, reendodoncie s mikroskopem, pedostomatologie</span><span class="lang-en hidden">Restorative dentistry, microscopic re‑endodontics, pediatric dentistry</span></p>
+            </div>
+            <div class="team-card">
+                <img src="images/bartonova.jpg" alt="doc. MUDr. Marie Bartoňová, CSc">
+                <h3>doc. MUDr. Marie Bartoňová, CSc</h3>
+                <p><span class="lang-cz">Protetika, funkční a estetické rekonstrukce chrupu, vrozené a získané vady, senioři</span><span class="lang-en hidden">Prosthodontics, functional & esthetic reconstructions, congenital & acquired defects, senior care</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ukazky" class="section">
+        <h2><span class="lang-cz">Ukázky prací</span><span class="lang-en hidden">Case Gallery</span></h2>
+        <div class="cases-grid">
+            
+            <div class="case-container">
+                <img src="images/smile1-before.jpg" alt="Smile 1 before">
+                <img src="images/smile1-after.jpg" alt="Smile 1 after" class="after">
+            </div>
+    
+            <div class="case-container">
+                <img src="images/smile2-before.jpg" alt="Smile 2 before">
+                <img src="images/smile2-after.jpg" alt="Smile 2 after" class="after">
+            </div>
+    
+            <div class="case-container">
+                <img src="images/smile3-before.jpg" alt="Smile 3 before">
+                <img src="images/smile3-after.jpg" alt="Smile 3 after" class="after">
+            </div>
+    
+            <div class="case-container">
+                <img src="images/smile4-before.jpg" alt="Smile 4 before">
+                <img src="images/smile4-after.jpg" alt="Smile 4 after" class="after">
+            </div>
+    
+        </div>
+    </section>
+
+    <section id="kontakt" class="section contact">
+        <h2><span class="lang-cz">Kontakt</span><span class="lang-en hidden">Contact</span></h2>
+        <p>Vinohradská 196, Praha 3, 130 00</p>
+        <p><span class="lang-cz">Telefon</span><span class="lang-en hidden">Phone</span>: <a href="tel:+420272735268">272 735 268</a></p>
+        <p>Email: <a href="mailto:cdentceleryn@gmail.com">cdentceleryn@gmail.com</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 C:Dent</p>
+    </footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
