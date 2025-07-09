@@ -14,3 +14,38 @@ document.getElementById("lang-toggle").addEventListener("click", function () {
         location.reload();
     }
 });
+
+// === Image Comparison Slider ===
+document.querySelectorAll('.ic-container').forEach(container=>{
+  const overlay = container.querySelector('.ic-overlay');
+  const handle  = container.querySelector('.ic-handle');
+  const setPos = (pct)=>{
+     overlay.style.width = pct+'%';
+     handle.style.left   = pct+'%';
+  };
+  setPos(50);
+
+  const onMove = e=>{
+     const rect = container.getBoundingClientRect();
+     const x = (e.touches?e.touches[0].clientX:e.clientX)-rect.left;
+     let pct = (x/rect.width)*100;
+     pct = Math.max(0,Math.min(100,pct));
+     setPos(pct);
+  };
+  const stop = ()=>{
+     window.removeEventListener('pointermove',onMove);
+     window.removeEventListener('pointerup',stop);
+     window.removeEventListener('touchmove',onMove);
+     window.removeEventListener('touchend',stop);
+  };
+  const start = e=>{
+     onMove(e);
+     window.addEventListener('pointermove',onMove);
+     window.addEventListener('pointerup',stop);
+     window.addEventListener('touchmove',onMove,{passive:false});
+     window.addEventListener('touchend',stop);
+  };
+  container.addEventListener('pointerdown',start);
+  container.addEventListener('touchstart',start,{passive:false});
+});
+// =================================
