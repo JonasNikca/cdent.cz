@@ -1,0 +1,145 @@
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+.hero {
+    background: url('../img/hero-family.jpg') center/cover no-repeat;
+    height: 100vh;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 2em;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 60px;
+    z-index: 2;
+}
+
+.hero-text {
+    background-color: rgba(0,0,0,0.5);
+    padding: 1em;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+nav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+    padding: 0;
+    margin: 0;
+}
+
+nav a, nav button {
+    color: white;
+    background: rgba(0,0,0,0.4);
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+section {
+    padding: 3em 2em;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.grid div {
+    background: #eaf6fb;
+    padding: 1em;
+    border-radius: 8px;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+
+.member {
+    max-width: 200px;
+    text-align: center;
+}
+
+.member img, .placeholder {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 100%;
+    background: #ccc;
+}
+
+.before-after {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+.before-after div {
+    position: relative;
+    width: 300px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.before {
+    display: block;
+    width: 100%;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.before-after div:hover .after {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 1.6rem;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .before-after {
+        flex-direction: column;
+    }
+}

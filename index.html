@@ -1,111 +1,82 @@
-
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C:Dent – Rodinná stomatologie Vinohrady</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2e6d4b0f57.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CDent - Rodinná stomatologie</title>
+    <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body>
-    <nav>
-        <div class="logo">
-            <img src="images/logo.jpeg" alt="C:Dent logo">
-        </div>
-        <ul class="nav-links">
-            <li><a href="#uvod" class="lang-cz">Úvod</a><a href="#uvod" class="lang-en hidden">Home</a></li>
-            <li><a href="#sluzby" class="lang-cz">Služby</a><a href="#sluzby" class="lang-en hidden">Services</a></li>
-            <li><a href="#tym" class="lang-cz">Náš tým</a><a href="#tym" class="lang-en hidden">Team</a></li>
-            <li><a href="#ukazky" class="lang-cz">Ukázky prací</a><a href="#ukazky" class="lang-en hidden">Cases</a></li>
-            <li><a href="#kontakt" class="lang-cz">Kontakt</a><a href="#kontakt" class="lang-en hidden">Contact</a></li>
-        </ul>
-        <button id="lang-toggle">EN</button>
-    </nav>
-
-    <header id="uvod" class="hero">
-        <div class="overlay">
-            <h1><span class="lang-cz">Rodinná klinika v srdci Vinohrad</span><span class="lang-en hidden">Family dental clinic in the heart of Vinohrady</span></h1>
-            <p><span class="lang-cz">Moderní stomatologie pod jednou střechou. Máme smlouvy se zdravotními pojišťovnami.</span><span class="lang-en hidden">Modern dentistry under one roof. We cooperate with health insurance companies.</span></p>
-            <a href="#kontakt" class="cta"><span class="lang-cz">Objednat se</span><span class="lang-en hidden">Book appointment</span></a>
+    <header class="hero">
+        <img src="assets/img/logo.jpeg" alt="CDent logo" class="logo"/>
+        <div class="hero-text">
+            <h1>Rodinná klinika v srdci Vinohrad</h1>
+            <p>Moderní stomatologické centrum s individuálním přístupem. Přijímáme nové pacienty. Máme smlouvy s pojišťovnami.</p>
         </div>
     </header>
 
-    <section id="sluzby" class="section">
-        <h2><span class="lang-cz">Služby</span><span class="lang-en hidden">Our Services</span></h2>
-        <div class="services-grid">
-            <div class="service-card"><i class="fas fa-tooth"></i><span class="lang-cz">Dentální hygiena</span><span class="lang-en hidden">Dental Hygiene</span></div>
-            <div class="service-card"><i class="fas fa-screwdriver"></i><span class="lang-cz">Implantologie</span><span class="lang-en hidden">Implantology</span></div>
-            <div class="service-card"><i class="fas fa-teeth"></i><span class="lang-cz">Protetika</span><span class="lang-en hidden">Prosthetics</span></div>
-            <div class="service-card"><i class="fas fa-user-md"></i><span class="lang-cz">Záchovná stomatologie</span><span class="lang-en hidden">Restorative</span></div>
-            <div class="service-card"><i class="fas fa-microscope"></i><span class="lang-cz">Reendodoncie s mikroskopem</span><span class="lang-en hidden">Re‑endodontics</span></div>
-            <div class="service-card"><i class="fas fa-cut"></i><span class="lang-cz">Chirurgie</span><span class="lang-en hidden">Oral Surgery</span></div>
-            <div class="service-card"><i class="fas fa-sun"></i><span class="lang-cz">Bělení</span><span class="lang-en hidden">Whitening</span></div>
-            <div class="service-card"><i class="fas fa-smile"></i><span class="lang-cz">Estetické rekonstrukce</span><span class="lang-en hidden">Esthetic Rehab</span></div>
+    <nav>
+        <ul>
+            <li><a href="#sluzby">Služby</a></li>
+            <li><a href="#tym">Náš tým</a></li>
+            <li><a href="#ukazky">Ukázky prací</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+            <li><button id="lang-toggle">EN</button></li>
+        </ul>
+    </nav>
+
+    <section id="sluzby">
+        <h2>Služby</h2>
+        <div class="grid">
+            <div><span>🦷</span><p>Dentální hygiena</p></div>
+            <div><span>🦷</span><p>Implantologie</p></div>
+            <div><span>🦷</span><p>Protetika</p></div>
+            <div><span>🦷</span><p>Záchovná stomatologie</p></div>
+            <div><span>🔬</span><p>Reendodoncie s mikroskopem</p></div>
+            <div><span>🔪</span><p>Chirurgie</p></div>
+            <div><span>✨</span><p>Bělení</p></div>
+            <div><span>🎨</span><p>Estetické rekonstrukce</p></div>
         </div>
     </section>
 
-    <section id="tym" class="section">
-        <h2><span class="lang-cz">Náš tým</span><span class="lang-en hidden">Meet the Team</span></h2>
-        <div class="team-grid">
-            <div class="team-card">
-                <img src="images/celeryn.jpg" alt="MDDr. Jonáš Celerýn">
+    <section id="tym">
+        <h2>Náš tým</h2>
+        <div class="team">
+            <div class="member">
+                <img src="assets/img/celeryn.jpg" alt="MDDr. Jonáš Celerýn"/>
                 <h3>MDDr. Jonáš Celerýn</h3>
-                <p><span class="lang-cz">Záchovná stomatologie, protetika, implantologie, chirurgie, estetické rekonstrukce</span><span class="lang-en hidden">Restorative dentistry, prosthetics, implants, surgery, esthetic reconstructions</span></p>
+                <p>Záchovná stomatologie, protetika, implantologie, chirurgie, estetické rekonstrukce</p>
             </div>
-            <div class="team-card">
-                <img src="images/placeholder.png" alt="MDDr. Nikola Celerýnová">
-                <h3>MDDr. Nikola Celerýnová</h3>
-                <p><span class="lang-cz">Záchovná stomatologie, reendodoncie s mikroskopem, pedostomatologie</span><span class="lang-en hidden">Restorative dentistry, microscopic re‑endodontics, pediatric dentistry</span></p>
-            </div>
-            <div class="team-card">
-                <img src="images/bartonova.jpg" alt="doc. MUDr. Marie Bartoňová, CSc">
+            <div class="member">
+                <img src="assets/img/bartonova.jpg" alt="doc. MUDr. Marie Bartoňová, CSc"/>
                 <h3>doc. MUDr. Marie Bartoňová, CSc</h3>
-                <p><span class="lang-cz">Protetika, funkční a estetické rekonstrukce chrupu, vrozené a získané vady, senioři</span><span class="lang-en hidden">Prosthodontics, functional & esthetic reconstructions, congenital & acquired defects, senior care</span></p>
+                <p>Protetika, funkční a estetické rekonstrukce chrupu, vrozené a získané vady, senioři</p>
+            </div>
+            <div class="member">
+                <div class="placeholder"></div>
+                <h3>MDDr. Nikola Celerýnová</h3>
+                <p>Záchovná stomatologie, reendodoncie s mikroskopem, pedostomatologie</p>
             </div>
         </div>
     </section>
 
-    <section id="ukazky" class="section">
-        <h2><span class="lang-cz">Ukázky prací</span><span class="lang-en hidden">Case Gallery</span></h2>
-        <div class="cases-grid">
-            
-            <div class="case-container">
-                <img src="images/smile1-before.jpg" alt="Smile 1 before">
-                <img src="images/smile1-after.jpg" alt="Smile 1 after" class="after">
-            </div>
-    
-            <div class="case-container">
-                <img src="images/smile2-before.jpg" alt="Smile 2 before">
-                <img src="images/smile2-after.jpg" alt="Smile 2 after" class="after">
-            </div>
-    
-            <div class="case-container">
-                <img src="images/smile3-before.jpg" alt="Smile 3 before">
-                <img src="images/smile3-after.jpg" alt="Smile 3 after" class="after">
-            </div>
-    
-            <div class="case-container">
-                <img src="images/smile4-before.jpg" alt="Smile 4 before">
-                <img src="images/smile4-after.jpg" alt="Smile 4 after" class="after">
-            </div>
-    
+    <section id="ukazky">
+        <h2>Ukázky prací</h2>
+        <div class="before-after">
+            <div><img src="assets/img/smile1_before.jpg" class="before"/><img src="assets/img/smile1_after.jpg" class="after"/></div>
+            <div><img src="assets/img/smile2_before.jpg" class="before"/><img src="assets/img/smile2_after.jpg" class="after"/></div>
+            <div><img src="assets/img/smile3_before.jpg" class="before"/><img src="assets/img/smile3_after.jpg" class="after"/></div>
+            <div><img src="assets/img/smile4_before.jpg" class="before"/><img src="assets/img/smile4_after.jpg" class="after"/></div>
         </div>
     </section>
 
-    <section id="kontakt" class="section contact">
-        <h2><span class="lang-cz">Kontakt</span><span class="lang-en hidden">Contact</span></h2>
-        <p>Vinohradská 196, Praha 3, 130 00</p>
-        <p><span class="lang-cz">Telefon</span><span class="lang-en hidden">Phone</span>: <a href="tel:+420272735268">272 735 268</a></p>
-        <p>Email: <a href="mailto:cdentceleryn@gmail.com">cdentceleryn@gmail.com</a></p>
+    <section id="kontakt">
+        <h2>Kontakt</h2>
+        <p>Vinohradská 196, Praha 3, 130 00</p>
+        <p>Telefon: 272 735 268</p>
+        <p>Email: cdentceleryn@gmail.com</p>
     </section>
 
-    <footer>
-        <p>&copy; 2025 C:Dent</p>
-    </footer>
-
-<script src="js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
