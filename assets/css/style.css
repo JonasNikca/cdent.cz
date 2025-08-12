@@ -4,7 +4,7 @@ body {
     font-family: 'Segoe UI', sans-serif;
     
     color: #333;
-}
+background-color:#f3f4f6;}
 
 .hero {
     background: url('../img/hero-family.jpg') center/cover no-repeat;
@@ -50,7 +50,7 @@ nav ul {
 
 nav a, nav button {
     color: white;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.45);
     padding: 0.5em 1em;
     text-decoration: none;
     border: none;
@@ -72,8 +72,7 @@ section {
 }
 
 .grid div {
-    background: #ffffff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    background: #eaf6fb;
     padding: 1em;
     border-radius: 8px;
 }
@@ -172,3 +171,6 @@ section {
     font-weight: normal;
     font-size: 1em;
 }
+
+/* výrazné zvýraznění úvodního nápisu */
+.highlight-hero{color:#fff;font-weight:800;letter-spacing:.2px;text-shadow:0 2px 8px rgba(0,0,0,.45);}
