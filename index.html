@@ -269,6 +269,54 @@ img.logo{
 .svc-icon[data-svc="chirurgie"]{ color:#14b8a6; }    /* teal */
 .svc-icon[data-svc="beleni"]{ color:#3b82f6; }       /* blue */
 .svc-icon[data-svc="estetika"]{ color:#ec4899; }     /* pink */
+</style><style>
+#sluzby {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 24px;
+  padding: 20px;
+  justify-items: center;
+}
+.sluzba-item { text-align: center; }
+.sluzba-icon {
+  width: 60px;
+  height: 60px;
+  padding: 12px;
+  border-radius: 50%;
+  background-color: var(--bg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+.sluzba-icon svg { width: 32px; height: 32px; fill: currentColor; }
+.sluzba-title { font-size: 1rem; font-weight: 600; }
+</style><style>
+/* === New Services grid (clean, colorful) === */
+.services-grid { padding: 24px 0; }
+.services-grid h2 { text-align:center; margin: 0 0 12px 0; }
+.services-grid__wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+.sluzba-item { text-align: center; }
+.sluzba-icon {
+  width: 64px; height: 64px; padding: 12px; border-radius: 16px;
+  background: var(--bg);
+  display: inline-flex; align-items:center; justify-content:center;
+  margin-bottom: 8px;
+}
+.sluzba-icon svg { width: 34px; height: 34px; fill: currentColor; }
+.sluzba-title { font-size: 1rem; font-weight: 700; line-height:1.25; }
+@media (max-width: 640px){
+  .services-grid__wrap { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+}
+/* Keep previous mobile logo adjustment stronger */
+@media (max-width: 640px){
+  img.logo{ display:block; margin:0 auto; max-width: clamp(120px, 32vw, 200px); position: relative; top: -14px; transform: translateY(-6px); }
+}
 </style></head>
 <body>
 <header class="hero">
@@ -277,7 +325,7 @@ img.logo{
 <h1>Rodinná klinika v srdci Vinohrad</h1>
 <p style="color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.35); color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.35); color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.35)">Moderní stomatologické centrum s individuálním přístupem. Přijímáme nové pacienty. Máme smlouvu s VZP a OZP.</p>
 <div class="hero-cta"><a class="btn primary" href="tel:272735268" style="color:#fff; border:1px solid rgba(255,255,255,0.85); background:transparent">Zavolat</a><a class="btn ghost" href="mailto:cdentceleryn@gmail.com" style="color:#fff; border:1px solid rgba(255,255,255,0.85); background:transparent">Napsat e‑mail</a></div></div>
-</header>
+</header><section class="services-grid" id="sluzby"><h2>Služby</h2><div class="services-grid__wrap"><div class="sluzba-item"><div class="sluzba-icon" style="--bg:#E0F2FE; color:#0ea5e9;"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="currentColor" height="4" rx="2" width="12" x="2" y="10"></rect><rect fill="currentColor" height="8" rx="1" width="2" x="15" y="8"></rect><rect fill="currentColor" height="8" rx="1" width="2" x="18" y="8"></rect></svg></div><div class="sluzba-title">Dentální hygiena</div></div><div class="sluzba-item"><div class="sluzba-icon" style="--bg:#F3F4F6; color:#52525B;"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M8 3h8v6a4 4 0 0 1-4 4H8V3z" fill="currentColor" opacity=".8"></path><path d="M8 13h8l-1.2 2H9.2z" fill="currentColor"></path><path d="M7.2 17h9.6L15.8 19H8.2z" fill="currentColor" opacity=".8"></path></svg></div><div class="sluzba-title">Implantologie</div></div><div class="sluzba-item"><div class="sluzba-icon" style="--bg:#FEF3C7; color:#D97706;"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 10l4-3 4 2 4-2 4 3v5H4z" fill="currentColor"></path><rect fill="currentColor" height="2" opacity=".9" rx="1" width="12" x="6" y="18"></rect></svg></div><div class="sluzba-title">Protetika</div></div><div class="sluzba-item"><div class="sluzba-icon" style="--bg:#E0F2FE; color:#0ea5e9;"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2c3.5 0 6 2.7 6 5.8 0 2.4-.9 3.9-2 5.3-.6.8-1.2 1.6-1.6 2.6-.3.8-.5 1.7-.7 2.8-.3 1.6-2.5 1.8-3 0-.5-1.8-.8-2.8-1.5-3.8-.5-.8-1.2-1.6-1.9-2.4C5.4 10.1 5 8.7 5 7.8 5 4.7 8.5 2 12 2z" fill="none" stroke="currentColor" stroke-width="1.6"></path><rect fill="currentColor" height="2" width="3.2" x="9" y="7"></rect></svg></div><div class="sluzba-title">Záchovná stomatologie</div></div><div class="sluzba-item"><div class="sluzba-icon" style="--bg:#FEE2E2; color:#ef4444;"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2c3.5 0 6 2.7 6 5.8 0 2.4-.9 3.9-2 5.3-.6.8-1.2 1.6-1.6 2.6-.3.8-.5 1.7-.7 2.8-.3 1.6-2.5 1.8-3 0-.5-1.8-.8-2.8-1.5-3.8-.5-.8-1.2-1.6-1.9-2.4C5.4 10.1 5 8.7 5 7.8 5 4.7 8.5 2 12 2z" fill="none" stroke="currentColor" stroke-width="1.6"></path><path d="M10 8c.5 1.5.5 3.5 0 5M14 8c.5 1.5.5 3.5 0 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.4"></path></svg></div><div class="sluzba-title">Endodoncie</div></div><div class="sluzba-item"><div class="sluzba-icon" style="--bg:#CCFBF1; color:#14b8a6;"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 18l8-8 3 3-8 8H3z" fill="currentColor"></path><path d="M15 5l3-3 3 3-3 3-3-3z" fill="currentColor" opacity=".7"></path></svg></div><div class="sluzba-title">Chirurgie</div></div><div class="sluzba-item"><div class="sluzba-icon" style="--bg:#DBEAFE; color:#3b82f6;"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 4l1.6 4 4 1.6-4 1.6L12 16l-1.6-4-4-1.6 4-1.6L12 4z" fill="currentColor"></path><path d="M18 6l.9 2.2L21 9l-2.1.8L18 12l-.9-2.2L15 9l2.1-.8L18 6z" fill="currentColor" opacity=".6"></path></svg></div><div class="sluzba-title">Bělení</div></div><div class="sluzba-item"><div class="sluzba-icon" style="--bg:#FCE7F3; color:#ec4899;"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 14s2.5 5 8 5 8-5 8-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg></div><div class="sluzba-title">Estetická stomatologie</div></div></div></section>
 <nav>
 <button aria-label="Otevřít menu" class="nav-toggle">☰</button><ul class="nav-list">
 <li><a href="#sluzby">Služby</a></li>
@@ -287,73 +335,6 @@ img.logo{
 <li><button aria-label="Přepnout jazyk" id="lang-toggle">EN</button></li>
 </ul><a class="cta-call" href="tel:+420272735268">Objednat: 272 735 268</a>
 </nav>
-<section id="sluzby">
-<h2>Služby</h2>
-<div class="grid">
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="hygiena"><svg aria-hidden="true" viewbox="0 0 24 24">
-<rect fill="currentColor" height="4" rx="2" width="14" x="2" y="10"></rect>
-<rect fill="currentColor" height="8" rx="1" width="2" x="16" y="8"></rect>
-<rect fill="currentColor" height="8" rx="1" width="2" x="19" y="8"></rect>
-</svg></span>
-<svg viewbox="0 0 24 24">
-<path d="M2 6h14v4H2z" fill="#0ea5e9"></path>
-<rect fill="#2563eb" height="8" width="2" x="16" y="4"></rect>
-</svg><span class="service-line">Dentální hygiena</span></p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="implant"><svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M8 13h8l-1.2 2H9.2L8 13zm-.8 4h9.6L15.8 19H8.2L7.2 17z" fill="currentColor"></path>
-<path d="M8 3h8v5a4 4 0 0 1-4 4H8V3z" fill="currentColor" opacity=".65"></path>
-</svg></span>
-<svg viewbox="0 0 24 24">
-<path d="M8 2h8v6a4 4 0 0 1-4 4H8V2z" fill="#94a3b8"></path>
-<path d="M9 14h6l-1 2H8l1-2z" fill="#64748b"></path>
-</svg><span class="service-line">Implantologie</span></p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="protetika"><svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M4 10l4-3 4 2 4-2 4 3v5H4v-5z" fill="currentColor"></path>
-<rect fill="currentColor" height="2" rx="1" width="12" x="6" y="18"></rect>
-</svg></span>
-<svg viewbox="0 0 24 24">
-<path d="M4 9l4-3 4 2 4-2 4 3v4H4V9z" fill="#fbbf24"></path>
-<path d="M6 18h12v2H6z" fill="#d97706"></path>
-</svg><span class="service-line">Protetika</span></p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="zachovna"><svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M12 2c3.5 0 6 2.7 6 5.8 0 2.4-.9 3.9-2 5.3-.6.8-1.2 1.6-1.6 2.6-.3.8-.5 1.7-.7 2.8-.3 1.6-2.5 1.8-3 0-.5-1.8-.8-2.8-1.5-3.8-.5-.8-1.2-1.6-1.9-2.4C5.4 10.1 5 8.7 5 7.8 5 4.7 8.5 2 12 2z" fill="none" stroke="currentColor" stroke-width="1.6"></path>
-<rect fill="currentColor" height="2" width="3.2" x="9" y="7"></rect>
-</svg></span>
-<svg viewbox="0 0 24 24">
-<path d="M12 2c3.5 0 6 2.7 6 5.8 0 2.4-.9 3.9-2 5.3-.6.8-1.2 1.6-1.6 2.6-.3.8-.5 1.7-.7 2.8-.3 1.6-2.5 1.8-3 0-.5-1.8-.8-2.8-1.5-3.8-.5-.8-1.2-1.6-1.9-2.4C5.4 10.1 5 8.7 5 7.8 5 4.7 8.5 2 12 2z" fill="#ffffff" stroke="#0ea5e9" stroke-width="1.5"></path>
-<rect fill="#0ea5e9" height="2" width="3" x="9" y="7"></rect>
-</svg>Záchovná stomatologie</p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="endo"><svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M12 2c3.5 0 6 2.7 6 5.8 0 2.4-.9 3.9-2 5.3-.6.8-1.2 1.6-1.6 2.6-.3.8-.5 1.7-.7 2.8-.3 1.6-2.5 1.8-3 0-.5-1.8-.8-2.8-1.5-3.8-.5-.8-1.2-1.6-1.9-2.4C5.4 10.1 5 8.7 5 7.8 5 4.7 8.5 2 12 2z" fill="none" stroke="currentColor" stroke-width="1.6"></path>
-<path d="M10 8c.5 1.5.5 3.5 0 5M14 8c.5 1.5.5 3.5 0 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.4"></path>
-</svg></span>
-<svg viewbox="0 0 24 24">
-<path d="M12 2c3.5 0 6 2.7 6 5.8..." fill="#ffffff" stroke="#ef4444" stroke-width="1.5"></path>
-<path d="M10 8v5M14 8v5" fill="none" stroke="#ef4444" stroke-width="1.2"></path>
-</svg><span class="service-line">Reendodoncie s mikroskopem</span></p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="chirurgie"><svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M3 18l8-8 3 3-8 8H3z" fill="currentColor"></path>
-<path d="M15 5l3-3 3 3-3 3-3-3z" fill="currentColor" opacity=".7"></path>
-</svg></span>
-<svg viewbox="0 0 24 24">
-<path d="M4 18l6-6 4 4-6 6H4z" fill="#14b8a6"></path>
-<path d="M15 5l3-3 3 3-3 3-3-3z" fill="#0d9488"></path>
-</svg><span class="service-line">Chirurgie</span></p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="beleni"><svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M12 4l1.6 4 4 1.6-4 1.6L12 16l-1.6-4-4-1.6 4-1.6L12 4z" fill="currentColor"></path>
-<path d="M18 6l.9 2.2L21 9l-2.1.8L18 12l-.9-2.2L15 9l2.1-.8L18 6z" fill="currentColor" opacity=".6"></path>
-</svg></span>
-<svg viewbox="0 0 24 24">
-<path d="M12 2l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#3b82f6"></path>
-</svg>Bělení</p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="estetika"><svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M4 14s2.5 5 8 5 8-5 8-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
-</svg></span>
-<svg viewbox="0 0 24 24">
-<path d="M4 15s2 4 8 4 8-4 8-4" fill="none" stroke="#ec4899" stroke-width="2"></path>
-</svg>Estetické rekonstrukce</p></div>
-</div>
-</section>
 <section id="tym">
 <h2>Náš tým</h2>
 <div class="team">
@@ -409,5 +390,7 @@ document.addEventListener('click', function(e){
   if (!box) return;
   box.classList.toggle('is-toggled');
 }, {passive:true});
-</script></body>
+</script>
+
+</body>
 </html>
