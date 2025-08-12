@@ -342,27 +342,22 @@ img.logo{
 <div class="icon" style="background:linear-gradient(135deg,#3b82f6,#06b6d4)">🪥</div>
 <h3>Dentální hygiena</h3>
 </div>
-
 <div class="service-card">
 <div class="icon" style="background:linear-gradient(135deg,#10b981,#14b8a6)">🦷</div>
 <h3>Implantologie</h3>
 </div>
-
 <div class="service-card">
 <div class="icon" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)">💎</div>
 <h3>Estetická stomatologie</h3>
 </div>
-
 <div class="service-card">
 <div class="icon" style="background:linear-gradient(135deg,#ec4899,#f43f5e)">🔬</div>
 <h3>Mikroskopická endodoncie</h3>
 </div>
-
 <div class="service-card">
 <div class="icon" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">👶</div>
 <h3>Péče o děti</h3>
 </div>
-
 <div class="service-card">
 <div class="icon" style="background:linear-gradient(135deg,#ef4444,#f87171)">🔪</div>
 <h3>Chirurgie</h3>
@@ -371,31 +366,63 @@ img.logo{
 </section>
 <style>
     .services-modern{
-      padding:60px 20px; background:#f9fafb; text-align:center;
+      padding:60px 20px;
+      background:#f4f4f4;
+      text-align:center;
     }
     .services-modern h2{
-      font-size:2rem; margin-bottom:32px; color:#0f172a;
+      font-size:2rem;
+      margin-bottom:32px;
+      color:#0f172a;
     }
     .services-wrap{
-      display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr)); gap:22px; align-items:start;
+      display:grid;
+      grid-template-columns:repeat(3, minmax(200px, 1fr));
+      gap:24px;
+      justify-content:center;
+      justify-items:center;
+      max-width:900px;
+      margin:0 auto;
+    }
+    @media(max-width:768px){
+      .services-wrap{
+        grid-template-columns:1fr;
+        gap:20px;
+      }
     }
     .service-card{
-      background:#ffffff; border-radius:16px; padding:22px;
+      background:#ffffff;
+      border-radius:16px;
+      padding:22px;
       box-shadow:0 4px 12px rgba(0,0,0,.05);
       transition:transform .2s ease, box-shadow .2s ease;
-      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      max-width:240px;
     }
     .service-card:hover{
       transform:translateY(-4px);
       box-shadow:0 8px 20px rgba(0,0,0,0.08);
     }
     .service-card .icon{
-      width:64px; height:64px; border-radius:16px;
-      display:flex; align-items:center; justify-content:center;
-      font-size:2rem; margin-bottom:12px; color:#fff;
+      width:64px;
+      height:64px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:2rem;
+      margin-bottom:12px;
+      color:#fff;
     }
     .service-card h3{
-      margin:0; font-size:1rem; font-weight:600; color:#0f172a;
+      margin:0;
+      font-size:1rem;
+      font-weight:600;
+      color:#0f172a;
     }
     </style>
 <section id="tym">
