@@ -55,6 +55,61 @@
 .svc-icon { display:inline-flex; width:28px; height:28px; margin-right:10px; vertical-align:middle; align-items:center; justify-content:center; color:#0ea5e9; }
 .svc-icon svg { width:20px; height:20px; }
 .service-line { display:flex; align-items:center; gap:.5rem; margin: .25rem 0; }
+</style><style>
+/* === Tweaks: services + logo (added) === */
+#sluzby .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+#sluzby .service-card {
+  background: #f3f8fb; /* light bluish */
+  border: 1px solid rgba(2, 6, 23, 0.06);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 1px 2px rgba(2, 6, 23, 0.04);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+#sluzby .service-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.08);
+}
+#sluzby .service-card img,
+#sluzby .service-card .svc-icon svg {
+  width: 40px;
+  height: 40px;
+}
+#sluzby .service-card img {
+  display: block;
+  margin-bottom: 8px;
+}
+/* Make inline SVG icons colorful and more visible */
+.svc-icon {
+  display:inline-flex;
+  width: 44px;
+  height: 44px;
+  margin-right: 10px;
+  align-items:center;
+  justify-content:center;
+  color: #1284d6; /* stronger blue */
+}
+.svc-icon svg { width: 32px; height: 32px; }
+/* Service title line */
+#sluzby .service-card p {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin: 0;
+  font-weight: 600;
+}
+/* Mobile logo adjustment for blue/white mark */
+@media (max-width: 640px) {
+  img.logo {
+    position: relative;
+    top: 4px;
+    transform: translateY(2px);
+  }
+}
 </style></head>
 <body>
 <header class="hero">
@@ -76,32 +131,12 @@
 <section id="sluzby">
 <h2>Služby</h2>
 <div class="grid">
-<div class="service-card"><img alt="Dentální hygiena" src="assets/img/icon-toothbrush-color.svg"/><p><span aria-hidden="true" class="svc-icon">
-<svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M4 3h6v6H4V3zm10 0h6v6h-6V3zM4 15h6v6H4v-6zm10 0h6v6h-6v-6z" fill="currentColor"></path>
-</svg>
-</span><span class="service-line">Dentální hygiena</span></p></div>
-<div class="service-card"><img alt="Implantologie" src="assets/img/icon-implant-color.svg"/><p><span aria-hidden="true" class="svc-icon">
-<svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M7 3h10v5a5 5 0 0 1-5 5H7V3zm3 13h4l-1 2h-4l1-2zm-2 4h6l-1 2H7l1-2z" fill="currentColor"></path>
-</svg>
-</span><span class="service-line">Implantologie</span></p></div>
-<div class="service-card"><img alt="Protetika" src="assets/img/icon-prosthetics-color.svg"/><p><span aria-hidden="true" class="svc-icon">
-<svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M3 7l4 3 5-5 5 5 4-3v10H3V7z" fill="currentColor"></path>
-</svg>
-</span><span class="service-line">Protetika</span></p></div>
+<div class="service-card"><img alt="Dentální hygiena" src="assets/img/icon-toothbrush-color.svg"/><p><span class="service-line">Dentální hygiena</span></p></div>
+<div class="service-card"><img alt="Implantologie" src="assets/img/icon-implant-color.svg"/><p><span class="service-line">Implantologie</span></p></div>
+<div class="service-card"><img alt="Protetika" src="assets/img/icon-prosthetics-color.svg"/><p><span class="service-line">Protetika</span></p></div>
 <div class="service-card"><img alt="Záchovná stomatologie" src="assets/img/icon-tooth-color.svg"/><p>Záchovná stomatologie</p></div>
-<div class="service-card"><img alt="Reendodoncie" src="assets/img/icon-microscope-color.svg"/><p><span aria-hidden="true" class="svc-icon">
-<svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M6 2h12v6H6V2zm2 8h8l-1 10H9L8 10z" fill="currentColor"></path>
-</svg>
-</span><span class="service-line">Reendodoncie s mikroskopem</span></p></div>
-<div class="service-card"><img alt="Chirurgie" src="assets/img/icon-surgery-color.svg"/><p><span aria-hidden="true" class="svc-icon">
-<svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M3 17l9-9 3 3-9 9H3zm12-9l3-3 3 3-3 3-3-3z" fill="currentColor"></path>
-</svg>
-</span><span class="service-line">Chirurgie</span></p></div>
+<div class="service-card"><img alt="Reendodoncie" src="assets/img/icon-microscope-color.svg"/><p><span class="service-line">Reendodoncie s mikroskopem</span></p></div>
+<div class="service-card"><img alt="Chirurgie" src="assets/img/icon-surgery-color.svg"/><p><span class="service-line">Chirurgie</span></p></div>
 <div class="service-card"><img alt="Bělení" src="assets/img/icon-bleaching-color.svg"/><p>Bělení</p></div>
 <div class="service-card"><img alt="Estetické rekonstrukce" src="assets/img/icon-esthetics-color.svg"/><p>Estetické rekonstrukce</p></div>
 </div>
