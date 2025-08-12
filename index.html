@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>CDent - Rodinná stomatologie</title>
     <link rel="stylesheet" href="assets/css/style.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="hero">
@@ -15,31 +12,31 @@
         <div class="hero-text">
             <h1>Rodinná klinika v srdci Vinohrad</h1>
             <p>Moderní stomatologické centrum s individuálním přístupem. Přijímáme nové pacienty. Máme smlouvu s VZP a OZP.</p>
-        <div class="hero-cta"><a class="btn primary" href="tel:+420272735268">Zavolat</a><a class="btn ghost" href="mailto:cdentceleryn@gmail.com">Napsat e‑mail</a></div></div>
+        </div>
     </header>
 
     <nav>
-        <button class="nav-toggle" aria-label="Otevřít menu">☰</button><ul class="nav-list">
+        <ul>
             <li><a href="#sluzby">Služby</a></li>
             <li><a href="#tym">Náš tým</a></li>
             <li><a href="#ukazky">Ukázky prací</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
-            <li><button id="lang-toggle" aria-label="Přepnout jazyk">EN</button></li>
-        </ul><a class="cta-call" href="tel:+420272735268">Objednat: 272 735 268</a>
+            <li><button id="lang-toggle">EN</button></li>
+        </ul>
     </nav>
 
     
 <section id="sluzby">
     <h2>Služby</h2>
     <div class="grid">
-        <div class="service-card"><img src="assets/img/icon-toothbrush-color.svg" alt="Dentální hygiena"/><p>Dentální hygiena</p></div>
-        <div class="service-card"><img src="assets/img/icon-implant-color.svg" alt="Implantologie"/><p>Implantologie</p></div>
-        <div class="service-card"><img src="assets/img/icon-prosthetics-color.svg" alt="Protetika"/><p>Protetika</p></div>
-        <div class="service-card"><img src="assets/img/icon-tooth-color.svg" alt="Záchovná stomatologie"/><p>Záchovná stomatologie</p></div>
-        <div class="service-card"><img src="assets/img/icon-microscope-color.svg" alt="Reendodoncie"/><p>Reendodoncie s mikroskopem</p></div>
-        <div class="service-card"><img src="assets/img/icon-surgery-color.svg" alt="Chirurgie"/><p>Chirurgie</p></div>
-        <div class="service-card"><img src="assets/img/icon-bleaching-color.svg" alt="Bělení"/><p>Bělení</p></div>
-        <div class="service-card"><img src="assets/img/icon-esthetics-color.svg" alt="Estetické rekonstrukce"/><p>Estetické rekonstrukce</p></div>
+        <div><img src="assets/img/icon-hygiene.svg" alt="Dentální hygiena"/><p>Dentální hygiena</p></div>
+        <div><img src="assets/img/icon-implant.svg" alt="Implantologie"/><p>Implantologie</p></div>
+        <div><img src="assets/img/icon-prosthetics.svg" alt="Protetika"/><p>Protetika</p></div>
+        <div><img src="assets/img/icon-tooth.svg" alt="Záchovná stomatologie"/><p>Záchovná stomatologie</p></div>
+        <div><img src="assets/img/icon-microscope.svg" alt="Reendodoncie"/><p>Reendodoncie s mikroskopem</p></div>
+        <div><img src="assets/img/icon-surgery.svg" alt="Chirurgie"/><p>Chirurgie</p></div>
+        <div><img src="assets/img/icon-bleaching.svg" alt="Bělení"/><p>Bělení</p></div>
+        <div><img src="assets/img/icon-esthetics.svg" alt="Estetické rekonstrukce"/><p>Estetické rekonstrukce</p></div>
     </div>
 </section>
 
@@ -65,33 +62,15 @@
         </div>
     </section>
 
-    
-<section id="ukazky">
-  <h2>Ukázky prací</h2>
-  <div class="slider-gallery">
-    <div class="ic-container">
-      <img src="assets/img/smile1_before.jpg" class="ic-base" alt="Před – případ 1"/>
-      <img src="assets/img/smile1_after.jpg" class="ic-overlay" alt="Po – případ 1"/>
-      <div class="ic-handle" aria-hidden="true"></div>
-    </div>
-    <div class="ic-container">
-      <img src="assets/img/smile2_before.jpg" class="ic-base" alt="Před – případ 2"/>
-      <img src="assets/img/smile2_after.jpg" class="ic-overlay" alt="Po – případ 2"/>
-      <div class="ic-handle" aria-hidden="true"></div>
-    </div>
-    <div class="ic-container">
-      <img src="assets/img/smile3_before.jpg" class="ic-base" alt="Před – případ 3"/>
-      <img src="assets/img/smile3_after.jpg" class="ic-overlay" alt="Po – případ 3"/>
-      <div class="ic-handle" aria-hidden="true"></div>
-    </div>
-    <div class="ic-container">
-      <img src="assets/img/smile4_before.jpg" class="ic-base" alt="Před – případ 4"/>
-      <img src="assets/img/smile4_after.jpg" class="ic-overlay" alt="Po – případ 4"/>
-      <div class="ic-handle" aria-hidden="true"></div>
-    </div>
-  </div>
-</section>
-
+    <section id="ukazky">
+        <h2>Ukázky prací</h2>
+        <div class="before-after">
+            <div><img src="assets/img/smile1_before.jpg" class="before"/><img src="assets/img/smile1_after.jpg" class="after"/></div>
+            <div><img src="assets/img/smile2_before.jpg" class="before"/><img src="assets/img/smile2_after.jpg" class="after"/></div>
+            <div><img src="assets/img/smile3_before.jpg" class="before"/><img src="assets/img/smile3_after.jpg" class="after"/></div>
+            <div><img src="assets/img/smile4_before.jpg" class="before"/><img src="assets/img/smile4_after.jpg" class="after"/></div>
+        </div>
+    </section>
 
     <section id="kontakt">
         <h2>Kontakt</h2>
@@ -112,9 +91,5 @@
 </section>
 
     <script src="assets/js/script.js"></script>
-
-<footer class="site-footer">
-  <p>&copy; CDent – Rodinná klinika v srdci Vinohrad</p>
-</footer>
 </body>
 </html>
