@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #fff;
+    
     color: #333;
 }
 
@@ -173,5 +173,9 @@ section {
 }
 
 body {
-    background-color: #f8f4f0; /* elegantní světle béžová */
+     /* elegantní světle béžová */
+}
+
+body {
+    background: linear-gradient(180deg, #f2e6d9 0%, #e9dccb 100%);
 }
