@@ -317,7 +317,38 @@ img.logo{
 @media (max-width: 640px){
   img.logo{ display:block; margin:0 auto; max-width: clamp(120px, 32vw, 200px); position: relative; top: -14px; transform: translateY(-6px); }
 }
-</style></head>
+</style><style id="cdent-overrides">
+
+/* === CDent quick overrides (2025-08-13) === */
+body{ background:#eef6fb !important; }
+header, nav, main, section, footer, .page, .content, .intro, .about, .team-modern, .contact, .cta, .features, .faq{
+  background:transparent !important;
+}
+/* Služby: center heading like 'Můj tým' and add spacing */
+.services-modern h2{ text-align:center !important; margin: 0 0 28px 0 !important; padding-top: 4px; }
+/* Keep the services block centered and not shifted */
+.services-modern{ max-width: 1200px; margin: 0 auto; padding-left: 16px; padding-right: 16px; }
+.services-modern .services-wrap{
+  margin: 0 auto; 
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  justify-content: center; 
+  align-items: stretch; 
+  justify-items: center;
+  gap: 24px;
+}
+/* Make service-card a consistent width so rows center nicely */
+.services-modern .service-card{
+  width: 100%; max-width: 360px;
+}
+@media (max-width: 640px){
+  .services-modern{ padding-left: 12px; padding-right: 12px; }
+  .services-modern .service-card{ max-width: 100%; }
+}
+/* Optional: unify inter-section stripes by removing stray alt backgrounds */
+.section-alt, .striped, .bg-soft, .bg-alt{ background:transparent !important; }
+
+</style>
+</head>
 <body>
 <header class="hero">
 <img alt="CDent logo" class="logo" src="assets/img/logo.jpeg"/>
@@ -337,71 +368,40 @@ img.logo{
 </nav>
 
 <section class="services-modern" id="sluzby">
-<h2 class="section-title">Služby</h2>
-<div class="services-grid">
-<div class="service-card"><div class="icon" style="background:linear-gradient(135deg,#3b82f6,#06b6d4)">🪥</div><h3>Dentální hygiena</h3></div>
-<div class="service-card"><div class="icon" style="background:linear-gradient(135deg,#10b981,#14b8a6)">🦷</div><h3>Implantologie</h3></div>
-<div class="service-card"><div class="icon" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)">💎</div><h3>Estetická stomatologie</h3></div>
-<div class="service-card"><div class="icon" style="background:linear-gradient(135deg,#ec4899,#f43f5e)">🔬</div><h3>Mikroskopická endodoncie</h3></div>
-<div class="service-card"><div class="icon" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">👶</div><h3>Péče o děti</h3></div>
-<div class="service-card"><div class="icon" style="background:linear-gradient(135deg,#ef4444,#f87171)">🔪</div><h3>Chirurgie</h3></div>
+<h2>Služby</h2>
+<div class="services-wrap">
+<div class="service-card">
+<div class="icon" style="background:linear-gradient(135deg,#3b82f6,#06b6d4)">🪥</div>
+<h3>Dentální hygiena</h3>
+<p>Profesionální odstranění zubního kamene a pigmentací, edukace a prevence.</p>
 </div>
-
-<style>
-  /* Services: centered header, 3x grid on desktop, 1x on mobile; background exactly as team */
-  .services-modern{
-    padding: 60px 20px;
-    background: #f3e6d6;
-    text-align: center;
-  }
-  .services-modern .section-title{
-    font-size: 2rem;
-    margin: 0 0 32px 0;
-    color: #0f172a;
-    text-align: center;
-  }
-  .services-grid{
-    display: grid;
-    grid-template-columns: repeat(3, minmax(220px, 1fr));
-    gap: 24px;
-    max-width: 1000px;
-    margin: 0 auto;
-    justify-items: center;
-  }
-  @media (max-width: 768px){
-    .services-grid{
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-  }
-  .service-card{
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 22px;
-    box-shadow: 0 4px 12px rgba(0,0,0,.05);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: transform .2s ease, box-shadow .2s ease;
-    width: 100%;
-    max-width: 280px;
-  }
-  .service-card:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,.08);
-  }
-  .service-card .icon{
-    width: 64px; height: 64px; border-radius: 16px;
-    display:flex; align-items:center; justify-content:center;
-    font-size: 2rem; color:#fff; margin-bottom: 10px;
-  }
-  .service-card h3{
-    margin: 0; font-size: 1rem; font-weight: 700; color: #0f172a; text-align:center;
-  }
-</style>
+<div class="service-card">
+<div class="icon" style="background:linear-gradient(135deg,#10b981,#14b8a6)">🦷</div>
+<h3>Implantologie</h3>
+<p>Šetrná náhrada chybějících zubů titanovými implantáty, včetně korunek.</p>
+</div>
+<div class="service-card">
+<div class="icon" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)">💎</div>
+<h3>Estetická stomatologie</h3>
+<p>Bělení a estetické kompozitní rekonstrukce pro přirozený, jasný úsměv.</p>
+</div>
+<div class="service-card">
+<div class="icon" style="background:linear-gradient(135deg,#ec4899,#f43f5e)">🔬</div>
+<h3>Mikroskopická endodoncie</h3>
+<p>Precizní ošetření kořenových kanálků pod zvětšením pro dlouhodobý výsledek.</p>
+</div>
+<div class="service-card">
+<div class="icon" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">👶</div>
+<h3>Péče o děti</h3>
+<p>Citlivý přístup k dětským pacientům, prevence a bezbolestné ošetření.</p>
+</div>
+<div class="service-card">
+<div class="icon" style="background:linear-gradient(135deg,#ef4444,#f87171)">🔪</div>
+<h3>Chirurgie</h3>
+<p>Drobné chirurgické výkony – extrakce, resekce, plastiky měkkých tkání.</p>
+</div>
+</div>
 </section>
-
 <style>
   .services-modern{
     padding:60px 20px; background:#f9fafb; text-align:center;
