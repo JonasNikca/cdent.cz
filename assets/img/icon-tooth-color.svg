@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect fill="none" width="64" height="64"/>
+  <g fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    M20 16 c8 -10 16 -10 24 0 c6 8 0 28 -6 32 c-3 2 -3 -8 -6 -8 s-3 10 -6 8 c-6 -4 -12 -24 -6 -32 z
+  </g>
+</svg>
