@@ -171,3 +171,7 @@ section {
     font-weight: normal;
     font-size: 1em;
 }
+
+body {
+    background-color: #f8f4f0; /* elegantní světle béžová */
+}
