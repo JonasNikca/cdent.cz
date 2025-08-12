@@ -165,6 +165,45 @@ img.logo{ max-width: clamp(120px, 38vw, 220px); height:auto; }
 @media (max-width: 640px){
   img.logo{ position: relative; top: 2px; transform: translateY(2px); }
 }
+</style><style>
+/* === CDent tweaks v4 === */
+/* Mobile logo: center and move up */
+.header, header { position: relative; }
+img.logo{
+  display:block;
+  margin: 0 auto;            /* center horizontally */
+  max-width: clamp(120px, 34vw, 200px);
+  height:auto;
+}
+@media (max-width: 640px){
+  img.logo{
+    position: relative;
+    top: -6px;               /* move up */
+    transform: translateY(-4px);
+  }
+}
+
+/* Service cards */
+#sluzby .grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:16px; }
+#sluzby .service-card{
+  background:#eef6fb;
+  border:1px solid rgba(2,6,23,.06);
+  border-radius:14px;
+  padding:14px 16px;
+  box-shadow:0 1px 2px rgba(2,6,23,.04);
+}
+#sluzby .service-card p{ margin:0; display:flex; align-items:center; gap:.75rem; font-weight:600; }
+.svc-icon{ display:inline-flex; width:44px; height:44px; align-items:center; justify-content:center; }
+.svc-icon svg{ width:34px; height:34px; }
+/* Color accents per discipline */
+.svc-icon[data-svc="hygiena"]{ color:#0ea5e9; }
+.svc-icon[data-svc="implant"]{ color:#2563eb; }
+.svc-icon[data-svc="protetika"]{ color:#f59e0b; }
+.svc-icon[data-svc="zachovna"]{ color:#10b981; }
+.svc-icon[data-svc="endo"]{ color:#ef4444; }
+.svc-icon[data-svc="chirurgie"]{ color:#14b8a6; }
+.svc-icon[data-svc="beleni"]{ color:#eab308; }
+.svc-icon[data-svc="estetika"]{ color:#ec4899; }
 </style></head>
 <body>
 <header class="hero">
@@ -186,14 +225,46 @@ img.logo{ max-width: clamp(120px, 38vw, 220px); height:auto; }
 <section id="sluzby">
 <h2>Služby</h2>
 <div class="grid">
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="hygiena"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 3h6v6H4V3zm10 0h6v6h-6V3zM4 15h6v6H4v-6zm10 0h6v6h-6v-6z" fill="currentColor"></path></svg></span><span class="service-line">Dentální hygiena</span></p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="implant"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M7 3h10v5a5 5 0 0 1-5 5H7V3zm3 13h4l-1 2h-4l1-2zm-2 4h6l-1 2H7l1-2z" fill="currentColor"></path></svg></span><span class="service-line">Implantologie</span></p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="protetika"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 7l4 3 5-5 5 5 4-3v10H3V7z" fill="currentColor"></path></svg></span><span class="service-line">Protetika</span></p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="zachovna"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2c3.5 0 6 2.7 6 5.8 0 2.4-.9 3.9-2 5.3-.6.8-1.2 1.6-1.6 2.6-.3.8-.5 1.7-.7 2.8-.3 1.6-2.5 1.8-3 0-.5-1.8-.8-2.8-1.5-3.8-.5-.8-1.2-1.6-1.9-2.4C5.4 10.1 5 8.7 5 7.8 5 4.7 8.5 2 12 2z" fill="currentColor"></path></svg></span>Záchovná stomatologie</p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="endo"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 2h12v6H6V2zm2 8h8l-1 10H9L8 10z" fill="currentColor"></path></svg></span><span class="service-line">Reendodoncie s mikroskopem</span></p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="chirurgie"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 17l9-9 3 3-9 9H3zm12-9l3-3 3 3-3 3-3-3z" fill="currentColor"></path></svg></span><span class="service-line">Chirurgie</span></p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="beleni"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5z" fill="currentColor"></path></svg></span>Bělení</p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="estetika"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 4c4.4 0 8 3.6 8 8s-3.6 8-8 8c-2.5 0-4.7-1.1-6.2-2.9 3.2.7 6.2-1.6 7-4.8.3-1.2-1.1-2-2-1.1-1.2 1.2-3.1 2-5.3 1.4C5.2 9 8.2 4 12 4z" fill="currentColor"></path></svg></span>Estetické rekonstrukce</p></div>
+<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="hygiena">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M18 3h2v8h-2V3zM3 11h12v2H3v-2zm12-4h2v3h-2V7z" fill="currentColor"></path>
+<path d="M9 3c2.2 0 4 1.8 4 4 0 1.4-.6 2.5-1.4 3.6-.5.7-1 1.4-1.3 2.2-.2.6-.4 1.3-.5 2-.2 1.1-1.7 1.2-2 0-.4-1.4-.6-2.1-1.1-2.9-.4-.6-.9-1.2-1.4-1.8C3.9 8.8 3.6 7.9 3.6 7.3 3.6 4.8 6 3 9 3z" fill="currentColor" opacity=".85"></path>
+</svg></span><span class="service-line">Dentální hygiena</span></p></div>
+<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="implant">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M7 2h10v5a5 5 0 0 1-5 5H7V2z" fill="currentColor"></path>
+<path d="M9 14h6l-1 2H8l1-2zm-2 4h8l-1 2H6l1-2z" fill="currentColor"></path>
+</svg></span><span class="service-line">Implantologie</span></p></div>
+<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="protetika">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 9l4-3 4 2 4-2 4 3v4H4V9z" fill="currentColor"></path>
+<path d="M6 19h12v2H6z" fill="currentColor"></path>
+</svg></span><span class="service-line">Protetika</span></p></div>
+<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="zachovna">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2c3.5 0 6 2.7 6 5.8 0 2.4-.9 3.9-2 5.3-.6.8-1.2 1.6-1.6 2.6-.3.8-.5 1.7-.7 2.8-.3 1.6-2.5 1.8-3 0-.5-1.8-.8-2.8-1.5-3.8-.5-.8-1.2-1.6-1.9-2.4C5.4 10.1 5 8.7 5 7.8 5 4.7 8.5 2 12 2z" fill="currentColor"></path>
+<rect fill="#fff" height="2.2" width="3.2" x="8.8" y="7.2"></rect>
+</svg></span>Záchovná stomatologie</p></div>
+<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="endo">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2c3.5 0 6 2.7 6 5.8 0 2.4-.9 3.9-2 5.3-.6.8-1.2 1.6-1.6 2.6-.3.8-.5 1.7-.7 2.8-.3 1.6-2.5 1.8-3 0-.5-1.8-.8-2.8-1.5-3.8-.5-.8-1.2-1.6-1.9-2.4C5.4 10.1 5 8.7 5 7.8 5 4.7 8.5 2 12 2z" fill="currentColor"></path>
+<path d="M10 8c.5 1.5.5 3.5 0 5m4-5c.5 1.5.5 3.5 0 5" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.4"></path>
+</svg></span><span class="service-line">Reendodoncie s mikroskopem</span></p></div>
+<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="chirurgie">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2c3.5 0 6 2.7 6 5.8 0 2.4-.9 3.9-2 5.3-.6.8-1.2 1.6-1.6 2.6-.3.8-.5 1.7-.7 2.8-.3 1.6-2.5 1.8-3 0-.5-1.8-.8-2.8-1.5-3.8-.5-.8-1.2-1.6-1.9-2.4C5.4 10.1 5 8.7 5 7.8 5 4.7 8.5 2 12 2z" fill="currentColor"></path>
+<path d="M3 19l6-4 1 2-4 3H3z" fill="currentColor"></path>
+</svg></span><span class="service-line">Chirurgie</span></p></div>
+<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="beleni">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2c3.5 0 6 2.7 6 5.8 0 2.4-.9 3.9-2 5.3-.6.8-1.2 1.6-1.6 2.6-.3.8-.5 1.7-.7 2.8-.3 1.6-2.5 1.8-3 0-.5-1.8-.8-2.8-1.5-3.8-.5-.8-1.2-1.6-1.9-2.4C5.4 10.1 5 8.7 5 7.8 5 4.7 8.5 2 12 2z" fill="currentColor"></path>
+<path d="M17 6l1.2 3L21 10l-2.8 1-1.2 3-1.2-3L13 10l2.8-1L17 6z" fill="#fff"></path>
+</svg></span>Bělení</p></div>
+<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="estetika">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2c3.5 0 6 2.7 6 5.8 0 2.4-.9 3.9-2 5.3-.6.8-1.2 1.6-1.6 2.6-.3.8-.5 1.7-.7 2.8-.3 1.6-2.5 1.8-3 0-.5-1.8-.8-2.8-1.5-3.8-.5-.8-1.2-1.6-1.9-2.4C5.4 10.1 5 8.7 5 7.8 5 4.7 8.5 2 12 2z" fill="currentColor"></path>
+<path d="M16.5 8.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7.7-1.8z" fill="#fff"></path>
+</svg></span>Estetické rekonstrukce</p></div>
 </div>
 </section>
 <section id="tym">
