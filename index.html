@@ -319,30 +319,34 @@ img.logo{
 }
 </style><style>
 
-/* === CDent: fix Služby layout === */
-#sluzby.services-modern{
-  background:#f5efe3; /* beige like team */
-  padding:60px 20px;
+/* === CDent: Služby fix v2 === */
+:root{ --cdent-beige:#f5efe3; } /* unified beige */
+#sluzby.services-modern,
+#tym {
+  background: var(--cdent-beige);
 }
 #sluzby h2{
   text-align:center;
-  margin:0 auto 28px;
+  margin: 0 auto 28px;
 }
 #sluzby .services-wrap{
-  max-width:1200px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap:24px;
-  justify-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 26px;
+  justify-items: start;     /* start at left edge */
+}
+#sluzby .service-card{
+  text-align:left;
 }
 #sluzby .service-card p{ display:none; } /* hide descriptions */
-#sluzby .service-card{ text-align:center; }
 
+/* responsive */
 @media (max-width: 1024px){
   #sluzby .services-wrap{ grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
-@media (max-width: 600px){
+@media (max-width: 640px){
   #sluzby .services-wrap{ grid-template-columns: 1fr; }
 }
 
