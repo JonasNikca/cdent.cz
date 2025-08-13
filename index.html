@@ -318,75 +318,23 @@ img.logo{
   img.logo{ display:block; margin:0 auto; max-width: clamp(120px, 32vw, 200px); position: relative; top: -14px; transform: translateY(-6px); }
 }
 </style><style>
-
-/* === CDent: Služby fix v2 === */
-:root{ --cdent-beige:#f5efe3; } /* unified beige */
-#sluzby.services-modern,
-#tym {
-  background: var(--cdent-beige);
-}
-#sluzby h2{
-  text-align:center;
-  margin: 0 auto 28px;
-}
-#sluzby .services-wrap{
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
+/* === CDent: requested tweaks (2025-08-13) === */
+.services-modern .services-wrap{
+  display:grid;
   grid-template-columns: repeat(3, minmax(0,1fr));
-  gap: 26px;
-  justify-items: start;     /* start at left edge */
+  gap: 20px;
+  margin-top: 16px;
 }
-#sluzby .service-card{
-  text-align:left;
+@media (max-width: 900px){
+  .services-modern .services-wrap{ grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
-#sluzby .service-card p{ display:none; } /* hide descriptions */
-
-/* responsive */
-@media (max-width: 1024px){
-  #sluzby .services-wrap{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+@media (max-width: 560px){
+  .services-modern .services-wrap{ grid-template-columns: 1fr; }
 }
-@media (max-width: 640px){
-  #sluzby .services-wrap{ grid-template-columns: 1fr; }
-}
-
-</style>
-
-<style id="cdent-overrides">
-/* Jednotné pozadí jako „Ukázky prací“ */
-body { background: #eaf6fb !important; }
-
-/* Zarovnání a rozestupy nadpisů sekcí */
-section > h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin: 0 auto 20px;
-  line-height: 1.2;
-}
-
-/* Jednoduchý přehled služeb – štítky pod nadpisem */
-#sluzby { padding: 3em 2em; }
-#sluzby .services-simple {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px 18px;
-  max-width: 1100px;
-  margin: 12px auto 0;
-  padding: 0;
-  list-style: none;
-}
-#sluzby .services-simple li {
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: #ffffff;
-  border: 1px solid rgba(2,6,23,0.08);
-  box-shadow: 0 1px 2px rgba(2,6,23,0.04);
-  font-weight: 600;
-}
-</style>
-
-</head>
+/* Uniform beige background matching team section */
+:root{ --cdent-beige: #f5efe6; }
+body, #sluzby, #tym{ background: var(--cdent-beige) !important; }
+</style></head>
 <body>
 <header class="hero">
 <img alt="CDent logo" class="logo" src="assets/img/logo.jpeg"/>
@@ -404,19 +352,40 @@ section > h2 {
 <li><button aria-label="Přepnout jazyk" id="lang-toggle">EN</button></li>
 </ul><a class="cta-call" href="tel:+420272735268">Objednat: 272 735 268</a>
 </nav>
+<section class="services-modern" id="sluzby">
+<h2 style="text-align:center; margin-bottom: 24px">Služby</h2>
+<div class="services-wrap">
+<div class="service-card">
+<div class="icon" style="background:linear-gradient(135deg,#3b82f6,#06b6d4)">🪥</div>
+<h3>Dentální hygiena</h3>
 
-<section id="sluzby">
-<h2>Služby</h2>
-<ul class="services-simple">
-  <li>Dentální hygiena</li>
-  <li>Implantologie</li>
-  <li>Estetická stomatologie</li>
-  <li>Mikroskopická endodoncie</li>
-  <li>Péče o děti</li>
-  <li>Chirurgie</li>
-  <li>Protetika</li>
-  <li>Záchovná stomatologie</li>
-</ul>
+</div>
+<div class="service-card">
+<div class="icon" style="background:linear-gradient(135deg,#10b981,#14b8a6)">🦷</div>
+<h3>Implantologie</h3>
+
+</div>
+<div class="service-card">
+<div class="icon" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)">💎</div>
+<h3>Estetická stomatologie</h3>
+
+</div>
+<div class="service-card">
+<div class="icon" style="background:linear-gradient(135deg,#ec4899,#f43f5e)">🔬</div>
+<h3>Mikroskopická endodoncie</h3>
+
+</div>
+<div class="service-card">
+<div class="icon" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">👶</div>
+<h3>Péče o děti</h3>
+
+</div>
+<div class="service-card">
+<div class="icon" style="background:linear-gradient(135deg,#ef4444,#f87171)">🔪</div>
+<h3>Chirurgie</h3>
+
+</div>
+</div>
 </section>
 <style>
   .services-modern{
