@@ -351,6 +351,41 @@ img.logo{
 }
 
 </style>
+
+<style id="cdent-overrides">
+/* Jednotné pozadí jako „Ukázky prací“ */
+body { background: #eaf6fb !important; }
+
+/* Zarovnání a rozestupy nadpisů sekcí */
+section > h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0 auto 20px;
+  line-height: 1.2;
+}
+
+/* Jednoduchý přehled služeb – štítky pod nadpisem */
+#sluzby { padding: 3em 2em; }
+#sluzby .services-simple {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 18px;
+  max-width: 1100px;
+  margin: 12px auto 0;
+  padding: 0;
+  list-style: none;
+}
+#sluzby .services-simple li {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid rgba(2,6,23,0.08);
+  box-shadow: 0 1px 2px rgba(2,6,23,0.04);
+  font-weight: 600;
+}
+</style>
+
 </head>
 <body>
 <header class="hero">
@@ -370,40 +405,18 @@ img.logo{
 </ul><a class="cta-call" href="tel:+420272735268">Objednat: 272 735 268</a>
 </nav>
 
-<section class="services-modern" id="sluzby">
+<section id="sluzby">
 <h2>Služby</h2>
-<div class="services-wrap">
-<div class="service-card">
-<div class="icon" style="background:linear-gradient(135deg,#3b82f6,#06b6d4)">🪥</div>
-<h3>Dentální hygiena</h3>
-<p>Profesionální odstranění zubního kamene a pigmentací, edukace a prevence.</p>
-</div>
-<div class="service-card">
-<div class="icon" style="background:linear-gradient(135deg,#10b981,#14b8a6)">🦷</div>
-<h3>Implantologie</h3>
-<p>Šetrná náhrada chybějících zubů titanovými implantáty, včetně korunek.</p>
-</div>
-<div class="service-card">
-<div class="icon" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)">💎</div>
-<h3>Estetická stomatologie</h3>
-<p>Bělení a estetické kompozitní rekonstrukce pro přirozený, jasný úsměv.</p>
-</div>
-<div class="service-card">
-<div class="icon" style="background:linear-gradient(135deg,#ec4899,#f43f5e)">🔬</div>
-<h3>Mikroskopická endodoncie</h3>
-<p>Precizní ošetření kořenových kanálků pod zvětšením pro dlouhodobý výsledek.</p>
-</div>
-<div class="service-card">
-<div class="icon" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">👶</div>
-<h3>Péče o děti</h3>
-<p>Citlivý přístup k dětským pacientům, prevence a bezbolestné ošetření.</p>
-</div>
-<div class="service-card">
-<div class="icon" style="background:linear-gradient(135deg,#ef4444,#f87171)">🔪</div>
-<h3>Chirurgie</h3>
-<p>Drobné chirurgické výkony – extrakce, resekce, plastiky měkkých tkání.</p>
-</div>
-</div>
+<ul class="services-simple">
+  <li>Dentální hygiena</li>
+  <li>Implantologie</li>
+  <li>Estetická stomatologie</li>
+  <li>Mikroskopická endodoncie</li>
+  <li>Péče o děti</li>
+  <li>Chirurgie</li>
+  <li>Protetika</li>
+  <li>Záchovná stomatologie</li>
+</ul>
 </section>
 <style>
   .services-modern{
