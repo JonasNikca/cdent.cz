@@ -1,221 +1,120 @@
-
 <!DOCTYPE html>
-
 <html lang="cs">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>C:Dent – Stomatologická klinika</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&amp;display=swap" rel="stylesheet"/>
-<style>
-    :root {
-      --primary: #008cdd;
-      --text: #012b39;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      color: var(--text);
-      background: #f9f9f9;
-    }
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.95);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      z-index: 999;
-    }
-    .logo {
-      font-weight: 600;
-      font-size: 1.3rem;
-      color: var(--primary);
-    }
-    nav a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-      cursor: pointer;
-    }
-    .hero {
-      background: url('assets/family-bg.jpg') center/cover no-repeat;
-      filter: grayscale(100%);
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      position: relative;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top:0; left:0; right:0; bottom:0;
-      background: rgba(0, 140, 221, 0.45);
-      z-index: 1;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      color: white;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-    .hero a {
-      background: white;
-      color: var(--primary);
-      padding: 0.7rem 1.4rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem 1.5rem;
-    }
-    section {
-      margin-top: 3rem;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-    .service {
-      background: white;
-      padding: 1.2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      text-align: center;
-      transition: transform 0.2s ease;
-    }
-    .service:hover {
-      transform: translateY(-5px);
-    }
-    .service i {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-    .slider-container {
-      position: relative;
-      max-width: 700px;
-      margin: 2rem auto;
-      aspect-ratio: 16/9;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-    .slider-container img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .after {
-      clip-path: inset(0 50% 0 0);
-      z-index: 2;
-      transition: clip-path .2s ease;
-    }
-    .slider-range {
-      width: 100%;
-      margin-top: 1rem;
-    }
-    form input, form textarea, form button {
-      display:block;
-      width:100%;
-      padding:.6rem;
-      margin-bottom:1rem;
-      border:1px solid #ccc;
-      border-radius:4px;
-      font-family:inherit;
-    }
-    form button {
-      background:var(--primary);
-      color:#fff;
-      border:none;
-      font-weight:600;
-      cursor:pointer;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CDent - Rodinná stomatologie</title>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-<div class="logo">C:Dent</div>
-<nav>
-<a href="#services">Služby</a>
-<a href="#work">Ukázky</a>
-<a href="#contact">Kontakt</a>
-</nav>
-</header>
-<section class="hero">
-<div class="hero-content">
-<h1>Rodinná stomatologická péče na Vinohradech</h1>
-<p>Komplexní zubní služby – prevence, estetika i moderní mikroskopie</p>
-<a href="#contact">Objednat konzultaci</a>
+    <header class="hero">
+        <img src="assets/img/logo.jpeg" alt="CDent logo" class="logo"/>
+        <div class="hero-text">
+            <h1>Rodinná klinika v srdci Vinohrad</h1>
+            <p>Moderní stomatologické centrum s individuálním přístupem. Přijímáme nové pacienty. Máme smlouvu s VZP a OZP.</p>
+        <div class="hero-cta"><a class="btn primary" href="tel:+420272735268">Zavolat</a><a class="btn ghost" href="mailto:cdentceleryn@gmail.com">Napsat e‑mail</a></div></div>
+    </header>
+
+    <nav>
+        <button class="nav-toggle" aria-label="Otevřít menu">☰</button><ul class="nav-list">
+            <li><a href="#sluzby">Služby</a></li>
+            <li><a href="#tym">Náš tým</a></li>
+            <li><a href="#ukazky">Ukázky prací</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+            <li><button id="lang-toggle" aria-label="Přepnout jazyk">EN</button></li>
+        </ul><a class="cta-call" href="tel:+420272735268">Objednat: 272 735 268</a>
+    </nav>
+
+    
+<section id="sluzby">
+    <h2>Služby</h2>
+    <div class="grid">
+        <div class="service-card"><img src="assets/img/icon-toothbrush-color.svg" alt="Dentální hygiena"/><p>Dentální hygiena</p></div>
+        <div class="service-card"><img src="assets/img/icon-implant-color.svg" alt="Implantologie"/><p>Implantologie</p></div>
+        <div class="service-card"><img src="assets/img/icon-prosthetics-color.svg" alt="Protetika"/><p>Protetika</p></div>
+        <div class="service-card"><img src="assets/img/icon-tooth-color.svg" alt="Záchovná stomatologie"/><p>Záchovná stomatologie</p></div>
+        <div class="service-card"><img src="assets/img/icon-microscope-color.svg" alt="Reendodoncie"/><p>Reendodoncie s mikroskopem</p></div>
+        <div class="service-card"><img src="assets/img/icon-surgery-color.svg" alt="Chirurgie"/><p>Chirurgie</p></div>
+        <div class="service-card"><img src="assets/img/icon-bleaching-color.svg" alt="Bělení"/><p>Bělení</p></div>
+        <div class="service-card"><img src="assets/img/icon-esthetics-color.svg" alt="Estetické rekonstrukce"/><p>Estetické rekonstrukce</p></div>
+    </div>
+</section>
+
+
+    <section id="tym">
+        <h2>Náš tým</h2>
+        <div class="team">
+            <div class="member">
+                <img src="assets/img/celeryn.jpg" alt="MDDr. Jonáš Celerýn"/>
+                <h3>MDDr. Jonáš Celerýn</h3>
+                <p>Záchovná stomatologie, protetika, implantologie, chirurgie, estetické rekonstrukce</p>
+            </div>
+            <div class="member">
+                <img src="assets/img/bartonova.jpg" alt="doc. MUDr. Marie Bartoňová, CSc"/>
+                <h3>doc. MUDr. Marie Bartoňová, CSc</h3>
+                <p>Protetika, funkční a estetické rekonstrukce chrupu, vrozené a získané vady, senioři</p>
+            </div>
+            <div class="member">
+                <img src="assets/img/celerynova.jpg" alt="MDDr. Nikola Celerýnová"/>
+                <h3>MDDr. Nikola Celerýnová</h3>
+                <p>Záchovná stomatologie, reendodoncie s mikroskopem, pedostomatologie</p>
+            </div>
+        </div>
+    </section>
+
+    
+<section id="ukazky">
+  <h2>Ukázky prací</h2>
+  <div class="slider-gallery">
+    <div class="ic-container">
+      <img src="assets/img/smile1_before.jpg" class="ic-base" alt="Před – případ 1"/>
+      <img src="assets/img/smile1_after.jpg" class="ic-overlay" alt="Po – případ 1"/>
+      <div class="ic-handle" aria-hidden="true"></div>
+    </div>
+    <div class="ic-container">
+      <img src="assets/img/smile2_before.jpg" class="ic-base" alt="Před – případ 2"/>
+      <img src="assets/img/smile2_after.jpg" class="ic-overlay" alt="Po – případ 2"/>
+      <div class="ic-handle" aria-hidden="true"></div>
+    </div>
+    <div class="ic-container">
+      <img src="assets/img/smile3_before.jpg" class="ic-base" alt="Před – případ 3"/>
+      <img src="assets/img/smile3_after.jpg" class="ic-overlay" alt="Po – případ 3"/>
+      <div class="ic-handle" aria-hidden="true"></div>
+    </div>
+    <div class="ic-container">
+      <img src="assets/img/smile4_before.jpg" class="ic-base" alt="Před – případ 4"/>
+      <img src="assets/img/smile4_after.jpg" class="ic-overlay" alt="Po – případ 4"/>
+      <div class="ic-handle" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+
+    <section id="kontakt">
+        <h2>Kontakt</h2>
+        <p>Vinohradská 196, Praha 3, 130 00</p>
+        <p>Telefon: 272 735 268</p>
+        <p>Email: cdentceleryn@gmail.com</p>
+    
+<div class="oteviraci-doba" style="font-size: 1.2em; font-weight: bold; margin-top: 1em;">
+    <p>Otevírací doba:</p>
+    <ul style="list-style: none; padding-left: 0;">
+        <li>Pondělí: 7:30 – 20:00</li>
+        <li>Úterý: 7:30 – 20:00</li>
+        <li>Středa: 7:30 – 20:00</li>
+        <li>Čtvrtek: 7:30 – 20:00</li>
+        <li>Pátek: 7:30 – 14:00</li>
+    </ul>
 </div>
 </section>
-<main>
-<section id="services">
-<h2>Naše služby</h2>
-<div class="services-grid">
-<div class="service"><i>🦷</i><p>Preventivní prohlídky</p></div>
-<div class="service"><i>🪥</i><p>Dentální hygiena</p></div>
-<div class="service"><i>💎</i><p>Bělení zubů</p></div>
-<div class="service"><i>🛠️</i><p>Zubní protetika</p></div>
-<div class="service"><i>👶</i><p>Dětská stomatologie</p></div>
-<div class="service"><i>🔬</i><p>Mikroskopická endodoncie</p></div>
-</div>
-</section>
-<section id="work">
-<h2>Ukázky naší práce</h2>
-<div class="slider-container">
-<img alt="Před" class="before" src="assets/before.jpg"/>
-<img class="after" id="after" src="assets/after.jpg"/>
-</div>
-<input class="slider-range" max="100" min="0" type="range" value="50"/>
-</section>
-<section id="contact">
-<h2>Kontaktujte nás</h2>
-<p><strong>Adresa:</strong> Vinohradská 196, Praha 3, 130 00</p>
-<p><strong>Telefon:</strong> <a href="tel:+420272735268">272 735 268</a></p>
-<p><strong>Email:</strong> <a href="mailto:dmd@zubnidmd.cz">dmd@zubnidmd.cz</a></p>
-<form>
-<input placeholder="Vaše jméno" type="text"/>
-<input placeholder="Váš e-mail" type="email"/>
-<textarea placeholder="Zpráva..." rows="4"></textarea>
-<button type="submit">Odeslat</button>
-</form>
-</section>
-</main>
-<script>
-const slider = document.querySelector('.slider-range');
-const afterImg = document.getElementById('after');
-if (slider && afterImg) {
-  slider.addEventListener('input', e => {
-    afterImg.style.clipPath = `inset(0 ${100 - e.target.value}% 0 0)`;
-  });
-}
-</script>
+
+    <script src="assets/js/script.js"></script>
+
+<footer class="site-footer">
+  <p>&copy; CDent – Rodinná klinika v srdci Vinohrad</p>
+</footer>
 </body>
 </html>
