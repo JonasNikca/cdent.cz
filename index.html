@@ -9,186 +9,351 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<style id="unified-styles">
-
-/* === UNIFIED THEME OVERRIDES (non-destructive) === */
-:root{
-  --brand:#136ef6;
-  --brand-ink:#0b3d9a;
-  --ink:#121418;
-  --muted:#5a6270;
-  --bg:#ffffff;
-  --sec-bg:#f6f8fb;
-  --card:#ffffff;
-  --radius:18px;
-  --shadow: 0 8px 24px rgba(16,24,40,.08);
+<style>
+/* Added by automated edit: improve hero text contrast */
+.hero, .hero *,
+.hero-text, .hero-text *,
+.hero__headline, .hero__subheadline,
+.header-hero, .header-hero *,
+.intro-banner, .intro-banner * {
+  color: #ffffff !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35), 0 1px 2px rgba(0,0,0,0.3);
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
-  color:var(--ink);
-  background:var(--bg);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+.hero a.button, .hero .btn, .hero button,
+.hero .cta, .header-hero .btn, .intro-banner .btn {
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.85) !important;
 }
-/* Header / navbar */
-.unified-nav{
-  position:sticky; top:0; z-index:100;
-  backdrop-filter:saturate(180%) blur(8px);
-  background:rgba(255,255,255,.8);
-  border-bottom:1px solid rgba(2,6,23,.06);
+</style><style data-hover-compare-injected="1">
+/* Added by automated edit: hover before/after effect */
+.hover-compare {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 12px;
 }
-.unified-nav .nav-inner{
-  max-width:1200px; margin:0 auto; padding:12px 20px;
-  display:flex; align-items:center; gap:20px; justify-content:space-between;
+.hover-compare img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
-.unified-nav a{ color:var(--ink); text-decoration:none; font-weight:600 }
-.unified-nav .nav-links a{opacity:.8; margin:0 10px}
-.unified-nav .nav-links a:hover{opacity:1}
-
-/* Hero (keep existing, just ensure nice text legibility if background is a photo) */
-.unified-hero{
-  position:relative;
-  min-height:58vh;
-  display:grid; place-items:center;
-  padding:72px 20px 56px;
-  color:#fff;
-  isolation:isolate;
+.hover-compare .after {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .25s ease;
 }
-.unified-hero::after{
-  content:""; position:absolute; inset:0;
-  background:linear-gradient(180deg, rgba(0,0,0,.40), rgba(0,0,0,.30));
-  z-index:-1; border-radius:0;
+.hover-compare:hover .after,
+.hover-compare:focus-within .after {
+  opacity: 1;
 }
-.unified-hero .hero-inner{ max-width:1100px; width:100%; text-align:center }
-.unified-hero .hero-title{
-  font-weight:800; letter-spacing:.2px; line-height:1.1;
-  font-size: clamp(28px, 5vw, 48px);
-  margin:0 0 8px;
+.hover-compare.is-toggled .after {
+  opacity: 1;
 }
-.unified-hero .hero-sub{
-  font-size: clamp(16px, 2.5vw, 20px);
-  opacity:.95; margin:0 auto; max-width:800px;
+</style><style>
+/* Added: service icons */
+.svc-icon { display:inline-flex; width:28px; height:28px; margin-right:10px; vertical-align:middle; align-items:center; justify-content:center; color:#0ea5e9; }
+.svc-icon svg { width:20px; height:20px; }
+.service-line { display:flex; align-items:center; gap:.5rem; margin: .25rem 0; }
+</style><style>
+/* === Tweaks: services + logo (added) === */
+#sluzby .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
 }
-.unified-hero .hero-cta{
-  margin-top:22px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+#sluzby .service-card {
+  background: #f3f8fb; /* light bluish */
+  border: 1px solid rgba(2, 6, 23, 0.06);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 1px 2px rgba(2, 6, 23, 0.04);
+  transition: transform .15s ease, box-shadow .15s ease;
 }
-.btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:8px;
-  padding:12px 18px; border-radius:999px; font-weight:700; text-decoration:none;
-  border:1px solid transparent; box-shadow: var(--shadow);
+#sluzby .service-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.08);
 }
-.btn.primary{background:var(--brand); color:#fff}
-.btn.primary:hover{background:var(--brand-ink)}
-.btn.ghost{background:#fff; color:var(--ink); border-color:rgba(2,6,23,.08); box-shadow:none}
-.btn.ghost:hover{background:#f3f5f9}
-
-/* Section wrapper applied via JS to detected sections */
-.unified-section{
-  background:var(--sec-bg);
-  padding:56px 20px;
-  border-top:1px solid rgba(2,6,23,.06);
+#sluzby .service-card img,
+#sluzby .service-card .svc-icon svg {
+  width: 40px;
+  height: 40px;
 }
-.unified-section .section-inner{ max-width:1100px; margin:0 auto }
-.unified-section .section-title{
-  font-size: clamp(22px, 3vw, 32px);
-  line-height:1.15; margin:0 0 22px; font-weight:800; letter-spacing:.2px;
+#sluzby .service-card img {
+  display: block;
+  margin-bottom: 8px;
 }
-.unified-section .section-desc{ color:var(--muted); max-width:800px; margin:8px 0 28px }
-
-/* Cards grid (used for team & services & gallery thumbs) */
-.grid{
-  display:grid; grid-template-columns:repeat(12,1fr); gap:18px;
+/* Make inline SVG icons colorful and more visible */
+.svc-icon {
+  display:inline-flex;
+  width: 44px;
+  height: 44px;
+  margin-right: 10px;
+  align-items:center;
+  justify-content:center;
+  color: #1284d6; /* stronger blue */
 }
-@media (max-width: 1024px){ .grid{grid-template-columns:repeat(8,1fr)} }
-@media (max-width: 640px){ .grid{grid-template-columns:repeat(4,1fr)} }
-.card{
-  grid-column: span 4;
-  background:var(--card); border-radius:var(--radius);
-  box-shadow: var(--shadow); overflow:hidden; border:1px solid rgba(2,6,23,.06);
-}
-.card .media{ aspect-ratio: 4/3; width:100%; object-fit:cover; display:block }
-.card .pad{ padding:16px }
-.card h3{ margin:0 0 6px; font-size:18px }
-.card p{ margin:0; color:var(--muted); font-size:14px }
-
-/* Gallery grid */
-.gallery .card{ grid-column: span 3 }
-
-/* Contact block */
-.contact-cards .card{ grid-column: span 6 }
-.contact-list a{ color:var(--brand); text-decoration:none; font-weight:600 }
-.contact-list a:hover{ text-decoration:underline }
-
-/* Footer */
-.unified-footer{ background:#0a0d14; color:#cbd5e1; padding:32px 20px; margin-top:24px }
-.unified-footer .inner{ max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap }
-.unified-footer a{ color:#fff; opacity:.9; text-decoration:none }
-.unified-footer a:hover{ opacity:1; text-decoration:underline }
-
-
-/* Override: show "after" image only on hover (desktop) or click (mobile) */
-.before-after .after-image { opacity:0; transition:opacity .4s ease; }
-.before-after:hover .after-image,
-.before-after.active .after-image { opacity:1; }
-/* Mobile tap support */
-@media (hover:none) {
-  .before-after { cursor:pointer; }
-}
-</style>
-<style id='patch-visibility'>
-
-/* Emphasize welcome/intro text for visibility on photo */
-.unified-hero .hero-sub, .welcome-sub, .intro-sub, .hero p { 
-  color:#fff !important;
-  text-shadow: 0 2px 6px rgba(0,0,0,.55), 0 1px 2px rgba(0,0,0,.35);
+.svc-icon svg { width: 32px; height: 32px; }
+/* Service title line */
+#sluzby .service-card p {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin: 0;
   font-weight: 600;
 }
-
-</style>
-<style id='patch-visibility'>
-
-/* Before/After hover-tap reveal */
-.before-after{ position:relative; overflow:hidden; display:block }
-.before-after img{ display:block; width:100%; height:auto; }
-.before-after .ba-after,
-.before-after img.after{ 
-  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
-  clip-path: inset(0 100% 0 0); transition: clip-path .35s ease;
+/* Mobile logo adjustment for blue/white mark */
+@media (max-width: 640px) {
+  img.logo {
+    position: relative;
+    top: 4px;
+    transform: translateY(2px);
+  }
 }
-.before-after:hover .ba-after,
-.before-after:hover img.after{ clip-path: inset(0 0 0 0) }
-.before-after.active .ba-after,
-.before-after.active img.after{ clip-path: inset(0 0 0 0) }
-/* Optional handle (hidden unless present in HTML) */
-.before-after .ba-handle{ position:absolute; top:0; bottom:0; width:2px; left:50%; background:rgba(255,255,255,.9); box-shadow:0 0 0 1px rgba(0,0,0,.2) }
+</style><style>
+/* Colored icons styling */
+.svc-icon {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.svc-icon svg { width: 32px; height: 32px; }
+/* Mobile logo sizing */
+@media (max-width: 640px) {
+  img.logo {
+    max-width: 140px;
+    height: auto;
+  }
+}
+</style><style>
+/* === CDent tweaks v3 === */
+/* Service grid compact cards */
+#sluzby .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+#sluzby .service-card {
+  background: #eef6fb; /* světle modré pozadí */
+  border: 1px solid rgba(2,6,23,.06);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 2px rgba(2,6,23,.04);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+#sluzby .service-card:hover{ transform: translateY(-2px); box-shadow: 0 6px 16px rgba(2,6,23,.08); }
+#sluzby .service-card p{ margin:0; display:flex; align-items:center; gap:.75rem; font-weight:600; }
+/* Colorful prominent icons */
+.svc-icon{ display:inline-flex; width:44px; height:44px; align-items:center; justify-content:center; }
+.svc-icon svg{ width:34px; height:34px; }
+/* Default icon color */
+.svc-icon{ color:#0ea5e9; }
+/* Specific accent per service (optional via data-svc attr) */
+.svc-icon[data-svc="hygiena"]{ color:#10b981; }      /* green */
+.svc-icon[data-svc="implant"]{ color:#3b82f6; }      /* blue */
+.svc-icon[data-svc="protetika"]{ color:#f59e0b; }    /* amber */
+.svc-icon[data-svc="zachovna"]{ color:#a855f7; }     /* purple */
+.svc-icon[data-svc="endo"]{ color:#ef4444; }         /* red */
+.svc-icon[data-svc="chirurgie"]{ color:#14b8a6; }    /* teal */
+.svc-icon[data-svc="beleni"]{ color:#eab308; }       /* yellow */
+.svc-icon[data-svc="estetika"]{ color:#ec4899; }     /* pink */
+/* Mobile logo sizing & slight shift */
+img.logo{ max-width: clamp(120px, 38vw, 220px); height:auto; }
+@media (max-width: 640px){
+  img.logo{ position: relative; top: 2px; transform: translateY(2px); }
+}
+</style><style>
+/* === CDent tweaks v4 === */
+/* Mobile logo: center and move up */
+.header, header { position: relative; }
+img.logo{
+  display:block;
+  margin: 0 auto;            /* center horizontally */
+  max-width: clamp(120px, 34vw, 200px);
+  height:auto;
+}
+@media (max-width: 640px){
+  img.logo{
+    position: relative;
+    top: -6px;               /* move up */
+    transform: translateY(-4px);
+  }
+}
 
-</style>
-<style id='patch-white-text'>
-.white-text{ color:#fff !important; text-shadow:0 2px 6px rgba(0,0,0,.55) }
-</style>
-</head>
+/* Service cards */
+#sluzby .grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:16px; }
+#sluzby .service-card{
+  background:#eef6fb;
+  border:1px solid rgba(2,6,23,.06);
+  border-radius:14px;
+  padding:14px 16px;
+  box-shadow:0 1px 2px rgba(2,6,23,.04);
+}
+#sluzby .service-card p{ margin:0; display:flex; align-items:center; gap:.75rem; font-weight:600; }
+.svc-icon{ display:inline-flex; width:44px; height:44px; align-items:center; justify-content:center; }
+.svc-icon svg{ width:34px; height:34px; }
+/* Color accents per discipline */
+.svc-icon[data-svc="hygiena"]{ color:#0ea5e9; }
+.svc-icon[data-svc="implant"]{ color:#2563eb; }
+.svc-icon[data-svc="protetika"]{ color:#f59e0b; }
+.svc-icon[data-svc="zachovna"]{ color:#10b981; }
+.svc-icon[data-svc="endo"]{ color:#ef4444; }
+.svc-icon[data-svc="chirurgie"]{ color:#14b8a6; }
+.svc-icon[data-svc="beleni"]{ color:#eab308; }
+.svc-icon[data-svc="estetika"]{ color:#ec4899; }
+</style><style>
+/* Mobile logo higher */
+@media (max-width: 640px){
+  img.logo{
+    display:block;
+    margin:0 auto;
+    max-width: clamp(120px, 34vw, 200px);
+    position:relative;
+    top:-10px;
+  }
+}
+/* Service cards */
+#sluzby .service-card{
+  background:#eef6fb;
+  border:1px solid rgba(0,0,0,.05);
+  border-radius:14px;
+  padding:14px 16px;
+  box-shadow:0 1px 3px rgba(0,0,0,.08);
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+#sluzby .service-card svg{
+  width:38px;
+  height:38px;
+  flex-shrink:0;
+}
+</style><style>
+/* === CDent tweaks v5 === */
+/* Center logo and move higher on mobile */
+img.logo{
+  display:block;
+  margin:0 auto;
+  max-width: clamp(120px, 32vw, 200px);
+  height:auto;
+}
+@media (max-width: 640px){
+  img.logo{
+    position: relative;
+    top: -14px;         /* higher than before */
+    transform: translateY(-6px);
+  }
+}
+
+/* Service card look */
+#sluzby .service-card{
+  background:#eef6fb;
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:14px;
+  padding:14px 16px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);
+  display:flex; align-items:center; gap:12px;
+}
+#sluzby .service-card p{ margin:0; font-weight:600; display:flex; align-items:center; gap:.75rem; }
+.svc-icon{ display:inline-flex; width:42px; height:42px; align-items:center; justify-content:center; }
+.svc-icon svg{ width:34px; height:34px; }
+/* Color accents per service */
+.svc-icon[data-svc="hygiena"]{ color:#0ea5e9; }      /* blue */
+.svc-icon[data-svc="implant"]{ color:#64748b; }      /* slate gray */
+.svc-icon[data-svc="protetika"]{ color:#f59e0b; }    /* amber */
+.svc-icon[data-svc="zachovna"]{ color:#0ea5e9; }     /* blue */
+.svc-icon[data-svc="endo"]{ color:#ef4444; }         /* red */
+.svc-icon[data-svc="chirurgie"]{ color:#14b8a6; }    /* teal */
+.svc-icon[data-svc="beleni"]{ color:#3b82f6; }       /* blue */
+.svc-icon[data-svc="estetika"]{ color:#ec4899; }     /* pink */
+</style></head>
 <body>
 <header class="hero">
 <img alt="CDent logo" class="logo" src="assets/img/logo.jpeg"/>
 <div class="hero-text">
 <h1>Rodinná klinika v srdci Vinohrad</h1>
-<p><span class="white-text">Moderní stomatologické centrum s individuálním přístupem. Přijímáme nové pacienty. Máme smlouvu s VZP a OZP.</span></p>
-<div class="hero-cta"><a class="btn primary" href="tel:<a href="tel:+420272735268">+420272735268</a>">Zavolat</a><a class="btn ghost" href="mailto:<a href="mailto:cdentceleryn@gmail.com">cdentceleryn@gmail.com</a>">Napsat e‑mail</a></div></div>
+<p style="color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.35); color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.35); color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.35)">Moderní stomatologické centrum s individuálním přístupem. Přijímáme nové pacienty. Máme smlouvu s VZP a OZP.</p>
+<div class="hero-cta"><a class="btn primary" href="tel:272735268" style="color:#fff; border:1px solid rgba(255,255,255,0.85); background:transparent">Zavolat</a><a class="btn ghost" href="mailto:cdentceleryn@gmail.com" style="color:#fff; border:1px solid rgba(255,255,255,0.85); background:transparent">Napsat e‑mail</a></div></div>
 </header>
 <nav>
 <button aria-label="Otevřít menu" class="nav-toggle">☰</button><ul class="nav-list">
-<li></li>
+<li><a href="#sluzby">Služby</a></li>
 <li><a href="#tym">Náš tým</a></li>
 <li><a href="#ukazky">Ukázky prací</a></li>
 <li><a href="#kontakt">Kontakt</a></li>
 <li><button aria-label="Přepnout jazyk" id="lang-toggle">EN</button></li>
-</ul><a class="cta-call" href="tel:<a href="tel:+420272735268">+420272735268</a>">Objednat: <a href="tel:272735268">272 735 268</a></a>
+</ul><a class="cta-call" href="tel:+420272735268">Objednat: 272 735 268</a>
 </nav>
-
+<section id="sluzby">
+<h2>Služby</h2>
+<div class="grid">
+<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="hygiena"><svg aria-hidden="true" viewbox="0 0 24 24">
+<rect fill="currentColor" height="4" rx="2" width="14" x="2" y="10"></rect>
+<rect fill="currentColor" height="8" rx="1" width="2" x="16" y="8"></rect>
+<rect fill="currentColor" height="8" rx="1" width="2" x="19" y="8"></rect>
+</svg></span>
+<svg viewbox="0 0 24 24">
+<path d="M2 6h14v4H2z" fill="#0ea5e9"></path>
+<rect fill="#2563eb" height="8" width="2" x="16" y="4"></rect>
+</svg><span class="service-line">Dentální hygiena</span></p></div>
+<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="implant"><svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M8 13h8l-1.2 2H9.2L8 13zm-.8 4h9.6L15.8 19H8.2L7.2 17z" fill="currentColor"></path>
+<path d="M8 3h8v5a4 4 0 0 1-4 4H8V3z" fill="currentColor" opacity=".65"></path>
+</svg></span>
+<svg viewbox="0 0 24 24">
+<path d="M8 2h8v6a4 4 0 0 1-4 4H8V2z" fill="#94a3b8"></path>
+<path d="M9 14h6l-1 2H8l1-2z" fill="#64748b"></path>
+</svg><span class="service-line">Implantologie</span></p></div>
+<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="protetika"><svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 10l4-3 4 2 4-2 4 3v5H4v-5z" fill="currentColor"></path>
+<rect fill="currentColor" height="2" rx="1" width="12" x="6" y="18"></rect>
+</svg></span>
+<svg viewbox="0 0 24 24">
+<path d="M4 9l4-3 4 2 4-2 4 3v4H4V9z" fill="#fbbf24"></path>
+<path d="M6 18h12v2H6z" fill="#d97706"></path>
+</svg><span class="service-line">Protetika</span></p></div>
+<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="zachovna"><svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2c3.5 0 6 2.7 6 5.8 0 2.4-.9 3.9-2 5.3-.6.8-1.2 1.6-1.6 2.6-.3.8-.5 1.7-.7 2.8-.3 1.6-2.5 1.8-3 0-.5-1.8-.8-2.8-1.5-3.8-.5-.8-1.2-1.6-1.9-2.4C5.4 10.1 5 8.7 5 7.8 5 4.7 8.5 2 12 2z" fill="none" stroke="currentColor" stroke-width="1.6"></path>
+<rect fill="currentColor" height="2" width="3.2" x="9" y="7"></rect>
+</svg></span>
+<svg viewbox="0 0 24 24">
+<path d="M12 2c3.5 0 6 2.7 6 5.8 0 2.4-.9 3.9-2 5.3-.6.8-1.2 1.6-1.6 2.6-.3.8-.5 1.7-.7 2.8-.3 1.6-2.5 1.8-3 0-.5-1.8-.8-2.8-1.5-3.8-.5-.8-1.2-1.6-1.9-2.4C5.4 10.1 5 8.7 5 7.8 5 4.7 8.5 2 12 2z" fill="#ffffff" stroke="#0ea5e9" stroke-width="1.5"></path>
+<rect fill="#0ea5e9" height="2" width="3" x="9" y="7"></rect>
+</svg>Záchovná stomatologie</p></div>
+<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="endo"><svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2c3.5 0 6 2.7 6 5.8 0 2.4-.9 3.9-2 5.3-.6.8-1.2 1.6-1.6 2.6-.3.8-.5 1.7-.7 2.8-.3 1.6-2.5 1.8-3 0-.5-1.8-.8-2.8-1.5-3.8-.5-.8-1.2-1.6-1.9-2.4C5.4 10.1 5 8.7 5 7.8 5 4.7 8.5 2 12 2z" fill="none" stroke="currentColor" stroke-width="1.6"></path>
+<path d="M10 8c.5 1.5.5 3.5 0 5M14 8c.5 1.5.5 3.5 0 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.4"></path>
+</svg></span>
+<svg viewbox="0 0 24 24">
+<path d="M12 2c3.5 0 6 2.7 6 5.8..." fill="#ffffff" stroke="#ef4444" stroke-width="1.5"></path>
+<path d="M10 8v5M14 8v5" fill="none" stroke="#ef4444" stroke-width="1.2"></path>
+</svg><span class="service-line">Reendodoncie s mikroskopem</span></p></div>
+<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="chirurgie"><svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M3 18l8-8 3 3-8 8H3z" fill="currentColor"></path>
+<path d="M15 5l3-3 3 3-3 3-3-3z" fill="currentColor" opacity=".7"></path>
+</svg></span>
+<svg viewbox="0 0 24 24">
+<path d="M4 18l6-6 4 4-6 6H4z" fill="#14b8a6"></path>
+<path d="M15 5l3-3 3 3-3 3-3-3z" fill="#0d9488"></path>
+</svg><span class="service-line">Chirurgie</span></p></div>
+<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="beleni"><svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 4l1.6 4 4 1.6-4 1.6L12 16l-1.6-4-4-1.6 4-1.6L12 4z" fill="currentColor"></path>
+<path d="M18 6l.9 2.2L21 9l-2.1.8L18 12l-.9-2.2L15 9l2.1-.8L18 6z" fill="currentColor" opacity=".6"></path>
+</svg></span>
+<svg viewbox="0 0 24 24">
+<path d="M12 2l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#3b82f6"></path>
+</svg>Bělení</p></div>
+<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="estetika"><svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 14s2.5 5 8 5 8-5 8-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg></span>
+<svg viewbox="0 0 24 24">
+<path d="M4 15s2 4 8 4 8-4 8-4" fill="none" stroke="#ec4899" stroke-width="2"></path>
+</svg>Estetické rekonstrukce</p></div>
+</div>
+</section>
 <section id="tym">
 <h2>Náš tým</h2>
 <div class="team">
@@ -212,33 +377,17 @@ body{
 <section id="ukazky">
 <h2>Ukázky prací</h2>
 <div class="slider-gallery">
-<div class="ic-container">
-<img alt="Před – případ 1" class="ic-base" src="assets/img/smile1_before.jpg"/>
-<img alt="Po – případ 1" class="ic-overlay" src="assets/img/smile1_after.jpg"/>
-<div aria-hidden="true" class="ic-handle"></div>
-</div>
-<div class="ic-container">
-<img alt="Před – případ 2" class="ic-base" src="assets/img/smile2_before.jpg"/>
-<img alt="Po – případ 2" class="ic-overlay" src="assets/img/smile2_after.jpg"/>
-<div aria-hidden="true" class="ic-handle"></div>
-</div>
-<div class="ic-container">
-<img alt="Před – případ 3" class="ic-base" src="assets/img/smile3_before.jpg"/>
-<img alt="Po – případ 3" class="ic-overlay" src="assets/img/smile3_after.jpg"/>
-<div aria-hidden="true" class="ic-handle"></div>
-</div>
-<div class="ic-container">
-<img alt="Před – případ 4" class="ic-base" src="assets/img/smile4_before.jpg"/>
-<img alt="Po – případ 4" class="ic-overlay" src="assets/img/smile4_after.jpg"/>
-<div aria-hidden="true" class="ic-handle"></div>
-</div>
+<div class="ic-container"><div aria-label="Před / po – najeďte myší nebo klepněte" class="hover-compare" tabindex="0"><img alt="Před – případ 1" src="assets/img/smile1_before.jpg"/><div class="after"><img alt="Po – případ 1" src="assets/img/smile1_after.jpg"/></div></div></div>
+<div class="ic-container"><div aria-label="Před / po – najeďte myší nebo klepněte" class="hover-compare" tabindex="0"><img alt="Před – případ 2" src="assets/img/smile2_before.jpg"/><div class="after"><img alt="Po – případ 2" src="assets/img/smile2_after.jpg"/></div></div></div>
+<div class="ic-container"><div aria-label="Před / po – najeďte myší nebo klepněte" class="hover-compare" tabindex="0"><img alt="Před – případ 3" src="assets/img/smile3_before.jpg"/><div class="after"><img alt="Po – případ 3" src="assets/img/smile3_after.jpg"/></div></div></div>
+<div class="ic-container"><div aria-label="Před / po – najeďte myší nebo klepněte" class="hover-compare" tabindex="0"><img alt="Před – případ 4" src="assets/img/smile4_before.jpg"/><div class="after"><img alt="Po – případ 4" src="assets/img/smile4_after.jpg"/></div></div></div>
 </div>
 </section>
 <section id="kontakt">
 <h2>Kontakt</h2>
 <p>Vinohradská 196, Praha 3, 130 00</p>
-<p>Telefon: <a href="tel:272735268">272 735 268</a></p>
-<p>Email: <a href="mailto:cdentceleryn@gmail.com">cdentceleryn@gmail.com</a></p>
+<p>Telefon: 272 735 268</p>
+<p><a href="mailto:cdentceleryn@gmail.com">cdentceleryn@gmail.com</a></p>
 <div class="oteviraci-doba" style="font-size: 1.2em; font-weight: bold; margin-top: 1em;">
 <p>Otevírací doba:</p>
 <ul style="list-style: none; padding-left: 0;">
@@ -254,83 +403,11 @@ body{
 <footer class="site-footer">
 <p>© CDent – Rodinná klinika v srdci Vinohrad</p>
 </footer>
-<script>
-/* Auto-detect sections by ID or heading text and add uniform classes */
-(function(){
-  const sectionKeys = [
-    {id:'nas-tym', labels:[/n(a|á)š t(ý|y)m/i]},
-    {id:'ukazky-praci', labels:[/uk(á|a)zky pr(a|á)c(i|í)/i]},
-    {id:'sluzby', labels:[/slu(z|ž)by/i]},
-    {id:'kontakty', labels:[/kontakt(y|)/i]},
-  ];
-  const all = Array.from(document.querySelectorAll('section, div, main, article'));
-  function labelMatch(el, labelRegexes){
-    // Scan direct heading children
-    const hs = el.querySelectorAll(':scope > h1, :scope > h2, :scope > h3, :scope > header h1, :scope > header h2, :scope > header h3');
-    return Array.from(hs).some(h => labelRegexes.some(rx => rx.test(h.textContent||"")));
-  }
-  for(const key of sectionKeys){
-    let el = document.getElementById(key.id);
-    if(!el){
-      el = all.find(c => labelMatch(c, key.labels));
-    }
-    if(el){
-      el.classList.add('unified-section');
-      // ensure consistent inner wrapper if not present
-      if(!el.querySelector(':scope > .section-inner')){
-        const wrapper = document.createElement('div');
-        wrapper.className = 'section-inner';
-        while(el.firstChild) wrapper.appendChild(el.firstChild);
-        el.appendChild(wrapper);
-      }
-      // unify headings
-      const heading = el.querySelector(':scope .section-inner h1, :scope .section-inner h2, :scope .section-inner h3');
-      if(heading) heading.classList.add('section-title');
-    }
-  }
-})();
-
-
-/* Mobile tap toggle for before/after */
-document.querySelectorAll('.before-after').forEach(el=>{
-  el.addEventListener('click',()=>{
-    if(window.matchMedia('(hover:none)').matches){
-      el.classList.toggle('active');
-    }
-  });
-});
-</script>
-<script id='ba-toggle'>
-
-// Make before/after work on hover (desktop) and toggle on tap/click (mobile)
-(function(){
-  const els = Array.from(document.querySelectorAll('.before-after'));
-  els.forEach(el => {
-    // If there are exactly two images, tag the second as "after" for CSS
-    const imgs = el.querySelectorAll('img');
-    if(imgs.length >= 2) {
-      imgs[1].classList.add('after','ba-after');
-      el.style.position = el.style.position || 'relative';
-      if(getComputedStyle(imgs[1]).position !== 'absolute'){
-        imgs[1].style.position = 'absolute';
-        imgs[1].style.inset = '0';
-        imgs[1].style.objectFit = 'cover';
-        imgs[0].style.display = 'block';
-        imgs[0].style.width = '100%';
-        imgs[0].style.height = 'auto';
-      }
-    }
-    // Toggle on tap/click
-    el.addEventListener('click', () => {
-      el.classList.toggle('active');
-    }, {passive:true});
-    // On touchstart also toggle (for some browsers not sending click)
-    el.addEventListener('touchstart', () => {
-      el.classList.toggle('active');
-    }, {passive:true});
-  });
-})();
-
-</script>
-</body>
+<script data-hover-compare-injected="1">
+document.addEventListener('click', function(e){
+  var box = e.target.closest('.hover-compare');
+  if (!box) return;
+  box.classList.toggle('is-toggled');
+}, {passive:true});
+</script></body>
 </html>
