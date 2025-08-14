@@ -317,6 +317,46 @@ img.logo{
 @media (max-width: 640px){
   img.logo{ display:block; margin:0 auto; max-width: clamp(120px, 32vw, 200px); position: relative; top: -14px; transform: translateY(-6px); }
 }
+</style><style>
+/* Injected overrides (Aug 14, 2025) */
+:root{
+  --bg:#f8f8f8; /* beige-ish to match Náš tým & Ukázky prací */
+}
+#sluzby h2{
+  text-align:center;
+  margin: 0 auto 1.5rem auto;
+  font-size: 2rem;
+}
+#sluzby .services-wrap{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+  justify-content:center;
+}
+#sluzby .service-card{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  flex-direction:row; /* icon + title in a row */
+  border:1px solid #e5e5e5;
+  border-radius:10px;
+  padding:.75rem 1rem;
+  min-width: 240px;
+}
+#sluzby .service-card .icon{
+  width:44px;height:44px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;
+}
+#sluzby .service-card h3{
+  margin:0;
+  font-size:1rem;
+  font-weight:600;
+}
+.hero{
+  background:none !important;
+}
+.hero::after{ display:none !important; }
 </style></head>
 <body>
 <header class="hero">
@@ -335,39 +375,38 @@ img.logo{
 <li><button aria-label="Přepnout jazyk" id="lang-toggle">EN</button></li>
 </ul><a class="cta-call" href="tel:+420272735268">Objednat: 272 735 268</a>
 </nav>
-
 <section class="services-modern" id="sluzby">
 <h2>Služby</h2>
 <div class="services-wrap">
 <div class="service-card">
 <div class="icon" style="background:linear-gradient(135deg,#3b82f6,#06b6d4)">🪥</div>
 <h3>Dentální hygiena</h3>
-<p>Profesionální odstranění zubního kamene a pigmentací, edukace a prevence.</p>
+
 </div>
 <div class="service-card">
 <div class="icon" style="background:linear-gradient(135deg,#10b981,#14b8a6)">🦷</div>
 <h3>Implantologie</h3>
-<p>Šetrná náhrada chybějících zubů titanovými implantáty, včetně korunek.</p>
+
 </div>
 <div class="service-card">
 <div class="icon" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)">💎</div>
 <h3>Estetická stomatologie</h3>
-<p>Bělení a estetické kompozitní rekonstrukce pro přirozený, jasný úsměv.</p>
+
 </div>
 <div class="service-card">
 <div class="icon" style="background:linear-gradient(135deg,#ec4899,#f43f5e)">🔬</div>
 <h3>Mikroskopická endodoncie</h3>
-<p>Precizní ošetření kořenových kanálků pod zvětšením pro dlouhodobý výsledek.</p>
+
 </div>
 <div class="service-card">
 <div class="icon" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">👶</div>
 <h3>Péče o děti</h3>
-<p>Citlivý přístup k dětským pacientům, prevence a bezbolestné ošetření.</p>
+
 </div>
 <div class="service-card">
 <div class="icon" style="background:linear-gradient(135deg,#ef4444,#f87171)">🔪</div>
 <h3>Chirurgie</h3>
-<p>Drobné chirurgické výkony – extrakce, resekce, plastiky měkkých tkání.</p>
+
 </div>
 </div>
 </section>
