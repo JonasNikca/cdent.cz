@@ -291,6 +291,17 @@ nav ul, .nav, .menu, .navbar-nav, .main-nav, .navigation ul, .header-nav, .topme
     margin-left: 0; /* allow stacking on mobile */
   }
 }
+</style><style>
+/* Service icons */
+.service-icon { display:inline-flex; align-items:center; justify-content:center; margin-right: 10px; vertical-align: middle; }
+/* Slightly push nav to the right so it doesn't overlap the logo */
+.site-header, header, .header, .topbar, nav.navbar, nav.site-nav, .navigation, nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.logo, .brand, .site-brand, .branding { flex: 0 0 auto; }
+nav ul, .nav, .menu, .navbar-nav, .main-nav, .navigation ul, .header-nav, .topmenu { margin-left: auto; }
 </style></head>
 <body>
 <header class="hero">
@@ -313,17 +324,32 @@ nav ul, .nav, .menu, .navbar-nav, .main-nav, .navigation ul, .header-nav, .topme
 <h2>Služby</h2>
 <div class="grid">
 <div class="service-card"><p>
-<span class="service-line">Dentální hygiena</span></p></div>
+<span class="service-icon"><svg aria-hidden="true" height="28" viewbox="0 0 64 64" width="28">
+<path d="M6 40h28" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M34 40l16-10a6 6 0 0 1 8 5v3a6 6 0 0 1-6 6H34" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M10 36v-6M14 36v-8M18 36v-10M22 36v-8" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg></span><span class="service-line">Dentální hygiena</span></p></div>
 <div class="service-card"><p>
-<span class="service-line">Implantologie</span></p></div>
+<span class="service-icon"><svg aria-hidden="true" height="28" viewbox="0 0 64 64" width="28">
+<path d="M20 14c7-6 17-6 24 0 0 10-4 16-12 16S20 24 20 14z" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M32 30v18" stroke="currentColor" stroke-width="2"></path>
+<path d="M24 36h16M24 40h16M26 44h12M28 48h8" stroke="currentColor" stroke-width="2"></path>
+</svg></span><span class="service-line">Implantologie</span></p></div>
 <div class="service-card"><p>
-<span class="service-line">Protetika</span></p></div>
+<span class="service-icon"><svg aria-hidden="true" height="28" viewbox="0 0 64 64" width="28">
+<path d="M8 44h48l-4-20-12 8-8-14-8 14-12-8-4 20z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M16 50h32" stroke="currentColor" stroke-width="2"></path>
+</svg></span><span class="service-line">Protetika</span></p></div>
 <div class="service-card"><p>
 Záchovná stomatologie</p></div>
 <div class="service-card"><p>
-<span class="service-line">Reendodoncie s mikroskopem</span></p></div>
+<span class="service-icon"><svg aria-hidden="true" height="28" viewbox="0 0 64 64" width="28">
+<path d="M22 12c6-5 14-5 20 0 7 6 6 17 1 24-3 4-5 9-6 14-1 5-5 5-6 0-1-5-3-10-6-14-5-7-6-18-3-24z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+</svg></span><span class="service-line">Reendodoncie s mikroskopem</span></p></div>
 <div class="service-card"><p>
-<span class="service-line">Chirurgie</span></p></div>
+<span class="service-icon"><svg aria-hidden="true" height="28" viewbox="0 0 64 64" width="28">
+<path d="M22 12c6-5 14-5 20 0 7 6 6 17 1 24-3 4-5 9-6 14-1 5-5 5-6 0-1-5-3-10-6-14-5-7-6-18-3-24z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+</svg></span><span class="service-line">Chirurgie</span></p></div>
 <div class="service-card"><p>
 Bělení</p></div>
 <div class="service-card"><p>
