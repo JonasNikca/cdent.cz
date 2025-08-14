@@ -269,6 +269,10 @@ img.logo{
 .svc-icon[data-svc="chirurgie"]{ color:#14b8a6; }    /* teal */
 .svc-icon[data-svc="beleni"]{ color:#3b82f6; }       /* blue */
 .svc-icon[data-svc="estetika"]{ color:#ec4899; }     /* pink */
+</style><style>
+/* service-icon sizing */
+.service-icon { display:flex; align-items:center; justify-content:center; margin-bottom: 12px; }
+.service-icon svg { width: 48px; height: 48px; }
 </style></head>
 <body>
 <header class="hero">
@@ -290,64 +294,69 @@ img.logo{
 <section id="sluzby">
 <h2>Služby</h2>
 <div class="grid">
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="hygiena"><svg aria-hidden="true" viewbox="0 0 24 24">
-<rect fill="currentColor" height="4" rx="2" width="14" x="2" y="10"></rect>
-<rect fill="currentColor" height="8" rx="1" width="2" x="16" y="8"></rect>
-<rect fill="currentColor" height="8" rx="1" width="2" x="19" y="8"></rect>
+<div class="service-card"><p><span aria-hidden="true" class="service-icon svc-icon" data-svc="hygiena"><svg aria-hidden="true" height="48" viewbox="0 0 64 64" width="48">
+<rect fill="none" height="20" rx="2" stroke="currentColor" stroke-width="2" width="12" x="12" y="10"></rect>
+<path d="M24 20h20c4 0 6 3 6 6v20a6 6 0 0 1-6 6H24" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M16 30v20" stroke="currentColor" stroke-width="2"></path>
 </svg></span>
 <svg viewbox="0 0 24 24">
 <path d="M2 6h14v4H2z" fill="#0ea5e9"></path>
 <rect fill="#2563eb" height="8" width="2" x="16" y="4"></rect>
 </svg><span class="service-line">Dentální hygiena</span></p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="implant"><svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M8 13h8l-1.2 2H9.2L8 13zm-.8 4h9.6L15.8 19H8.2L7.2 17z" fill="currentColor"></path>
-<path d="M8 3h8v5a4 4 0 0 1-4 4H8V3z" fill="currentColor" opacity=".65"></path>
+<div class="service-card"><p><span aria-hidden="true" class="service-icon svc-icon" data-svc="implant"><svg aria-hidden="true" height="48" viewbox="0 0 64 64" width="48">
+<path d="M20 12c7-6 17-6 24 0 0 10-4 16-12 16s-12-6-12-16z" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M32 28v24" stroke="currentColor" stroke-width="2"></path>
+<path d="M24 36h16M24 40h16M26 44h12M28 48h8" stroke="currentColor" stroke-width="2"></path>
 </svg></span>
 <svg viewbox="0 0 24 24">
 <path d="M8 2h8v6a4 4 0 0 1-4 4H8V2z" fill="#94a3b8"></path>
 <path d="M9 14h6l-1 2H8l1-2z" fill="#64748b"></path>
 </svg><span class="service-line">Implantologie</span></p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="protetika"><svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M4 10l4-3 4 2 4-2 4 3v5H4v-5z" fill="currentColor"></path>
-<rect fill="currentColor" height="2" rx="1" width="12" x="6" y="18"></rect>
+<div class="service-card"><p><span aria-hidden="true" class="service-icon svc-icon" data-svc="protetika"><svg aria-hidden="true" height="48" viewbox="0 0 64 64" width="48">
+<path d="M10 46h44l-4-22-10 8-8-12-8 12-10-8-4 22z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M18 52h28" stroke="currentColor" stroke-width="2"></path>
 </svg></span>
 <svg viewbox="0 0 24 24">
 <path d="M4 9l4-3 4 2 4-2 4 3v4H4V9z" fill="#fbbf24"></path>
 <path d="M6 18h12v2H6z" fill="#d97706"></path>
 </svg><span class="service-line">Protetika</span></p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="zachovna"><svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M12 2c3.5 0 6 2.7 6 5.8 0 2.4-.9 3.9-2 5.3-.6.8-1.2 1.6-1.6 2.6-.3.8-.5 1.7-.7 2.8-.3 1.6-2.5 1.8-3 0-.5-1.8-.8-2.8-1.5-3.8-.5-.8-1.2-1.6-1.9-2.4C5.4 10.1 5 8.7 5 7.8 5 4.7 8.5 2 12 2z" fill="none" stroke="currentColor" stroke-width="1.6"></path>
-<rect fill="currentColor" height="2" width="3.2" x="9" y="7"></rect>
+<div class="service-card"><p><span aria-hidden="true" class="service-icon svc-icon" data-svc="zachovna"><svg aria-hidden="true" height="48" viewbox="0 0 64 64" width="48">
+<path d="M20 10c7-6 17-6 24 0 8 7 7 20 1 27-4 5-6 11-7 17-1 6-6 6-7 0-1-6-3-12-7-17-6-7-7-20  -4-27z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
 </svg></span>
 <svg viewbox="0 0 24 24">
 <path d="M12 2c3.5 0 6 2.7 6 5.8 0 2.4-.9 3.9-2 5.3-.6.8-1.2 1.6-1.6 2.6-.3.8-.5 1.7-.7 2.8-.3 1.6-2.5 1.8-3 0-.5-1.8-.8-2.8-1.5-3.8-.5-.8-1.2-1.6-1.9-2.4C5.4 10.1 5 8.7 5 7.8 5 4.7 8.5 2 12 2z" fill="#ffffff" stroke="#0ea5e9" stroke-width="1.5"></path>
 <rect fill="#0ea5e9" height="2" width="3" x="9" y="7"></rect>
 </svg>Záchovná stomatologie</p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="endo"><svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M12 2c3.5 0 6 2.7 6 5.8 0 2.4-.9 3.9-2 5.3-.6.8-1.2 1.6-1.6 2.6-.3.8-.5 1.7-.7 2.8-.3 1.6-2.5 1.8-3 0-.5-1.8-.8-2.8-1.5-3.8-.5-.8-1.2-1.6-1.9-2.4C5.4 10.1 5 8.7 5 7.8 5 4.7 8.5 2 12 2z" fill="none" stroke="currentColor" stroke-width="1.6"></path>
-<path d="M10 8c.5 1.5.5 3.5 0 5M14 8c.5 1.5.5 3.5 0 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.4"></path>
+<div class="service-card"><p><span aria-hidden="true" class="service-icon svc-icon" data-svc="endo"><svg aria-hidden="true" height="48" viewbox="0 0 64 64" width="48">
+<path d="M26 14h12v8H26zM30 22v8l8 6" fill="none" stroke="currentColor" stroke-width="2"></path>
+<circle cx="44" cy="38" fill="none" r="6" stroke="currentColor" stroke-width="2"></circle>
+<path d="M12 52h40M20 44h10" stroke="currentColor" stroke-width="2"></path>
 </svg></span>
 <svg viewbox="0 0 24 24">
 <path d="M12 2c3.5 0 6 2.7 6 5.8..." fill="#ffffff" stroke="#ef4444" stroke-width="1.5"></path>
 <path d="M10 8v5M14 8v5" fill="none" stroke="#ef4444" stroke-width="1.2"></path>
 </svg><span class="service-line">Reendodoncie s mikroskopem</span></p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="chirurgie"><svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M3 18l8-8 3 3-8 8H3z" fill="currentColor"></path>
-<path d="M15 5l3-3 3 3-3 3-3-3z" fill="currentColor" opacity=".7"></path>
+<div class="service-card"><p><span aria-hidden="true" class="service-icon svc-icon" data-svc="chirurgie"><svg aria-hidden="true" height="48" viewbox="0 0 64 64" width="48">
+<path d="M12 48l16-16 8 8-16 16H12z" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M44 20l8 8" stroke="currentColor" stroke-width="2"></path>
+<path d="M34 30l14-14 6 6-14 14" fill="none" stroke="currentColor" stroke-width="2"></path>
 </svg></span>
 <svg viewbox="0 0 24 24">
 <path d="M4 18l6-6 4 4-6 6H4z" fill="#14b8a6"></path>
 <path d="M15 5l3-3 3 3-3 3-3-3z" fill="#0d9488"></path>
 </svg><span class="service-line">Chirurgie</span></p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="beleni"><svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M12 4l1.6 4 4 1.6-4 1.6L12 16l-1.6-4-4-1.6 4-1.6L12 4z" fill="currentColor"></path>
-<path d="M18 6l.9 2.2L21 9l-2.1.8L18 12l-.9-2.2L15 9l2.1-.8L18 6z" fill="currentColor" opacity=".6"></path>
+<div class="service-card"><p><span aria-hidden="true" class="service-icon svc-icon" data-svc="beleni"><svg aria-hidden="true" height="48" viewbox="0 0 64 64" width="48">
+<path d="M32 10v12M26 16h12M14 30l8 4-8 4  -4 8-4-8  -8-4 8-4 4-8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+<circle cx="44" cy="44" fill="none" r="10" stroke="currentColor" stroke-width="2"></circle>
+<path d="M40 44h8" stroke="currentColor" stroke-width="2"></path>
 </svg></span>
 <svg viewbox="0 0 24 24">
 <path d="M12 2l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#3b82f6"></path>
 </svg>Bělení</p></div>
-<div class="service-card"><p><span aria-hidden="true" class="svc-icon" data-svc="estetika"><svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M4 14s2.5 5 8 5 8-5 8-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<div class="service-card"><p><span aria-hidden="true" class="service-icon svc-icon" data-svc="estetika"><svg aria-hidden="true" height="48" viewbox="0 0 64 64" width="48">
+<path d="M20 16h24v24H20z" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M24 20h16v16H24z" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M24 44h16" stroke="currentColor" stroke-width="2"></path>
 </svg></span>
 <svg viewbox="0 0 24 24">
 <path d="M4 15s2 4 8 4 8-4 8-4" fill="none" stroke="#ec4899" stroke-width="2"></path>
