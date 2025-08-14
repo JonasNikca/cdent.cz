@@ -1,497 +1,277 @@
 <!DOCTYPE html>
-
 <html lang="cs">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>CDent - Rodinná stomatologie</title>
-<link href="assets/css/style.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<style>
-/* Added by automated edit: improve hero text contrast */
-.hero, .hero *,
-.hero-text, .hero-text *,
-.hero__headline, .hero__subheadline,
-.header-hero, .header-hero *,
-.intro-banner, .intro-banner * {
-  color: #ffffff !important;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.35), 0 1px 2px rgba(0,0,0,0.3);
-}
-.hero a.button, .hero .btn, .hero button,
-.hero .cta, .header-hero .btn, .intro-banner .btn {
-  color: #ffffff !important;
-  border-color: rgba(255,255,255,0.85) !important;
-}
-</style><style data-hover-compare-injected="1">
-/* Added by automated edit: hover before/after effect */
-.hover-compare {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  border-radius: 12px;
-}
-.hover-compare img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.hover-compare .after {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity .25s ease;
-}
-.hover-compare:hover .after,
-.hover-compare:focus-within .after {
-  opacity: 1;
-}
-.hover-compare.is-toggled .after {
-  opacity: 1;
-}
-</style><style>
-/* Added: service icons */
-.svc-icon { display:inline-flex; width:28px; height:28px; margin-right:10px; vertical-align:middle; align-items:center; justify-content:center; color:#0ea5e9; }
-.svc-icon svg { width:20px; height:20px; }
-.service-line { display:flex; align-items:center; gap:.5rem; margin: .25rem 0; }
-</style><style>
-/* === Tweaks: services + logo (added) === */
-#sluzby .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-}
-#sluzby .service-card {
-  background: #f3f8fb; /* light bluish */
-  border: 1px solid rgba(2, 6, 23, 0.06);
-  border-radius: 14px;
-  padding: 14px;
-  box-shadow: 0 1px 2px rgba(2, 6, 23, 0.04);
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-#sluzby .service-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.08);
-}
-#sluzby .service-card img,
-#sluzby .service-card .svc-icon svg {
-  width: 40px;
-  height: 40px;
-}
-#sluzby .service-card img {
-  display: block;
-  margin-bottom: 8px;
-}
-/* Make inline SVG icons colorful and more visible */
-.svc-icon {
-  display:inline-flex;
-  width: 44px;
-  height: 44px;
-  margin-right: 10px;
-  align-items:center;
-  justify-content:center;
-  color: #1284d6; /* stronger blue */
-}
-.svc-icon svg { width: 32px; height: 32px; }
-/* Service title line */
-#sluzby .service-card p {
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  margin: 0;
-  font-weight: 600;
-}
-/* Mobile logo adjustment for blue/white mark */
-@media (max-width: 640px) {
-  img.logo {
-    position: relative;
-    top: 4px;
-    transform: translateY(2px);
-  }
-}
-</style><style>
-/* Colored icons styling */
-.svc-icon {
-  display: inline-flex;
-  width: 40px;
-  height: 40px;
-  margin-right: 8px;
-  align-items: center;
-  justify-content: center;
-}
-.svc-icon svg { width: 32px; height: 32px; }
-/* Mobile logo sizing */
-@media (max-width: 640px) {
-  img.logo {
-    max-width: 140px;
-    height: auto;
-  }
-}
-</style><style>
-/* === CDent tweaks v3 === */
-/* Service grid compact cards */
-#sluzby .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-}
-#sluzby .service-card {
-  background: #eef6fb; /* světle modré pozadí */
-  border: 1px solid rgba(2,6,23,.06);
-  border-radius: 14px;
-  padding: 14px 16px;
-  box-shadow: 0 1px 2px rgba(2,6,23,.04);
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-#sluzby .service-card:hover{ transform: translateY(-2px); box-shadow: 0 6px 16px rgba(2,6,23,.08); }
-#sluzby .service-card p{ margin:0; display:flex; align-items:center; gap:.75rem; font-weight:600; }
-/* Colorful prominent icons */
-.svc-icon{ display:inline-flex; width:44px; height:44px; align-items:center; justify-content:center; }
-.svc-icon svg{ width:34px; height:34px; }
-/* Default icon color */
-.svc-icon{ color:#0ea5e9; }
-/* Specific accent per service (optional via data-svc attr) */
-.svc-icon[data-svc="hygiena"]{ color:#10b981; }      /* green */
-.svc-icon[data-svc="implant"]{ color:#3b82f6; }      /* blue */
-.svc-icon[data-svc="protetika"]{ color:#f59e0b; }    /* amber */
-.svc-icon[data-svc="zachovna"]{ color:#a855f7; }     /* purple */
-.svc-icon[data-svc="endo"]{ color:#ef4444; }         /* red */
-.svc-icon[data-svc="chirurgie"]{ color:#14b8a6; }    /* teal */
-.svc-icon[data-svc="beleni"]{ color:#eab308; }       /* yellow */
-.svc-icon[data-svc="estetika"]{ color:#ec4899; }     /* pink */
-/* Mobile logo sizing & slight shift */
-img.logo{ max-width: clamp(120px, 38vw, 220px); height:auto; }
-@media (max-width: 640px){
-  img.logo{ position: relative; top: 2px; transform: translateY(2px); }
-}
-</style><style>
-/* === CDent tweaks v4 === */
-/* Mobile logo: center and move up */
-.header, header { position: relative; }
-img.logo{
-  display:block;
-  margin: 0 auto;            /* center horizontally */
-  max-width: clamp(120px, 34vw, 200px);
-  height:auto;
-}
-@media (max-width: 640px){
-  img.logo{
-    position: relative;
-    top: -6px;               /* move up */
-    transform: translateY(-4px);
-  }
-}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CDent - Rodinná stomatologie</title>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style id='unified-styles'>
 
-/* Service cards */
-#sluzby .grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:16px; }
-#sluzby .service-card{
-  background:#eef6fb;
-  border:1px solid rgba(2,6,23,.06);
-  border-radius:14px;
-  padding:14px 16px;
-  box-shadow:0 1px 2px rgba(2,6,23,.04);
-}
-#sluzby .service-card p{ margin:0; display:flex; align-items:center; gap:.75rem; font-weight:600; }
-.svc-icon{ display:inline-flex; width:44px; height:44px; align-items:center; justify-content:center; }
-.svc-icon svg{ width:34px; height:34px; }
-/* Color accents per discipline */
-.svc-icon[data-svc="hygiena"]{ color:#0ea5e9; }
-.svc-icon[data-svc="implant"]{ color:#2563eb; }
-.svc-icon[data-svc="protetika"]{ color:#f59e0b; }
-.svc-icon[data-svc="zachovna"]{ color:#10b981; }
-.svc-icon[data-svc="endo"]{ color:#ef4444; }
-.svc-icon[data-svc="chirurgie"]{ color:#14b8a6; }
-.svc-icon[data-svc="beleni"]{ color:#eab308; }
-.svc-icon[data-svc="estetika"]{ color:#ec4899; }
-</style><style>
-/* Mobile logo higher */
-@media (max-width: 640px){
-  img.logo{
-    display:block;
-    margin:0 auto;
-    max-width: clamp(120px, 34vw, 200px);
-    position:relative;
-    top:-10px;
-  }
-}
-/* Service cards */
-#sluzby .service-card{
-  background:#eef6fb;
-  border:1px solid rgba(0,0,0,.05);
-  border-radius:14px;
-  padding:14px 16px;
-  box-shadow:0 1px 3px rgba(0,0,0,.08);
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-#sluzby .service-card svg{
-  width:38px;
-  height:38px;
-  flex-shrink:0;
-}
-</style><style>
-/* === CDent tweaks v5 === */
-/* Center logo and move higher on mobile */
-img.logo{
-  display:block;
-  margin:0 auto;
-  max-width: clamp(120px, 32vw, 200px);
-  height:auto;
-}
-@media (max-width: 640px){
-  img.logo{
-    position: relative;
-    top: -14px;         /* higher than before */
-    transform: translateY(-6px);
-  }
-}
-
-/* Service card look */
-#sluzby .service-card{
-  background:#eef6fb;
-  border:1px solid rgba(0,0,0,.06);
-  border-radius:14px;
-  padding:14px 16px;
-  box-shadow:0 1px 3px rgba(0,0,0,.06);
-  display:flex; align-items:center; gap:12px;
-}
-#sluzby .service-card p{ margin:0; font-weight:600; display:flex; align-items:center; gap:.75rem; }
-.svc-icon{ display:inline-flex; width:42px; height:42px; align-items:center; justify-content:center; }
-.svc-icon svg{ width:34px; height:34px; }
-/* Color accents per service */
-.svc-icon[data-svc="hygiena"]{ color:#0ea5e9; }      /* blue */
-.svc-icon[data-svc="implant"]{ color:#64748b; }      /* slate gray */
-.svc-icon[data-svc="protetika"]{ color:#f59e0b; }    /* amber */
-.svc-icon[data-svc="zachovna"]{ color:#0ea5e9; }     /* blue */
-.svc-icon[data-svc="endo"]{ color:#ef4444; }         /* red */
-.svc-icon[data-svc="chirurgie"]{ color:#14b8a6; }    /* teal */
-.svc-icon[data-svc="beleni"]{ color:#3b82f6; }       /* blue */
-.svc-icon[data-svc="estetika"]{ color:#ec4899; }     /* pink */
-</style><style>
-#sluzby {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 24px;
-  padding: 20px;
-  justify-items: center;
-}
-.sluzba-item { text-align: center; }
-.sluzba-icon {
-  width: 60px;
-  height: 60px;
-  padding: 12px;
-  border-radius: 50%;
-  background-color: var(--bg);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 8px;
-}
-.sluzba-icon svg { width: 32px; height: 32px; fill: currentColor; }
-.sluzba-title { font-size: 1rem; font-weight: 600; }
-</style><style>
-/* === New Services grid (clean, colorful) === */
-.services-grid { padding: 24px 0; }
-.services-grid h2 { text-align:center; margin: 0 0 12px 0; }
-.services-grid__wrap {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 22px;
-  align-items: start;
-}
-.sluzba-item { text-align: center; }
-.sluzba-icon {
-  width: 64px; height: 64px; padding: 12px; border-radius: 16px;
-  background: var(--bg);
-  display: inline-flex; align-items:center; justify-content:center;
-  margin-bottom: 8px;
-}
-.sluzba-icon svg { width: 34px; height: 34px; fill: currentColor; }
-.sluzba-title { font-size: 1rem; font-weight: 700; line-height:1.25; }
-@media (max-width: 640px){
-  .services-grid__wrap { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
-}
-/* Keep previous mobile logo adjustment stronger */
-@media (max-width: 640px){
-  img.logo{ display:block; margin:0 auto; max-width: clamp(120px, 32vw, 200px); position: relative; top: -14px; transform: translateY(-6px); }
-}
-</style><style>
-/* Injected overrides (Aug 14, 2025) */
+/* === UNIFIED THEME OVERRIDES (non-destructive) === */
 :root{
-  --bg:#f8f8f8; /* beige-ish to match Náš tým & Ukázky prací */
+  --brand:#136ef6;
+  --brand-ink:#0b3d9a;
+  --ink:#121418;
+  --muted:#5a6270;
+  --bg:#ffffff;
+  --sec-bg:#f6f8fb;
+  --card:#ffffff;
+  --radius:18px;
+  --shadow: 0 8px 24px rgba(16,24,40,.08);
 }
-#sluzby h2{
-  text-align:center;
-  margin: 0 auto 1.5rem auto;
-  font-size: 2rem;
-}
-#sluzby .services-wrap{
-  display:flex;
-  flex-wrap:wrap;
-  gap:1rem;
-  justify-content:center;
-}
-#sluzby .service-card{
-  display:flex;
-  align-items:center;
-  gap:.75rem;
-  flex-direction:row; /* icon + title in a row */
-  border:1px solid #e5e5e5;
-  border-radius:10px;
-  padding:.75rem 1rem;
-  min-width: 240px;
-}
-#sluzby .service-card .icon{
-  width:44px;height:44px;border-radius:10px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:22px;
-}
-#sluzby .service-card h3{
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
   margin:0;
-  font-size:1rem;
-  font-weight:600;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
-.hero{
-  background:none !important;
+/* Header / navbar */
+.unified-nav{
+  position:sticky; top:0; z-index:100;
+  backdrop-filter:saturate(180%) blur(8px);
+  background:rgba(255,255,255,.8);
+  border-bottom:1px solid rgba(2,6,23,.06);
 }
-.hero::after{ display:none !important; }
-</style></head>
-<body>
-<header class="hero">
-<img alt="CDent logo" class="logo" src="assets/img/logo.jpeg"/>
-<div class="hero-text">
-<h1>Rodinná klinika v srdci Vinohrad</h1>
-<p style="color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.35); color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.35); color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.35)">Moderní stomatologické centrum s individuálním přístupem. Přijímáme nové pacienty. Máme smlouvu s VZP a OZP.</p>
-<div class="hero-cta"><a class="btn primary" href="tel:272735268" style="color:#fff; border:1px solid rgba(255,255,255,0.85); background:transparent">Zavolat</a><a class="btn ghost" href="mailto:cdentceleryn@gmail.com" style="color:#fff; border:1px solid rgba(255,255,255,0.85); background:transparent">Napsat e‑mail</a></div></div>
-</header>
-<nav>
-<button aria-label="Otevřít menu" class="nav-toggle">☰</button><ul class="nav-list">
-<li><a href="#sluzby">Služby</a></li>
-<li><a href="#tym">Náš tým</a></li>
-<li><a href="#ukazky">Ukázky prací</a></li>
-<li><a href="#kontakt">Kontakt</a></li>
-<li><button aria-label="Přepnout jazyk" id="lang-toggle">EN</button></li>
-</ul><a class="cta-call" href="tel:+420272735268">Objednat: 272 735 268</a>
-</nav>
-<section class="services-modern" id="sluzby">
-<h2>Služby</h2>
-<div class="services-wrap">
-<div class="service-card">
-<div class="icon" style="background:linear-gradient(135deg,#3b82f6,#06b6d4)">🪥</div>
-<h3>Dentální hygiena</h3>
+.unified-nav .nav-inner{
+  max-width:1200px; margin:0 auto; padding:12px 20px;
+  display:flex; align-items:center; gap:20px; justify-content:space-between;
+}
+.unified-nav a{ color:var(--ink); text-decoration:none; font-weight:600 }
+.unified-nav .nav-links a{opacity:.8; margin:0 10px}
+.unified-nav .nav-links a:hover{opacity:1}
 
-</div>
-<div class="service-card">
-<div class="icon" style="background:linear-gradient(135deg,#10b981,#14b8a6)">🦷</div>
-<h3>Implantologie</h3>
+/* Hero (keep existing, just ensure nice text legibility if background is a photo) */
+.unified-hero{
+  position:relative;
+  min-height:58vh;
+  display:grid; place-items:center;
+  padding:72px 20px 56px;
+  color:#fff;
+  isolation:isolate;
+}
+.unified-hero::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,.40), rgba(0,0,0,.30));
+  z-index:-1; border-radius:0;
+}
+.unified-hero .hero-inner{ max-width:1100px; width:100%; text-align:center }
+.unified-hero .hero-title{
+  font-weight:800; letter-spacing:.2px; line-height:1.1;
+  font-size: clamp(28px, 5vw, 48px);
+  margin:0 0 8px;
+}
+.unified-hero .hero-sub{
+  font-size: clamp(16px, 2.5vw, 20px);
+  opacity:.95; margin:0 auto; max-width:800px;
+}
+.unified-hero .hero-cta{
+  margin-top:22px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:12px 18px; border-radius:999px; font-weight:700; text-decoration:none;
+  border:1px solid transparent; box-shadow: var(--shadow);
+}
+.btn.primary{background:var(--brand); color:#fff}
+.btn.primary:hover{background:var(--brand-ink)}
+.btn.ghost{background:#fff; color:var(--ink); border-color:rgba(2,6,23,.08); box-shadow:none}
+.btn.ghost:hover{background:#f3f5f9}
 
-</div>
-<div class="service-card">
-<div class="icon" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)">💎</div>
-<h3>Estetická stomatologie</h3>
+/* Section wrapper applied via JS to detected sections */
+.unified-section{
+  background:var(--sec-bg);
+  padding:56px 20px;
+  border-top:1px solid rgba(2,6,23,.06);
+}
+.unified-section .section-inner{ max-width:1100px; margin:0 auto }
+.unified-section .section-title{
+  font-size: clamp(22px, 3vw, 32px);
+  line-height:1.15; margin:0 0 22px; font-weight:800; letter-spacing:.2px;
+}
+.unified-section .section-desc{ color:var(--muted); max-width:800px; margin:8px 0 28px }
 
-</div>
-<div class="service-card">
-<div class="icon" style="background:linear-gradient(135deg,#ec4899,#f43f5e)">🔬</div>
-<h3>Mikroskopická endodoncie</h3>
+/* Cards grid (used for team & services & gallery thumbs) */
+.grid{
+  display:grid; grid-template-columns:repeat(12,1fr); gap:18px;
+}
+@media (max-width: 1024px){ .grid{grid-template-columns:repeat(8,1fr)} }
+@media (max-width: 640px){ .grid{grid-template-columns:repeat(4,1fr)} }
+.card{
+  grid-column: span 4;
+  background:var(--card); border-radius:var(--radius);
+  box-shadow: var(--shadow); overflow:hidden; border:1px solid rgba(2,6,23,.06);
+}
+.card .media{ aspect-ratio: 4/3; width:100%; object-fit:cover; display:block }
+.card .pad{ padding:16px }
+.card h3{ margin:0 0 6px; font-size:18px }
+.card p{ margin:0; color:var(--muted); font-size:14px }
 
-</div>
-<div class="service-card">
-<div class="icon" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">👶</div>
-<h3>Péče o děti</h3>
+/* Gallery grid */
+.gallery .card{ grid-column: span 3 }
 
-</div>
-<div class="service-card">
-<div class="icon" style="background:linear-gradient(135deg,#ef4444,#f87171)">🔪</div>
-<h3>Chirurgie</h3>
+/* Contact block */
+.contact-cards .card{ grid-column: span 6 }
+.contact-list a{ color:var(--brand); text-decoration:none; font-weight:600 }
+.contact-list a:hover{ text-decoration:underline }
 
-</div>
-</div>
-</section>
-<style>
-  .services-modern{
-    padding:60px 20px; background:#f9fafb; text-align:center;
-  }
-  .services-modern h2{
-    font-size:2rem; margin-bottom:32px; color:#0f172a;
-  }
-  .services-wrap{
-    display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:22px; align-items:stretch;
-  }
-  .service-card{
-    background:#ffffff; border-radius:16px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,.05);
-    transition:transform .2s ease, box-shadow .2s ease;
-  }
-  .service-card:hover{
-    transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.08);
-  }
-  .service-card .icon{
-    width:64px; height:64px; border-radius:16px; display:inline-flex; align-items:center; justify-content:center; font-size:28px; margin-bottom:10px; color:#fff;
-  }
-  .service-card h3{ margin:6px 0 6px; font-size:1.05rem; }
-  .service-card p{ margin:0; color:#334155; font-size:.95rem; line-height:1.45; }
-  @media (max-width: 640px){
-    .services-modern{ padding:44px 16px; }
-    .services-wrap{ grid-template-columns: repeat(2, minmax(0,1fr)); gap:14px; }
-  }
+/* Footer */
+.unified-footer{ background:#0a0d14; color:#cbd5e1; padding:32px 20px; margin-top:24px }
+.unified-footer .inner{ max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap }
+.unified-footer a{ color:#fff; opacity:.9; text-decoration:none }
+.unified-footer a:hover{ opacity:1; text-decoration:underline }
+
 </style>
-<section id="tym">
-<h2>Náš tým</h2>
-<div class="team">
-<div class="member">
-<img alt="MDDr. Jonáš Celerýn" src="assets/img/celeryn.jpg"/>
-<h3>MDDr. Jonáš Celerýn</h3>
-<p>Záchovná stomatologie, protetika, implantologie, chirurgie, estetické rekonstrukce</p>
-</div>
-<div class="member">
-<img alt="doc. MUDr. Marie Bartoňová, CSc" src="assets/img/bartonova.jpg"/>
-<h3>doc. MUDr. Marie Bartoňová, CSc</h3>
-<p>Protetika, funkční a estetické rekonstrukce chrupu, vrozené a získané vady, senioři</p>
-</div>
-<div class="member">
-<img alt="MDDr. Nikola Celerýnová" src="assets/img/celerynova.jpg"/>
-<h3>MDDr. Nikola Celerýnová</h3>
-<p>Záchovná stomatologie, reendodoncie s mikroskopem, pedostomatologie</p>
-</div>
-</div>
+</head>
+<body>
+    <header class="hero">
+        <img src="assets/img/logo.jpeg" alt="CDent logo" class="logo"/>
+        <div class="hero-text">
+            <h1>Rodinná klinika v srdci Vinohrad</h1>
+            <p>Moderní stomatologické centrum s individuálním přístupem. Přijímáme nové pacienty. Máme smlouvu s VZP a OZP.</p>
+        <div class="hero-cta"><a class="btn primary" href="tel:+420272735268">Zavolat</a><a class="btn ghost" href="mailto:cdentceleryn@gmail.com">Napsat e‑mail</a></div></div>
+    </header>
+
+    <nav>
+        <button class="nav-toggle" aria-label="Otevřít menu">☰</button><ul class="nav-list">
+            <li><a href="#sluzby">Služby</a></li>
+            <li><a href="#tym">Náš tým</a></li>
+            <li><a href="#ukazky">Ukázky prací</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+            <li><button id="lang-toggle" aria-label="Přepnout jazyk">EN</button></li>
+        </ul><a class="cta-call" href="tel:+420272735268">Objednat: 272 735 268</a>
+    </nav>
+
+    
+<section id="sluzby">
+    <h2>Služby</h2>
+    <div class="grid">
+        <div class="service-card"><img src="assets/img/icon-toothbrush-color.svg" alt="Dentální hygiena"/><p>Dentální hygiena</p></div>
+        <div class="service-card"><img src="assets/img/icon-implant-color.svg" alt="Implantologie"/><p>Implantologie</p></div>
+        <div class="service-card"><img src="assets/img/icon-prosthetics-color.svg" alt="Protetika"/><p>Protetika</p></div>
+        <div class="service-card"><img src="assets/img/icon-tooth-color.svg" alt="Záchovná stomatologie"/><p>Záchovná stomatologie</p></div>
+        <div class="service-card"><img src="assets/img/icon-microscope-color.svg" alt="Reendodoncie"/><p>Reendodoncie s mikroskopem</p></div>
+        <div class="service-card"><img src="assets/img/icon-surgery-color.svg" alt="Chirurgie"/><p>Chirurgie</p></div>
+        <div class="service-card"><img src="assets/img/icon-bleaching-color.svg" alt="Bělení"/><p>Bělení</p></div>
+        <div class="service-card"><img src="assets/img/icon-esthetics-color.svg" alt="Estetické rekonstrukce"/><p>Estetické rekonstrukce</p></div>
+    </div>
 </section>
+
+
+    <section id="tym">
+        <h2>Náš tým</h2>
+        <div class="team">
+            <div class="member">
+                <img src="assets/img/celeryn.jpg" alt="MDDr. Jonáš Celerýn"/>
+                <h3>MDDr. Jonáš Celerýn</h3>
+                <p>Záchovná stomatologie, protetika, implantologie, chirurgie, estetické rekonstrukce</p>
+            </div>
+            <div class="member">
+                <img src="assets/img/bartonova.jpg" alt="doc. MUDr. Marie Bartoňová, CSc"/>
+                <h3>doc. MUDr. Marie Bartoňová, CSc</h3>
+                <p>Protetika, funkční a estetické rekonstrukce chrupu, vrozené a získané vady, senioři</p>
+            </div>
+            <div class="member">
+                <img src="assets/img/celerynova.jpg" alt="MDDr. Nikola Celerýnová"/>
+                <h3>MDDr. Nikola Celerýnová</h3>
+                <p>Záchovná stomatologie, reendodoncie s mikroskopem, pedostomatologie</p>
+            </div>
+        </div>
+    </section>
+
+    
 <section id="ukazky">
-<h2>Ukázky prací</h2>
-<div class="slider-gallery">
-<div class="ic-container"><div aria-label="Před / po – najeďte myší nebo klepněte" class="hover-compare" tabindex="0"><img alt="Před – případ 1" src="assets/img/smile1_before.jpg"/><div class="after"><img alt="Po – případ 1" src="assets/img/smile1_after.jpg"/></div></div></div>
-<div class="ic-container"><div aria-label="Před / po – najeďte myší nebo klepněte" class="hover-compare" tabindex="0"><img alt="Před – případ 2" src="assets/img/smile2_before.jpg"/><div class="after"><img alt="Po – případ 2" src="assets/img/smile2_after.jpg"/></div></div></div>
-<div class="ic-container"><div aria-label="Před / po – najeďte myší nebo klepněte" class="hover-compare" tabindex="0"><img alt="Před – případ 3" src="assets/img/smile3_before.jpg"/><div class="after"><img alt="Po – případ 3" src="assets/img/smile3_after.jpg"/></div></div></div>
-<div class="ic-container"><div aria-label="Před / po – najeďte myší nebo klepněte" class="hover-compare" tabindex="0"><img alt="Před – případ 4" src="assets/img/smile4_before.jpg"/><div class="after"><img alt="Po – případ 4" src="assets/img/smile4_after.jpg"/></div></div></div>
-</div>
+  <h2>Ukázky prací</h2>
+  <div class="slider-gallery">
+    <div class="ic-container">
+      <img src="assets/img/smile1_before.jpg" class="ic-base" alt="Před – případ 1"/>
+      <img src="assets/img/smile1_after.jpg" class="ic-overlay" alt="Po – případ 1"/>
+      <div class="ic-handle" aria-hidden="true"></div>
+    </div>
+    <div class="ic-container">
+      <img src="assets/img/smile2_before.jpg" class="ic-base" alt="Před – případ 2"/>
+      <img src="assets/img/smile2_after.jpg" class="ic-overlay" alt="Po – případ 2"/>
+      <div class="ic-handle" aria-hidden="true"></div>
+    </div>
+    <div class="ic-container">
+      <img src="assets/img/smile3_before.jpg" class="ic-base" alt="Před – případ 3"/>
+      <img src="assets/img/smile3_after.jpg" class="ic-overlay" alt="Po – případ 3"/>
+      <div class="ic-handle" aria-hidden="true"></div>
+    </div>
+    <div class="ic-container">
+      <img src="assets/img/smile4_before.jpg" class="ic-base" alt="Před – případ 4"/>
+      <img src="assets/img/smile4_after.jpg" class="ic-overlay" alt="Po – případ 4"/>
+      <div class="ic-handle" aria-hidden="true"></div>
+    </div>
+  </div>
 </section>
-<section id="kontakt">
-<h2>Kontakt</h2>
-<p>Vinohradská 196, Praha 3, 130 00</p>
-<p>Telefon: 272 735 268</p>
-<p><a href="mailto:cdentceleryn@gmail.com">cdentceleryn@gmail.com</a></p>
+
+
+    <section id="kontakt">
+        <h2>Kontakt</h2>
+        <p>Vinohradská 196, Praha 3, 130 00</p>
+        <p>Telefon: 272 735 268</p>
+        <p>Email: cdentceleryn@gmail.com</p>
+    
 <div class="oteviraci-doba" style="font-size: 1.2em; font-weight: bold; margin-top: 1em;">
-<p>Otevírací doba:</p>
-<ul style="list-style: none; padding-left: 0;">
-<li>Pondělí: 7:30 – 20:00</li>
-<li>Úterý: 7:30 – 20:00</li>
-<li>Středa: 7:30 – 20:00</li>
-<li>Čtvrtek: 7:30 – 20:00</li>
-<li>Pátek: 7:30 – 14:00</li>
-</ul>
+    <p>Otevírací doba:</p>
+    <ul style="list-style: none; padding-left: 0;">
+        <li>Pondělí: 7:30 – 20:00</li>
+        <li>Úterý: 7:30 – 20:00</li>
+        <li>Středa: 7:30 – 20:00</li>
+        <li>Čtvrtek: 7:30 – 20:00</li>
+        <li>Pátek: 7:30 – 14:00</li>
+    </ul>
 </div>
 </section>
-<script src="assets/js/script.js"></script>
+
+    <script src="assets/js/script.js"></script>
+
 <footer class="site-footer">
-<p>© CDent – Rodinná klinika v srdci Vinohrad</p>
+  <p>&copy; CDent – Rodinná klinika v srdci Vinohrad</p>
 </footer>
-<script data-hover-compare-injected="1">
-document.addEventListener('click', function(e){
-  var box = e.target.closest('.hover-compare');
-  if (!box) return;
-  box.classList.toggle('is-toggled');
-}, {passive:true});
+<script>
+/* Auto-detect sections by ID or heading text and add uniform classes */
+(function(){
+  const sectionKeys = [
+    {id:'nas-tym', labels:[/n(a|á)š t(ý|y)m/i]},
+    {id:'ukazky-praci', labels:[/uk(á|a)zky pr(a|á)c(i|í)/i]},
+    {id:'sluzby', labels:[/slu(z|ž)by/i]},
+    {id:'kontakty', labels:[/kontakt(y|)/i]},
+  ];
+  const all = Array.from(document.querySelectorAll('section, div, main, article'));
+  function labelMatch(el, labelRegexes){
+    // Scan direct heading children
+    const hs = el.querySelectorAll(':scope > h1, :scope > h2, :scope > h3, :scope > header h1, :scope > header h2, :scope > header h3');
+    return Array.from(hs).some(h => labelRegexes.some(rx => rx.test(h.textContent||"")));
+  }
+  for(const key of sectionKeys){
+    let el = document.getElementById(key.id);
+    if(!el){
+      el = all.find(c => labelMatch(c, key.labels));
+    }
+    if(el){
+      el.classList.add('unified-section');
+      // ensure consistent inner wrapper if not present
+      if(!el.querySelector(':scope > .section-inner')){
+        const wrapper = document.createElement('div');
+        wrapper.className = 'section-inner';
+        while(el.firstChild) wrapper.appendChild(el.firstChild);
+        el.appendChild(wrapper);
+      }
+      // unify headings
+      const heading = el.querySelector(':scope .section-inner h1, :scope .section-inner h2, :scope .section-inner h3');
+      if(heading) heading.classList.add('section-title');
+    }
+  }
+})();
 </script>
 </body>
 </html>
