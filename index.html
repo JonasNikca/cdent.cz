@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="cs">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>CDent - Rodinná stomatologie</title>
-    <link rel="stylesheet" href="assets/css/style.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style id='unified-styles'>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CDent - Rodinná stomatologie</title>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style id="unified-styles">
 
 /* === UNIFIED THEME OVERRIDES (non-destructive) === */
 :root{
@@ -128,114 +129,130 @@ body{
 .unified-footer a{ color:#fff; opacity:.9; text-decoration:none }
 .unified-footer a:hover{ opacity:1; text-decoration:underline }
 
+
+/* Override: show "after" image only on hover (desktop) or click (mobile) */
+.before-after .after-image { opacity:0; transition:opacity .4s ease; }
+.before-after:hover .after-image,
+.before-after.active .after-image { opacity:1; }
+/* Mobile tap support */
+@media (hover:none) {
+  .before-after { cursor:pointer; }
+}
+</style>
+<style id='patch-visibility'>
+
+/* Emphasize welcome/intro text for visibility on photo */
+.unified-hero .hero-sub, .welcome-sub, .intro-sub, .hero p { 
+  color:#fff !important;
+  text-shadow: 0 2px 6px rgba(0,0,0,.55), 0 1px 2px rgba(0,0,0,.35);
+  font-weight: 600;
+}
+
+</style>
+<style id='patch-visibility'>
+
+/* Before/After hover-tap reveal */
+.before-after{ position:relative; overflow:hidden; display:block }
+.before-after img{ display:block; width:100%; height:auto; }
+.before-after .ba-after,
+.before-after img.after{ 
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  clip-path: inset(0 100% 0 0); transition: clip-path .35s ease;
+}
+.before-after:hover .ba-after,
+.before-after:hover img.after{ clip-path: inset(0 0 0 0) }
+.before-after.active .ba-after,
+.before-after.active img.after{ clip-path: inset(0 0 0 0) }
+/* Optional handle (hidden unless present in HTML) */
+.before-after .ba-handle{ position:absolute; top:0; bottom:0; width:2px; left:50%; background:rgba(255,255,255,.9); box-shadow:0 0 0 1px rgba(0,0,0,.2) }
+
+</style>
+<style id='patch-white-text'>
+.white-text{ color:#fff !important; text-shadow:0 2px 6px rgba(0,0,0,.55) }
 </style>
 </head>
 <body>
-    <header class="hero">
-        <img src="assets/img/logo.jpeg" alt="CDent logo" class="logo"/>
-        <div class="hero-text">
-            <h1>Rodinná klinika v srdci Vinohrad</h1>
-            <p>Moderní stomatologické centrum s individuálním přístupem. Přijímáme nové pacienty. Máme smlouvu s VZP a OZP.</p>
-        <div class="hero-cta"><a class="btn primary" href="tel:+420272735268">Zavolat</a><a class="btn ghost" href="mailto:cdentceleryn@gmail.com">Napsat e‑mail</a></div></div>
-    </header>
+<header class="hero">
+<img alt="CDent logo" class="logo" src="assets/img/logo.jpeg"/>
+<div class="hero-text">
+<h1>Rodinná klinika v srdci Vinohrad</h1>
+<p><span class="white-text">Moderní stomatologické centrum s individuálním přístupem. Přijímáme nové pacienty. Máme smlouvu s VZP a OZP.</span></p>
+<div class="hero-cta"><a class="btn primary" href="tel:+420272735268">Zavolat</a><a class="btn ghost" href="mailto:cdentceleryn@gmail.com">Napsat e‑mail</a></div></div>
+</header>
+<nav>
+<button aria-label="Otevřít menu" class="nav-toggle">☰</button><ul class="nav-list">
+<li></li>
+<li><a href="#tym">Náš tým</a></li>
+<li><a href="#ukazky">Ukázky prací</a></li>
+<li><a href="#kontakt">Kontakt</a></li>
+<li><button aria-label="Přepnout jazyk" id="lang-toggle">EN</button></li>
+</ul><a class="cta-call" href="tel:+420272735268">Objednat: 272 735 268</a>
+</nav>
 
-    <nav>
-        <button class="nav-toggle" aria-label="Otevřít menu">☰</button><ul class="nav-list">
-            <li><a href="#sluzby">Služby</a></li>
-            <li><a href="#tym">Náš tým</a></li>
-            <li><a href="#ukazky">Ukázky prací</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
-            <li><button id="lang-toggle" aria-label="Přepnout jazyk">EN</button></li>
-        </ul><a class="cta-call" href="tel:+420272735268">Objednat: 272 735 268</a>
-    </nav>
-
-    
-<section id="sluzby">
-    <h2>Služby</h2>
-    <div class="grid">
-        <div class="service-card"><img src="assets/img/icon-toothbrush-color.svg" alt="Dentální hygiena"/><p>Dentální hygiena</p></div>
-        <div class="service-card"><img src="assets/img/icon-implant-color.svg" alt="Implantologie"/><p>Implantologie</p></div>
-        <div class="service-card"><img src="assets/img/icon-prosthetics-color.svg" alt="Protetika"/><p>Protetika</p></div>
-        <div class="service-card"><img src="assets/img/icon-tooth-color.svg" alt="Záchovná stomatologie"/><p>Záchovná stomatologie</p></div>
-        <div class="service-card"><img src="assets/img/icon-microscope-color.svg" alt="Reendodoncie"/><p>Reendodoncie s mikroskopem</p></div>
-        <div class="service-card"><img src="assets/img/icon-surgery-color.svg" alt="Chirurgie"/><p>Chirurgie</p></div>
-        <div class="service-card"><img src="assets/img/icon-bleaching-color.svg" alt="Bělení"/><p>Bělení</p></div>
-        <div class="service-card"><img src="assets/img/icon-esthetics-color.svg" alt="Estetické rekonstrukce"/><p>Estetické rekonstrukce</p></div>
-    </div>
-</section>
-
-
-    <section id="tym">
-        <h2>Náš tým</h2>
-        <div class="team">
-            <div class="member">
-                <img src="assets/img/celeryn.jpg" alt="MDDr. Jonáš Celerýn"/>
-                <h3>MDDr. Jonáš Celerýn</h3>
-                <p>Záchovná stomatologie, protetika, implantologie, chirurgie, estetické rekonstrukce</p>
-            </div>
-            <div class="member">
-                <img src="assets/img/bartonova.jpg" alt="doc. MUDr. Marie Bartoňová, CSc"/>
-                <h3>doc. MUDr. Marie Bartoňová, CSc</h3>
-                <p>Protetika, funkční a estetické rekonstrukce chrupu, vrozené a získané vady, senioři</p>
-            </div>
-            <div class="member">
-                <img src="assets/img/celerynova.jpg" alt="MDDr. Nikola Celerýnová"/>
-                <h3>MDDr. Nikola Celerýnová</h3>
-                <p>Záchovná stomatologie, reendodoncie s mikroskopem, pedostomatologie</p>
-            </div>
-        </div>
-    </section>
-
-    
-<section id="ukazky">
-  <h2>Ukázky prací</h2>
-  <div class="slider-gallery">
-    <div class="ic-container">
-      <img src="assets/img/smile1_before.jpg" class="ic-base" alt="Před – případ 1"/>
-      <img src="assets/img/smile1_after.jpg" class="ic-overlay" alt="Po – případ 1"/>
-      <div class="ic-handle" aria-hidden="true"></div>
-    </div>
-    <div class="ic-container">
-      <img src="assets/img/smile2_before.jpg" class="ic-base" alt="Před – případ 2"/>
-      <img src="assets/img/smile2_after.jpg" class="ic-overlay" alt="Po – případ 2"/>
-      <div class="ic-handle" aria-hidden="true"></div>
-    </div>
-    <div class="ic-container">
-      <img src="assets/img/smile3_before.jpg" class="ic-base" alt="Před – případ 3"/>
-      <img src="assets/img/smile3_after.jpg" class="ic-overlay" alt="Po – případ 3"/>
-      <div class="ic-handle" aria-hidden="true"></div>
-    </div>
-    <div class="ic-container">
-      <img src="assets/img/smile4_before.jpg" class="ic-base" alt="Před – případ 4"/>
-      <img src="assets/img/smile4_after.jpg" class="ic-overlay" alt="Po – případ 4"/>
-      <div class="ic-handle" aria-hidden="true"></div>
-    </div>
-  </div>
-</section>
-
-
-    <section id="kontakt">
-        <h2>Kontakt</h2>
-        <p>Vinohradská 196, Praha 3, 130 00</p>
-        <p>Telefon: 272 735 268</p>
-        <p>Email: cdentceleryn@gmail.com</p>
-    
-<div class="oteviraci-doba" style="font-size: 1.2em; font-weight: bold; margin-top: 1em;">
-    <p>Otevírací doba:</p>
-    <ul style="list-style: none; padding-left: 0;">
-        <li>Pondělí: 7:30 – 20:00</li>
-        <li>Úterý: 7:30 – 20:00</li>
-        <li>Středa: 7:30 – 20:00</li>
-        <li>Čtvrtek: 7:30 – 20:00</li>
-        <li>Pátek: 7:30 – 14:00</li>
-    </ul>
+<section id="tym">
+<h2>Náš tým</h2>
+<div class="team">
+<div class="member">
+<img alt="MDDr. Jonáš Celerýn" src="assets/img/celeryn.jpg"/>
+<h3>MDDr. Jonáš Celerýn</h3>
+<p>Záchovná stomatologie, protetika, implantologie, chirurgie, estetické rekonstrukce</p>
+</div>
+<div class="member">
+<img alt="doc. MUDr. Marie Bartoňová, CSc" src="assets/img/bartonova.jpg"/>
+<h3>doc. MUDr. Marie Bartoňová, CSc</h3>
+<p>Protetika, funkční a estetické rekonstrukce chrupu, vrozené a získané vady, senioři</p>
+</div>
+<div class="member">
+<img alt="MDDr. Nikola Celerýnová" src="assets/img/celerynova.jpg"/>
+<h3>MDDr. Nikola Celerýnová</h3>
+<p>Záchovná stomatologie, reendodoncie s mikroskopem, pedostomatologie</p>
+</div>
 </div>
 </section>
-
-    <script src="assets/js/script.js"></script>
-
+<section id="ukazky">
+<h2>Ukázky prací</h2>
+<div class="slider-gallery">
+<div class="ic-container">
+<img alt="Před – případ 1" class="ic-base" src="assets/img/smile1_before.jpg"/>
+<img alt="Po – případ 1" class="ic-overlay" src="assets/img/smile1_after.jpg"/>
+<div aria-hidden="true" class="ic-handle"></div>
+</div>
+<div class="ic-container">
+<img alt="Před – případ 2" class="ic-base" src="assets/img/smile2_before.jpg"/>
+<img alt="Po – případ 2" class="ic-overlay" src="assets/img/smile2_after.jpg"/>
+<div aria-hidden="true" class="ic-handle"></div>
+</div>
+<div class="ic-container">
+<img alt="Před – případ 3" class="ic-base" src="assets/img/smile3_before.jpg"/>
+<img alt="Po – případ 3" class="ic-overlay" src="assets/img/smile3_after.jpg"/>
+<div aria-hidden="true" class="ic-handle"></div>
+</div>
+<div class="ic-container">
+<img alt="Před – případ 4" class="ic-base" src="assets/img/smile4_before.jpg"/>
+<img alt="Po – případ 4" class="ic-overlay" src="assets/img/smile4_after.jpg"/>
+<div aria-hidden="true" class="ic-handle"></div>
+</div>
+</div>
+</section>
+<section id="kontakt">
+<h2>Kontakt</h2>
+<p>Vinohradská 196, Praha 3, 130 00</p>
+<p>Telefon: 272 735 268</p>
+<p>Email: cdentceleryn@gmail.com</p>
+<div class="oteviraci-doba" style="font-size: 1.2em; font-weight: bold; margin-top: 1em;">
+<p>Otevírací doba:</p>
+<ul style="list-style: none; padding-left: 0;">
+<li>Pondělí: 7:30 – 20:00</li>
+<li>Úterý: 7:30 – 20:00</li>
+<li>Středa: 7:30 – 20:00</li>
+<li>Čtvrtek: 7:30 – 20:00</li>
+<li>Pátek: 7:30 – 14:00</li>
+</ul>
+</div>
+</section>
+<script src="assets/js/script.js"></script>
 <footer class="site-footer">
-  <p>&copy; CDent – Rodinná klinika v srdci Vinohrad</p>
+<p>© CDent – Rodinná klinika v srdci Vinohrad</p>
 </footer>
 <script>
 /* Auto-detect sections by ID or heading text and add uniform classes */
@@ -272,6 +289,48 @@ body{
     }
   }
 })();
+
+
+/* Mobile tap toggle for before/after */
+document.querySelectorAll('.before-after').forEach(el=>{
+  el.addEventListener('click',()=>{
+    if(window.matchMedia('(hover:none)').matches){
+      el.classList.toggle('active');
+    }
+  });
+});
+</script>
+<script id='ba-toggle'>
+
+// Make before/after work on hover (desktop) and toggle on tap/click (mobile)
+(function(){
+  const els = Array.from(document.querySelectorAll('.before-after'));
+  els.forEach(el => {
+    // If there are exactly two images, tag the second as "after" for CSS
+    const imgs = el.querySelectorAll('img');
+    if(imgs.length >= 2) {
+      imgs[1].classList.add('after','ba-after');
+      el.style.position = el.style.position || 'relative';
+      if(getComputedStyle(imgs[1]).position !== 'absolute'){
+        imgs[1].style.position = 'absolute';
+        imgs[1].style.inset = '0';
+        imgs[1].style.objectFit = 'cover';
+        imgs[0].style.display = 'block';
+        imgs[0].style.width = '100%';
+        imgs[0].style.height = 'auto';
+      }
+    }
+    // Toggle on tap/click
+    el.addEventListener('click', () => {
+      el.classList.toggle('active');
+    }, {passive:true});
+    // On touchstart also toggle (for some browsers not sending click)
+    el.addEventListener('touchstart', () => {
+      el.classList.toggle('active');
+    }, {passive:true});
+  });
+})();
+
 </script>
 </body>
 </html>
